@@ -110,6 +110,9 @@ db_import results
 ```
 db_nmap -Pn -sV <ip>
 ```
+```
+use auxiliary/scanner/portscan/tcp
+```
 
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
