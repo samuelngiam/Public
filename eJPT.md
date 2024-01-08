@@ -566,7 +566,7 @@ sudo man man
 # id
 uid=0(root) gid=0(root) groups=0(root)
 ```
-- Press `!`, then type `/bin/sh`
+- Press `!`, then type `/bin/sh`.
 
 #### SUID Binaries
 ```
