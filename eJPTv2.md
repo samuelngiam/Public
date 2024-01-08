@@ -51,9 +51,14 @@ meterpreter > getpid
 Ctrl + M + L to clear screen
 ```
 ```
-connect -h
+hosts
+services
+creds
+vulns
 ```
-- Similar to `nc`.
+```
+connect
+```
 
 ## tmux
 ```
