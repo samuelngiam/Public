@@ -1,6 +1,6 @@
 # eJPTv2 Cheatsheet
 
-# Misc
+# Others
 - [Metasploit](#Metasploit)
 - [tmux](#tmux)
 - [Windows Resources](#Windows-Resources)
@@ -77,7 +77,16 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 - `/usr/share/windows-resources/binaries/`
 
 # 1 Info Gathering and Enumeration
+- [nmap](#nmap)
 
+## nmap
+```
+nmap -Pn -sV <ip>
+nmap -Pn -sV -p- <ip>
+```
+```
+nmap -Pn -sV <ip> -oX results
+```
 
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
