@@ -40,7 +40,7 @@ sudo wireshark -i eth1 -k
 - [Exploitation Frameworks](#Exploitation-Frameworks)
 - [Windows Exploitation](#Windows-Exploitation)
 - [Linux Exploitation](#Linux-Exploitation)
-- [AV Evasion & Obfuscation](#AV-Evasion-&-Obfuscation)
+- [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
 
 ### Vulnerability Scanning
 
@@ -185,7 +185,7 @@ empireadmin / password123
 
 ### Linux Exploitation
 
-### AV Evasion & Obfuscation
+### AV Evasion and Obfuscation
 - https://www.shellterproject.com/
 
 ```
