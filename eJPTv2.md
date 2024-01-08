@@ -1,3 +1,33 @@
+# 0 Misc
+## MSF
+```
+/usr/share/metasploit-framework
+```
+```
+service postgresql start
+
+msfconsole -q
+db_status
+
+workspace -a <name>
+workspace
+
+setg RHOSTS <ip>
+setg RHOST <ip>
+```
+```
+sessions -l
+sessions -i <session_id>
+sessions -k <session_id>
+```
+```
+meterpreter > background
+```
+```
+meterpreter > migrate <pid>
+meterpreter > migrate -N explorer.exe
+```
+
 # 1 Info Gathering and Enumeration
 
 
