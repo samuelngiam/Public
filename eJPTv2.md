@@ -87,13 +87,14 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 nmap -Pn -sV <ip>
 ```
 - Useful flags
-  -`-p<port>`, `-p<port_range>`
+  - `-p<port>`, `-p<port_range>`
   - `-p-`
   - `-F`
   - `-O`
   - `-A`
   - `-sC`
   - `-sU`
+  - `-T<0 to 5>`
 
 ```
 nmap -Pn -sV <ip> -oX results
