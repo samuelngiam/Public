@@ -1,4 +1,11 @@
 # eJPTv2 Cheatsheet
+- To Do
+  - Finish 3.3
+  - Finish 3.4
+  - Rewatch 3.1
+  - Rewatch 1.1, 1.2, 1.3, 1.4
+  - Review old notes
+  - Take Exam
 
 # Others
 - [Metasploit](#Metasploit)
