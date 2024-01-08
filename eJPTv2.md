@@ -48,6 +48,9 @@ meterpreter > migrate -N lsass.exe
 meterpreter > getpid
 ```
 ```
+Ctrl + M + L to clear screen
+```
+```
 connect -h
 ```
 - Similar to `nc`.
