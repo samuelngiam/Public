@@ -1,4 +1,6 @@
 # 0 Misc
+- [MSF](#MSF)
+
 ## MSF
 ```
 /usr/share/metasploit-framework
