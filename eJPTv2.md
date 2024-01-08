@@ -62,7 +62,7 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
-- [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-2.3)
+- [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
 - 
 
 ## ARP Poisoning
