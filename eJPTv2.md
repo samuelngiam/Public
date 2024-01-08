@@ -107,6 +107,8 @@ python 39161.py <ip> <port>
 - [Clear Linux History](#Clear-Linux-History)
 - [Clear Windows Event Logs](#Clear-Windows-Event-Logs)
 - [Linux Local Enumeration](#Linux-Local-Enumeration)
+- [Linux Persistence Via Cron Jobs](#Linux-Persistence-Via-Cron-Jobs)
+- [Linux Persistence Via SSH Keys](#Linux-Persistence-Via-SSH-Keys)
 - [Pivoting](#Pivoting)
 - [SUDO Privileges](#SUDO-Privileges)
 - [SUID Binaries](#SUID-Binaries)
