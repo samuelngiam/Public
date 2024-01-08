@@ -26,6 +26,7 @@ meterpreter > background
 ```
 meterpreter > migrate <pid>
 meterpreter > migrate -N explorer.exe
+meterpreter > getpid
 ```
 
 # 1 Info Gathering and Enumeration
