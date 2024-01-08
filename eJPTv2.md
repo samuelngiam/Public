@@ -146,7 +146,7 @@ cp /usr/share/windows-resources/binaries/vncviewer.exe ~/Desktop/AVBypass/vncvie
 cd /usr/share/windows-resources/shellter
 sudo wine shellter.exe
 ```
-- Backup of PE at `/usr/share/windows-resources/shellter/Shellter_Backups`.
+- Backup of EXE at `/usr/share/windows-resources/shellter/Shellter_Backups`.
 - Select Stealth mode - `vncviewer.exe` will function normally.
 
 ```
@@ -257,7 +257,7 @@ searchsploit -m 9303
 i686-w64-mingw32-gcc 9303.c -o exploit
 i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 ```
-- Use 32-bit if unsure of target's architecture.
+- Use 32-bit if unsure of target architecture.
 
 # 3 Post-Exploitation
 - [Keylogging](#Keylogging)
