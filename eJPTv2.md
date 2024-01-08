@@ -358,7 +358,16 @@ set WIN_TRANSFER VBS
 ```
 
 ## Windows Cross-Compilation
+```
+sudo apt-get install mingw-w64 gcc
+```
+```
+searchsploit -m 9303
 
+i686-w64-mingw32-gcc 9303.c -o exploit
+i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
+```
+- Use 32-bit if unsure of target's architecture.
 
 ## Windows Local Enumeration
 - Enumerating System Information
