@@ -33,6 +33,15 @@ sudo wireshark -i eth1 -k
 ## The Metasploit Framework (MSF)
 
 ## Exploitation
+- [Vulnerability Scanning](#Vulnerability-Scanning)
+- [Searching For Exploits](#Searching-For-Exploits)
+- [Fixing Exploits](#Fixing-Exploits)
+- [Bind and Reverse Shells](#Bind-and-Reverse-Shells)
+- [Exploitation Frameworks](#Exploitation-Frameworks)
+- [Windows Exploitation](#Windows-Exploitation)
+- [Linux Exploitation](#Linux-Exploitation)
+- [AV Evasion & Obfuscation](#AV-Evasion-&-Obfuscation)
+
 ### Vulnerability Scanning
 
 ### Searching For Exploits
