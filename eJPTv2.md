@@ -306,6 +306,7 @@ sudo -l
 ```
 find / -user root -perm -4000 -exec ls -ldb {} \;
 ```
+- https://gtfobins.github.io/
 
 ## Transfer Files
 - Set Up A Web Server With Python
