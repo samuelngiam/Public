@@ -15,6 +15,21 @@ sudo wireshark -i <interface> -k
 ```
 
 # 3 Post-Exploitation
+- [Keylogging](#Keylogging)
+- [Cleanup Resource Scripts](#Cleanup-Resource-Scripts)
+- [Clear Linux History](#Clear-Linux-History)
+- [Clear Windows Event Logs](#Clear-Windows-Event-Logs)
+- [Linux Local Enumeration](#Linux-Local-Enumeration)
+- [Pivoting](#Pivoting)
+- [SUDO Privileges](#SUDO-Privileges)
+- [SUID Binaries](#SUID-Binaries)
+- [Transfer Files](#Transfer-Files)
+- [Upgrade Shells](#Upgrade-Shells)
+- [Windows Local Enumeration](#Windows-Local-Enumeration)
+- [Windows Persistence Via RDP](#Windows-Persistence-Via-RDP)
+- [Windows Persistence Via Services](#Windows-Persistence-Via-Services)
+- [Working Directories](#Working-Directories)
+
 ## Keylogging
 ```
 meterpreter > getdesktop
