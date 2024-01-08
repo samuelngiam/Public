@@ -246,7 +246,7 @@ Set-Variable -Name client -Value (New-Object System.Net.Sockets.TCPClient('10.0.
 ```
 
 ## Post-Exploitation
-- [Windows Local Enumeration](#Windows-Local-Enumeration
+- [Windows Local Enumeration](#Windows-Local-Enumeration)
 - [Linux Local Enumeration](#Linux-Local-Enumeration)
 - [Transferring Files To Windows and Linux Targets](#Transferring-Files-To-Windows-and-Linux-Targets)
 - [Upgrading Shells](#Upgrading-Shells)
