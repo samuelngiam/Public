@@ -1,10 +1,13 @@
 # Misc
-- [MSF](#MSF)
-- [MSFVenom Cheatsheet](#MSFVenom-Cheatsheet)
+- [Metasploit](#Metasploit)
+- [MSFVenom](#MSFVenom)
 - [tmux](#tmux)
 - [Windows Resources](#Windows-Resources)
 
-## MSF
+## Metasploit
+```
+sudo apt update && sudo apt install metasploit-framework
+```
 ```
 /usr/share/metasploit-framework
 ```
@@ -38,7 +41,7 @@ meterpreter > migrate -N lsass.exe
 meterpreter > getpid
 ```
 
-## MSFVenom Cheatsheet
+## MSFVenom
 - https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
 ## tmux
