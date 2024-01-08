@@ -47,6 +47,9 @@ meterpreter > migrate -N explorer.exe
 meterpreter > migrate -N lsass.exe
 meterpreter > getpid
 ```
+```
+connect -h
+```
 
 ## tmux
 ```
