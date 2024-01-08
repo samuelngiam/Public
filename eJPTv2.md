@@ -64,6 +64,7 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 - [ARP Poisoning](#ARP-Poisoning)
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
 - [BadBlue httpd 2.7](#BadBlue-httpd-27)
+- [EternalBlue](#EternalBlue)
 - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [Linux Compilation](#Linux-Compilation)
 - [ProFTPD 1.3.3c](#ProFTPD-133c)
@@ -138,6 +139,13 @@ ALL
 ## BadBlue httpd 2.7
 ```
 use exploit/windows/http/badblue_passthru
+```
+
+## EternalBlue
+```
+use auxiliary/scanner/smb/smb_ms17_010
+
+use exploit/windows/smb/ms17_010_eternalblue
 ```
 
 ## Exploit Database Binary Exploits
