@@ -38,4 +38,9 @@ history -c
 
 ## Clear Windows Event Logs
 ```
+meterpreter > clearev
 ```
+
+## Working Directories
+- Windows: `C:\Temp`
+- Linux: `/tmp`
