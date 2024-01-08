@@ -2,7 +2,6 @@
 
 # Misc
 - [Metasploit](#Metasploit)
-- [MSFVenom](#MSFVenom)
 - [tmux](#tmux)
 - [Windows Resources](#Windows-Resources)
 
@@ -49,9 +48,6 @@ meterpreter > migrate -N lsass.exe
 meterpreter > getpid
 ```
 
-## MSFVenom
-- https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
-
 ## tmux
 ```
 tmux
@@ -78,6 +74,7 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 - [EternalBlue](#EternalBlue)
 - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [Linux Compilation](#Linux-Compilation)
+- [MSFVenom](#MSFVenom)
 - [ProFTPD 1.3.3c](#ProFTPD-133c)
 - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
 - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
@@ -168,6 +165,9 @@ searchsploit -m 40839
 
 gcc -pthread 40839.c -o dirty -lcrypt
 ```
+
+## MSFVenom
+- https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
 ## ProFTPD 1.3.3c
 ```
