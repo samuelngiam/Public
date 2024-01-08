@@ -75,6 +75,7 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [Linux Compilation](#Linux-Compilation)
 - [MSFVenom](#MSFVenom)
+- [Payloads](#Payloads)
 - [ProFTPD 1.3.3c](#ProFTPD-133c)
 - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
 - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
@@ -168,6 +169,13 @@ gcc -pthread 40839.c -o dirty -lcrypt
 
 ## MSFVenom
 - https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
+
+## Payloads
+```
+windows/meterpreter/reverse_tcp
+windows/meterpreter/bind_tcp
+windows/x64/meterpreter/reverse_tcp
+```
 
 ## ProFTPD 1.3.3c
 ```
