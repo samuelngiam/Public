@@ -62,7 +62,7 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
-- [HttpFileServer 2.3 (Rejetto)](#HttpFileServer-2.3-(Rejetto))
+- [Rejetto HttpFileServer 2.3)](#Rejetto-HttpFileServer-2.3)
 - 
 
 ## ARP Poisoning
@@ -77,7 +77,7 @@ arpspoof -i <interface> -t <ip1> -r <ip2>
 sudo wireshark -i <interface> -k
 ```
 
-## HttpFileServer 2.3 (Rejetto)
+## Rejetto HttpFileServer 2.3
 ```
 use exploit/windows/http/rejetto_hfs_exec
 ```
