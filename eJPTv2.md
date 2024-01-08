@@ -65,7 +65,7 @@ meterpreter > portfwd list
 ```
 ```
 netstat -an | grep LISTEN
-nmap -Pn -sV -p<local_port> localhost
+nmap -Pn -sV -p<local_port_on_kali> localhost
 ```
 ```
 use <exploit_module>
