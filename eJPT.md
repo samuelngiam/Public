@@ -37,6 +37,7 @@ cd /usr/share/windows-resources/shellter
 sudo wine shellter.exe
 ```
 - After execution, a backup of the original PE is stored in `/usr/share/windows-resources/shellter/Shellter_Backups`.
+- Select Stealth mode - `vncviewer.exe` will function normally.
 
 ## Post-Exploitation
 
