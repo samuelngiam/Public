@@ -85,7 +85,7 @@ gcc -pthread 40839.c -o dirty -lcrypt
 file dirty         
 dirty: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=831f9c59a2d3c829841c3f34979bd09c94104b21, for GNU/Linux 3.2.0, not stripped
 ```  
-- Specific compilation instructions given
+- Specific compilation instructions given.
 
 #### Useful Links
 - https://gitlab.com/exploit-database/exploitdb-bin-sploits
