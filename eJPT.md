@@ -285,7 +285,7 @@ netstat -ano
 netsh firewall show state
 netsh advfirewall show allprofiles
 ```
-- Take note of APIPA addresses (`169.254.0.0/16`) in `arp -a` output
+- Take note of APIPA addresses (`169.254.0.0/16`) in `arp -a` output.
 
 #### Enumerating Processes & Services
 ```
@@ -319,7 +319,7 @@ use post/windows/gather/checkvm
 
 cat /root/.msf4/loot/<filename>.txt
 ```
-- Post-exploitation modules need to `set SESSION <session_id>`
+- Post-exploitation modules need to `set SESSION <session_id>`.
 
 #### JAWS - Just Another Windows Script
 ```
@@ -367,7 +367,7 @@ w
 last
 lastlog
 ```
-- `uid=0` is root
+- `uid=0` is root.
 
 #### Enumerating Network Information
 ```
@@ -413,7 +413,7 @@ use post/linux/gather/checkvm
 
 cat /root/.msf4/loot/<filename>.txt
 ```
-- Post-exploitation modules need to `set SESSION <session_id>`
+- Post-exploitation modules need to `set SESSION <session_id>`.
 
 #### LinEnum
 ```
