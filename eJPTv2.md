@@ -10,16 +10,17 @@
 sudo apt update && sudo apt install metasploit-framework
 
 sudo systemctl enable postgresql
-systemctl start postgresql
+sudo systemctl start postgresql
 systemctl status postgresql
 
-sudo msfdb
+msfdb
 sudo msfdb init
 sudo msfdb reinit
 sudo msfdb status
 ```
 ```
-service postgresql start
+sudo service postgresql start
+service postgresql status
 
 msfconsole -q
 db_status
@@ -36,7 +37,7 @@ sessions -i <session_id>
 sessions -k <session_id>
 ```
 ```
-meterpreter > background
+meterpreter > background (or Ctrl + Z)
 ```
 ```
 meterpreter > ps
@@ -54,11 +55,13 @@ Ctrl + M + L to clear screen
 hosts
 services
 creds
+analyze
 vulns
 ```
 ```
 connect
 ```
+- Communicate with a host, similar to interacting via netcat, taking advantage of any configured session pivoting.
 
 ## tmux
 ```
@@ -67,9 +70,9 @@ tmux ls
 tmux attach -t <session_id>
 ```
 ```
-Ctrl + B D — Detach from the current session.
-Ctrl + B C — Create a new window.
-Ctrl + B 0 (1,2...) — Move to a specific window by number.
+Ctrl + B, D — Detach from the current session.
+Ctrl + B, C — Create a new window.
+Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 ```
 
 ## Windows Resources
@@ -77,15 +80,26 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 - `/usr/share/windows-resources/binaries/`
 
 # 1 Info Gathering and Enumeration
-- [nmap](#nmap)
+- [Port Scanning](#Port-Scanning)
 
-## nmap
+## Port Scanning
 ```
 nmap -Pn -sV <ip>
-nmap -Pn -sV -p- <ip>
 ```
+- Useful flags
+  - `-p-`
+  - `-F`
+  - `-O`
+  - `-A`
+  - `-sC`
+  - `-sU`
+
 ```
 nmap -Pn -sV <ip> -oX results
+db_import results
+```
+```
+db_nmap -Pn -sV <ip>
 ```
 
 # 2 Exploitation
