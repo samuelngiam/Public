@@ -114,6 +114,7 @@ python 39161.py <ip> <port>
 - [SUID Binaries](#SUID-Binaries)
 - [Transfer Files](#Transfer-Files)
 - [Upgrade Shells](#Upgrade-Shells)
+- [Windows Cross-Compilation](#Windows-Cross-Compilation)
 - [Windows Local Enumeration](#Windows-Local-Enumeration)
 - [Windows Persistence Via RDP](#Windows-Persistence-Via-RDP)
 - [Windows Persistence Via Services](#Windows-Persistence-Via-Services)
@@ -355,6 +356,9 @@ set LHOST <ip>
 set SESSION <session_id>
 set WIN_TRANSFER VBS
 ```
+
+## Windows Cross-Compilation
+
 
 ## Windows Local Enumeration
 - Enumerating System Information
