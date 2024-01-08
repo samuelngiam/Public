@@ -1,5 +1,7 @@
 # 0 Misc
 - [MSF](#MSF)
+- [tmux](#tmux)
+- [Windows Resources](#Windows-Resources)
 
 ## MSF
 ```
@@ -26,10 +28,30 @@ sessions -k <session_id>
 meterpreter > background
 ```
 ```
+meterpreter > ps
+meterpreter > ps -S <process_name>
+meterpreter > pgrep <process_name>
 meterpreter > migrate <pid>
 meterpreter > migrate -N explorer.exe
+meterpreter > migrate -N lsass.exe
 meterpreter > getpid
 ```
+
+## tmux
+```
+tmux
+tmux ls
+tmux attach -t <session_id>
+```
+```
+Ctrl + B D — Detach from the current session.
+Ctrl + B C — Create a new window.
+Ctrl + B 0 (1,2...) — Move to a specific window by number.
+```
+
+## Windows Resources
+- `ls -al /usr/share/windows-resources/`
+- `ls -al /usr/share/windows-resources/binaries/`
 
 # 1 Info Gathering and Enumeration
 
