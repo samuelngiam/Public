@@ -9,13 +9,11 @@
 ## Metasploit
 ```
 sudo apt update && sudo apt install metasploit-framework
-```
-```
+
 sudo systemctl enable postgresql
-systemctl status postgresql
 systemctl start postgresql
-```
-```
+systemctl status postgresql
+
 sudo msfdb
 sudo msfdb init
 sudo msfdb reinit
