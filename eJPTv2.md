@@ -50,6 +50,7 @@ meterpreter > getpid
 ```
 connect -h
 ```
+- Similar to `nc`.
 
 ## tmux
 ```
