@@ -14,20 +14,7 @@ arpspoof -i <interface> -t <ip1> -r <ip2>
 sudo wireshark -i <interface> -k
 ```
 
-
-
 # 3 Post-Exploitation
-- Keylogging
-- Cleanup Resource Scripts
-- Clear Linux History
-- Clear Windows Event Logs
-- Pivoting
-- SUDO Privileges
-- SUID Binaries
-- Upgrade Shells
-- Windows Local Enumeration
-- Working Directories
-
 ## Keylogging
 ```
 meterpreter > getdesktop
