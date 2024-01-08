@@ -54,8 +54,8 @@ Ctrl + B 0 (1,2...) — Move to a specific window by number.
 ```
 
 ## Windows Resources
-- `ls -al /usr/share/windows-resources/`
-- `ls -al /usr/share/windows-resources/binaries/`
+- `/usr/share/windows-resources/`
+- `/usr/share/windows-resources/binaries/`
 
 # 1 Info Gathering and Enumeration
 
