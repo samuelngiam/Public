@@ -1,5 +1,6 @@
-# 0 Misc
+# Misc
 - [MSF](#MSF)
+- [MSFVenom Cheatsheet](#MSFVenom-Cheatsheet)
 - [tmux](#tmux)
 - [Windows Resources](#Windows-Resources)
 
@@ -36,6 +37,9 @@ meterpreter > migrate -N explorer.exe
 meterpreter > migrate -N lsass.exe
 meterpreter > getpid
 ```
+
+## MSFVenom Cheatsheet
+- https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
 ## tmux
 ```
