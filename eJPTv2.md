@@ -227,6 +227,7 @@ rpcclient -U "" -N <ip>
 /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
 /usr/share/metasploit-framework/data/wordlists/http_default_users.txt
 /usr/share/metasploit-framework/data/wordlists/http_default_pass.txt
+/usr/share/metasploit-framework/data/wordlists/namelist.txt
 ```
 ```
 /usr/share/metasploit-framework/data/wmap/
