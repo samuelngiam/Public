@@ -108,6 +108,24 @@ set VERBOSE false
 
 ## HTTP
 ```
+use auxiliary/scanner/http/http_version
+```
+- Change `RPORT` and `SSL` if dealing with HTTPS.
+```
+use auxiliary/scanner/http/http_header
+use auxiliary/scanner/http/robots_txt
+```
+```
+use auxiliary/scanner/http/dir_scanner
+```
+- Default `DICTIONARY` is `/usr/share/metasploit-framework/data/wmap/wmap_dirs.txt`.
+```
+use auxiliary/scanner/http/files_dir
+```
+- Default `DICTIONARY` is `/usr/share/metasploit-framework/data/wmap/wmap_files.txt`.
+- Can specify `EXT` to focus on specific file extension.
+
+```
 curl http://<ip>:<port>
 curl http://<ip>/robots.txt
 ```
@@ -199,6 +217,8 @@ rpcclient -U "" -N <ip>
 /usr/share/metasploit-framework/data/wordlists/common_users.txt
 /usr/share/metasploit-framework/data/wordlists/unix_users.txt
 /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+/usr/share/metasploit-framework/data/wordlists/http_default_users.txt
+/usr/share/metasploit-framework/data/wordlists/http_default_pass.txt
 ```
 ```
 /usr/share/metasploit-framework/data/wmap/
