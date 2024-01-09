@@ -96,18 +96,22 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - [SSH](#SSH)
 - [Wordlists](#Wordlists)
 
+```
+set USER_FILE <wordlist>
+set PASS_FILE <wordlist>
+set USERNAME <username>
+set PASSWORD <password>
+set VERBOSE <boolean>
+set STOP_ON_SUCCESS <boolean>
+```
+- Set these options accordingly and as needed for brute-force attacks.
+
 ## FTP
 ```
 use auxiliary/scanner/ftp/ftp_version
 use auxiliary/scanner/ftp/anonymous
-```
-```
 use auxiliary/scanner/ftp/ftp_login
-set USER_FILE <wordlist>
-set PASS_FILE <wordlist>
-set VERBOSE false
 ```
-- Can set `USERNAME` or `PASSWORD` instead if either is known.
 
 ## HTTP
 ```
@@ -118,8 +122,6 @@ use auxiliary/scanner/http/http_version
 ```
 use auxiliary/scanner/http/http_header
 use auxiliary/scanner/http/robots_txt
-```
-```
 use auxiliary/scanner/http/dir_scanner
 ```
 ```
@@ -155,14 +157,11 @@ use auxiliary/scanner/mysql/mysql_version
 ```
 use auxiliary/scanner/mysql/mysql_login
 set USERNAME root
-set PASS_FILE <wordlist>
 ```
 - Focus on `root` account.
 
 ```
 use auxiliary/admin/mysql/mysql_enum
-set USERNAME <username>
-set PASSWORD <password>
 ```
 - Needs credentials.
 - Includes account enumeration - hashes, privileges.
@@ -174,37 +173,27 @@ set PASSWORD <password>
 
 ```
 use auxiliary/admin/mysql/mysql_sql
-set USERNAME <username>
-set PASSWORD <password>
 ```
 - Likely need `root` account for this.
 - Other SQL: `set SQL show databases;`
 
 ```
 use auxiliary/scanner/mysql/mysql_schemadump
-set USERNAME <username>
-set PASSWORD <password>
 ```
 
 ```
 use auxiliary/scanner/mysql/mysql_file_enum
 set FILE_LIST <wordlist>
-set PASSWORD <password>
 ```
-- `USERNAME` default as `root`.
 
 ```
 use auxiliary/scanner/mysql/mysql_hashdump
-set USERNAME <username>
-set PASSWORD <password>
 ```
 
 ```
 use auxiliary/scanner/mysql/mysql_writable_dirs
 set DIR_LIST <wordlist>
-set PASSWORD <password>
 ```
-- `USERNAME` default as `root`.
 
 ```
 mysql -h <ip> -u root -p
@@ -251,12 +240,7 @@ set ShowFiles true
 ```
 ```
 use auxiliary/scanner/smb/smb_login
-set USER_FILE <wordlist>
-set PASS_FILE <wordlist>
-set VERBOSE false
 ```
-- Can set `USERNAME` or `PASSWORD` if either is known.
-- Focus on administrator account.
 
 ```
 nmap -Pn -sV -p445 --script=smb-os-discovery <ip>
@@ -282,6 +266,13 @@ nmblookup -A <ip>
 ```
 
 ## SMTP
+```
+nmap -Pn -sV -p25 --script=banner <ip>
+```
+```
+use auxiliary/scanner/smtp/smtp_version
+use auxiliary/scanner/smtp/smtp_enum
+```
 
 ## SSH
 ```
@@ -289,41 +280,31 @@ use auxiliary/scanner/ssh/ssh_version
 ```
 ```
 use auxiliary/scanner/ssh/ssh_login
-set USER_FILE <wordlist>
-set PASS_FILE <wordlist>
 ```
 - Opens a reverse command shell (non-meterpreter) with credentials found.
 
 ```
 use auxiliary/scanner/ssh/ssh_enumusers
-set USER_FILE <wordlist>
 ```
 
 ## Wordlists
 ```
 /usr/share/wordlists/
-
-gunzip /usr/share/wordlists/rockyou.txt.gz
 /usr/share/wordlists/rockyou.txt
 ```
 ```
 /usr/share/metasploit-framework/data/wordlists/
-
 /usr/share/metasploit-framework/data/wordlists/common_users.txt
 /usr/share/metasploit-framework/data/wordlists/unix_users.txt
-/usr/share/metasploit-framework/data/wordlists/http_default_users.txt
-
 /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+/usr/share/metasploit-framework/data/wordlists/http_default_users.txt
 /usr/share/metasploit-framework/data/wordlists/http_default_pass.txt
-
 /usr/share/metasploit-framework/data/wordlists/namelist.txt
 /usr/share/metasploit-framework/data/wordlists/directory.txt
 ```
 ```
 /usr/share/metasploit-framework/data/wmap/
-
 /usr/share/metasploit-framework/data/wmap/wmap_dirs.txt
-
 /usr/share/metasploit-framework/data/wmap/wmap_files.txt
 ```
 
