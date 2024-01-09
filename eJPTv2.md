@@ -8,9 +8,9 @@
   - Take Exam
 
 # General
-- [Metasploit](#Metasploit) [x]
+- [Metasploit](#Metasploit)
 - [tmux](#tmux)
-- [Windows Resources](#Windows-Resources)
+- [windows-resources](#windows-resources)
 
 ## Metasploit
 ```
@@ -82,9 +82,10 @@ Ctrl + B, C — Create a new window.
 Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 ```
 
-## Windows Resources
+## windows-resources
 - `/usr/share/windows-resources/`
 - `/usr/share/windows-resources/binaries/`
+
 
 # 1 Info Gathering and Enumeration
 - [Port Scanning](#Port-Scanning)
