@@ -90,6 +90,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - [curl](#curl)
 - [FTP](#FTP)
 - [Port Scanning](#Port-Scanning)
+- [SMB/Samba](#SMB-Samba)
 - [Wordlists](#Wordlists)
 
 ## curl
@@ -137,6 +138,8 @@ db_nmap -Pn -sV <ip>
 use auxiliary/scanner/portscan/tcp
 use auxiliary/scanner/discovery/udp_sweep
 ```
+
+## SMB/Samba
 
 ## Wordlists
 ```
