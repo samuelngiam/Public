@@ -114,7 +114,7 @@ curl http://<ip>/robots.txt
 ```
 curl http://<ip>/<directory>/
 ```
-- Check if directory listing (Apache) is enabled i.e. `Index of`.
+- Check if directory listing (Apache) is enabled i.e. `Index of /<directory>`.
 
 ## Port Scanning
 ```
