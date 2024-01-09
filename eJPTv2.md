@@ -119,8 +119,9 @@ use auxiliary/scanner/discovery/udp_sweep
 
 ## curl
 ```
-curl <page>
+curl http://<ip>:<port>
 ```
+- Useful for analyzing a Web page in a shell-only environment.
 
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
