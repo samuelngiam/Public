@@ -192,14 +192,18 @@ rpcclient -U "" -N <ip>
 
 ## Wordlists
 ```
+/usr/share/wordlists/
+```
+```
+/usr/share/metasploit-framework/data/wordlists/
 /usr/share/metasploit-framework/data/wordlists/common_users.txt
 /usr/share/metasploit-framework/data/wordlists/unix_users.txt
-```
-```
 /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
 ```
 ```
+/usr/share/metasploit-framework/data/wmap/
 /usr/share/metasploit-framework/data/wmap/wmap_dirs.txt
+/usr/share/metasploit-framework/data/wmap/wmap_files.txt
 ```
 
 # 2 Exploitation
