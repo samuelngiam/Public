@@ -387,7 +387,6 @@ use exploit/unix/ftp/vsftpd_234_backdoor
 ```
 use exploit/unix/webapp/xoda_file_upload
 ```
-- Default payload is `php/meterpreter/reverse_tcp`.
 - Set `TARGETURI` accordingly.
 
 ## Windows Cross-Compilation
@@ -774,7 +773,6 @@ use exploit/windows/local/persistence_service
 set SESSION <session_id>
 ```
 - Admin or system privileges required.
-- Default payload is 32-bit meterpreter. Change payload/payload settings accordingly.
 - `RETRY_TIME` 5 seconds.
 - Other settings more for blending in e.g. `SERVICE_NAME`.
 
