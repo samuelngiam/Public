@@ -200,7 +200,7 @@ set PASSWORD <password>
 
 ```
 use auxiliary/scanner/mysql/mysql_writable_dirs
-set DIR_LIST /usr/share/metasploit-framework/data/wordlists/directory.txt
+set DIR_LIST <wordlist>
 set PASSWORD <password>
 ```
 - `USERNAME` default as `root`.
