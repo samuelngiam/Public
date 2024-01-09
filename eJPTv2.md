@@ -49,8 +49,8 @@ meterpreter > background (or Ctrl + Z)
 ```
 ```
 meterpreter > ps
-meterpreter > ps -S <process_name>
-meterpreter > pgrep <process_name>
+meterpreter > ps -S <process>
+meterpreter > pgrep <process>
 meterpreter > migrate <pid>
 meterpreter > migrate -N explorer.exe
 meterpreter > migrate -N lsass.exe
@@ -442,14 +442,14 @@ cat /etc/resolv.conf
 - Enumerating Processes & Cron Jobs
 ```
 meterpreter > ps
-meterpreter > ps -S <process_name>
-meterpreter > pgrep <process_name>
+meterpreter > ps -S <process>
+meterpreter > pgrep <process>
 
 ps --help all
 ps
 ps aux
 ps aux | grep root
-ps aux | grep <process_name>
+ps aux | grep <process>
 ps aux | grep -i <keyword>
 top
 crontab -l
@@ -532,7 +532,7 @@ netstat -an | grep LISTEN
 nmap -Pn -sV -p<port_local> localhost
 ```
 ```
-use <exploit_module>
+use <exploit>
 set RHOSTS <ip2>
 set RPORT <port_remote>
 set payload windows/meterpreter/bind_tcp
@@ -649,8 +649,8 @@ netsh advfirewall show allprofiles
 - Enumerating Processes & Services
 ```
 meterpreter > ps
-meterpreter > ps -S <process_name>
-meterpreter > pgrep <process_name>
+meterpreter > ps -S <process>
+meterpreter > pgrep <process>
 
 net start
 wmic service list brief
