@@ -515,9 +515,11 @@ meterpreter > ipconfig
 meterpreter > arp
 ```
 ```
-meterpreter > run autoroute -s <subnet_in_cidr>
+meterpreter > run autoroute -s <subnet>
 meterpreter > run autoroute -p
 ```
+- Use CIDR notation for `<subnet>`.
+
 ```
 use auxiliary/scanner/portscan/tcp
 set RHOSTS <ip2>
