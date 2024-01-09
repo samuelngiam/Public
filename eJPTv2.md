@@ -163,19 +163,38 @@ set USERNAME <username>
 set PASSWORD <password>
 ```
 - Needs credentials.
-- Performs account enumeration - hashes, privileges.
-  - Try https://crackstation.net/ for hash-cracking.
-  - Hashcat works too
+- Includes account enumeration - hashes, privileges.
+  - https://crackstation.net/
+  - Hashcat:
     - `echo <hash> > hash`
     - `hashcat -m300 -a0 hash /usr/share/wordlists/rockyou.txt`
     - `cat .hashcat/hashcat.potfile`
 
 ```
 use auxiliary/admin/mysql/mysql_sql
+set USERNAME <username>
+set PASSWORD <password>
+```
+- Likely need `root` account for this.
+- Other SQL: `set SQL show databases;`
+
+```
+use auxiliary/scanner/mysql/mysql_schemadump
+set USERNAME <username>
+set PASSWORD <password>
+```
+
+```
 use auxiliary/scanner/mysql/mysql_file_enum
 use auxiliary/scanner/mysql/mysql_hashdump
-use auxiliary/scanner/mysql/mysql_schemadump
 use auxiliary/scanner/mysql/mysql_writable_dirs
+```
+
+```
+mysql -h <ip> -u root -p
+
+MySQL [(none)]>
+MySQL [(none)]> show databases;
 ```
 
 ## Port Scanning
