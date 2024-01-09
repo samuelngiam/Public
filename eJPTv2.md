@@ -115,6 +115,11 @@ use auxiliary/scanner/portscan/tcp
 use auxiliary/scanner/discovery/udp_sweep
 ```
 
+## curl
+```
+curl <page>
+```
+
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
