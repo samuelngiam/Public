@@ -189,7 +189,6 @@ use auxiliary/scanner/mysql/mysql_file_enum
 set FILE_LIST <wordlist>
 set PASSWORD <password>
 ```
-- Enumerate files and directories using the MySQL load_file feature.
 - `USERNAME` default as `root`.
 
 ```
