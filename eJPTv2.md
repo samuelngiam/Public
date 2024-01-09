@@ -105,13 +105,14 @@ set USER_FILE <wordlist>
 set PASS_FILE <wordlist>
 set VERBOSE false
 ```
-- Can set `USERNAME` or `PASSWORD` if either is known.
+- Can set `USERNAME` or `PASSWORD` instead if either is known.
 
 ## HTTP
 ```
 use auxiliary/scanner/http/http_version
 ```
 - Change `RPORT` and `SSL` if dealing with HTTPS.
+
 ```
 use auxiliary/scanner/http/http_header
 use auxiliary/scanner/http/robots_txt
@@ -123,12 +124,14 @@ use auxiliary/scanner/http/dir_scanner
 use auxiliary/scanner/http/files_dir
 ```
 - Can specify `EXT` to focus on specific file extension.
+
 ```
 use auxiliary/scanner/http/http_login
 set AUTH_URI <directory>
 set --clear USERPASS_FILE
 ```
 - `unset USERPASS_FILE` reverts to default value.
+
 ```
 use auxiliary/scanner/http/apache_userdir_enum
 ```
@@ -205,19 +208,13 @@ smb: \> exit
 ```
 ```
 smbclient -L <ip> -N
+rpcclient -U "" -N <ip>
 ```
 - If successful, anonymous connection (null session) is allowed.
 
 ```
 nmblookup -A <ip>
 ```
-- NetBIOS over TCP/IP client used to lookup NetBIOS names.
-
-```
-rpcclient -U "" -N <ip>
-```
-- Tool for executing client side MS-RPC functions.
-- If successful, anonymous connection (null session) is allowed.
 
 ## Wordlists
 ```
