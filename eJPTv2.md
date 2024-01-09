@@ -90,7 +90,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - [curl](#curl)
 - [FTP](#FTP)
 - [Port Scanning](#Port-Scanning)
-- [SMB/Samba](#SMB-Samba)
+- [SMB/Samba](#SMBSamba)
 - [Wordlists](#Wordlists)
 
 ## curl
