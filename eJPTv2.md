@@ -124,6 +124,14 @@ use auxiliary/scanner/http/files_dir
 ```
 - Default `DICTIONARY` is `/usr/share/metasploit-framework/data/wmap/wmap_files.txt`.
 - Can specify `EXT` to focus on specific file extension.
+```
+use auxiliary/scanner/http/http_login
+set AUTH_URI <directory>
+set --clear USERPASS_FILE
+```
+- Default `USER_FILE` is `/usr/share/metasploit-framework/data/wordlists/http_default_users.txt`.
+- Default `PASS_FILE` is `/usr/share/metasploit-framework/data/wordlists/http_default_pass.txt`.
+- `unset USERPASS_FILE` reverts to default value.
 
 ```
 curl http://<ip>:<port>
