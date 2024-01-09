@@ -86,7 +86,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - `/usr/share/windows-resources/`
 - `/usr/share/windows-resources/binaries/`
 
-# 1 Info Gathering and Enumeration
+# 1 Information Gathering and Enumeration
 - [curl](#curl)
 - [FTP](#FTP)
 - [Port Scanning](#Port-Scanning)
@@ -99,6 +99,17 @@ curl http://<ip>:<port>
 - Useful for analyzing a Web page in a shell-only environment.
 
 ## FTP
+```
+use auxiliary/scanner/ftp/ftp_version
+
+use auxiliary/scanner/ftp/anonymous
+
+use auxiliary/scanner/ftp/ftp_login
+set USER_FILE <wordlist>
+set PASS_FILE <wordlist>
+set VERBOSE false
+- Can set `USERNAME` or `PASSWORD` if either is known.
+```
 
 ## Port Scanning
 ```
@@ -129,7 +140,11 @@ use auxiliary/scanner/discovery/udp_sweep
 
 ## Wordlists
 ```
-
+/usr/share/metasploit-framework/data/wordlists/common_users.txt
+/usr/share/metasploit-framework/data/wordlists/unix_users.txt
+```
+```
+/usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
 ```
 
 # 2 Exploitation
