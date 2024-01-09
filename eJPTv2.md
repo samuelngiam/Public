@@ -118,19 +118,15 @@ use auxiliary/scanner/http/robots_txt
 ```
 use auxiliary/scanner/http/dir_scanner
 ```
-- Default `DICTIONARY` is `/usr/share/metasploit-framework/data/wmap/wmap_dirs.txt`.
 ```
 use auxiliary/scanner/http/files_dir
 ```
-- Default `DICTIONARY` is `/usr/share/metasploit-framework/data/wmap/wmap_files.txt`.
 - Can specify `EXT` to focus on specific file extension.
 ```
 use auxiliary/scanner/http/http_login
 set AUTH_URI <directory>
 set --clear USERPASS_FILE
 ```
-- Default `USER_FILE` is `/usr/share/metasploit-framework/data/wordlists/http_default_users.txt`.
-- Default `PASS_FILE` is `/usr/share/metasploit-framework/data/wordlists/http_default_pass.txt`.
 - `unset USERPASS_FILE` reverts to default value.
 ```
 use auxiliary/scanner/http/apache_userdir_enum
