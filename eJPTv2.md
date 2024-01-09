@@ -132,6 +132,10 @@ set --clear USERPASS_FILE
 - Default `USER_FILE` is `/usr/share/metasploit-framework/data/wordlists/http_default_users.txt`.
 - Default `PASS_FILE` is `/usr/share/metasploit-framework/data/wordlists/http_default_pass.txt`.
 - `unset USERPASS_FILE` reverts to default value.
+```
+use auxiliary/scanner/http/apache_userdir_enum
+```
+- Apache only.
 
 ```
 curl http://<ip>:<port>
@@ -450,7 +454,7 @@ meterpreter > migrate -N winlogon.exe
 ```
 
 ## Linux Local Enumeration
-- Enumerating System Information
+### Enumerating System Information
 ```
 meterpreter > sysinfo
 
@@ -467,7 +471,7 @@ dpkg -l
 cat /etc/shells
 ```
 
-- Enumerating Users & Groups
+### Enumerating Users & Groups
 ```
 meterpreter > getuid
 
@@ -483,7 +487,7 @@ lastlog
 ```
 - `uid=0` is root.
 
-- Enumerating Network Information
+### Enumerating Network Information
 ```
 meterpreter > ifconfig
 meterpreter > netstat
@@ -498,7 +502,7 @@ cat /etc/hosts
 cat /etc/resolv.conf
 ```
 
-- Enumerating Processes & Cron Jobs
+### Enumerating Processes & Cron Jobs
 ```
 meterpreter > ps
 meterpreter > ps -S <process>
@@ -518,7 +522,7 @@ cat /etc/crontab
 cat /etc/cron*
 ```
 
-- Automating Linux Local Enumeration 
+### Automating Linux Local Enumeration 
 ```
 use post/linux/gather/enum_configs
 use post/linux/gather/enum_network
@@ -529,7 +533,7 @@ cat /root/.msf4/loot/<filename>.txt
 ```
 - Post-exploitation modules need to `set SESSION <session_id>`.
 
-- LinEnum
+### LinEnum
 ```
 meterpreter > cd /tmp
 meterpreter > upload /root/linenum.sh
@@ -665,7 +669,7 @@ set WIN_TRANSFER VBS
 ```
 
 ## Windows Local Enumeration
-- Enumerating System Information
+### Enumerating System Information
 ```
 meterpreter > sysinfo
 
@@ -675,7 +679,7 @@ wmic qfe get Caption,Description,HotFixID,InstalledOn
 dir /b/s eula.txt
 ```
 
-- Enumerating Users & Groups
+### Enumerating Users & Groups
 ```
 meterpreter > getuid
 meterpreter > getprivs
@@ -693,7 +697,7 @@ use post/windows/gather/enum_logged_on_users
 set SESSION <session_id>
 ```
 
-- Enumerating Network Information
+### Enumerating Network Information
 ```
 ipconfig
 ipconfig /all
@@ -705,7 +709,7 @@ netsh advfirewall show allprofiles
 ```
 - Take note of APIPA addresses (`169.254.0.0/16`) in `arp -a` output.
 
-- Enumerating Processes & Services
+### Enumerating Processes & Services
 ```
 meterpreter > ps
 meterpreter > ps -S <process>
@@ -726,7 +730,7 @@ cat schtasks.txt
 ```
 - `/SVC` shows the services hosted by the process.
 
-- Automating Windows Local Enumeration
+### Automating Windows Local Enumeration
 ```
 meterpreter > show_mount
 
@@ -743,7 +747,7 @@ cat /root/.msf4/loot/<filename>.txt
 - Post-exploitation modules need to `set SESSION <session_id>`.
 - `win_privs` will also check if UAC is enabled.
 
-- JAWS - Just Another Windows Script
+### JAWS - Just Another Windows Script
 ```
 meterpreter > mkdir C:\\Temp
 meterpreter > cd C:\\Temp
