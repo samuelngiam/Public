@@ -158,6 +158,10 @@ set VERBOSE false
 - Focus on administrator account.
 
 ```
+nmap -Pn -sV -p445 --script=smb-os-discovery <ip>
+```
+
+```
 smbclient -L \\\\<ip>\\ -U <username>
 
 smbclient -L \\\\<ip>\\<share> -U <username>
@@ -166,6 +170,21 @@ smb: \> cd <directory>
 smb: \> get <filename>
 smb: \> exit
 ```
+```
+smbclient -L <ip> -N
+```
+- If successful, anonymous connection (null session) is allowed.
+
+```
+nmblookup -A <ip>
+```
+- NetBIOS over TCP/IP client used to lookup NetBIOS names.
+
+```
+rpcclient -U "" -N <ip>
+```
+- Tool for executing client side MS-RPC functions.
+- If successful, anonymous connection (null session) is allowed.
 
 ## Wordlists
 ```
