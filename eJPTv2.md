@@ -198,6 +198,9 @@ rpcclient -U "" -N <ip>
 ```
 /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
 ```
+```
+/usr/share/metasploit-framework/data/wmap/wmap_dirs.txt
+```
 
 # 2 Exploitation
 - FTP
