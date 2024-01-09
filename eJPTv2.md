@@ -101,15 +101,15 @@ curl http://<ip>:<port>
 ## FTP
 ```
 use auxiliary/scanner/ftp/ftp_version
-
 use auxiliary/scanner/ftp/anonymous
-
+```
+```
 use auxiliary/scanner/ftp/ftp_login
 set USER_FILE <wordlist>
 set PASS_FILE <wordlist>
 set VERBOSE false
-- Can set `USERNAME` or `PASSWORD` if either is known.
 ```
+- Can set `USERNAME` or `PASSWORD` if either is known.
 
 ## Port Scanning
 ```
