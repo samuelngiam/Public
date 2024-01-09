@@ -148,18 +148,22 @@ use auxiliary/scanner/discovery/udp_sweep
 ```
 
 # 2 Exploitation
+- FTP
+  - [ProFTPD 1.3.3c](#ProFTPD-133c) 
+  - [vsftpd 2.3.4](#vsftpd-234)
+- SMB/Samba
+  - [EternalBlue](#EternalBlue)
+  - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
+- HTTP
+  - [BadBlue httpd 2.7](#BadBlue-httpd-27)
+  - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
+
 - [ARP Poisoning](#ARP-Poisoning)
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
-- [BadBlue httpd 2.7](#BadBlue-httpd-27)
-- [EternalBlue](#EternalBlue)
 - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [Linux Compilation](#Linux-Compilation)
 - [MSFVenom](#MSFVenom)
 - [Payloads](#Payloads)
-- [ProFTPD 1.3.3c](#ProFTPD-133c)
-- [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
-- [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
-- [vsftpd 2.3.4](#vsftpd-234)
 - [XODA 0.4.5](#XODA-045)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
