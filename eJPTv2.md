@@ -269,6 +269,7 @@ use exploit/unix/ftp/vsftpd_234_backdoor
 use exploit/unix/webapp/xoda_file_upload
 ```
 - Default payload is `php/meterpreter/reverse_tcp`.
+- Set `TARGETURI` accordingly.
 
 ## Windows Cross-Compilation
 ```
