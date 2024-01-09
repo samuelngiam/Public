@@ -7,14 +7,15 @@
   - Review old notes
   - Take Exam
 
-# Others
-- [Metasploit](#Metasploit)
+# General
+- [Metasploit](#Metasploit) [x]
 - [tmux](#tmux)
 - [Windows Resources](#Windows-Resources)
 
 ## Metasploit
 ```
-sudo apt update && sudo apt install metasploit-framework
+sudo apt update
+sudo apt install metasploit-framework
 
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
@@ -56,7 +57,7 @@ meterpreter > migrate -N lsass.exe
 meterpreter > getpid
 ```
 ```
-Ctrl + M + L to clear screen
+Hold Ctrl + M + L to clear screen
 ```
 ```
 hosts
@@ -66,9 +67,8 @@ analyze
 vulns
 ```
 ```
-connect
+connect <ip> <port>
 ```
-- Communicate with a host, similar to interacting via netcat, taking advantage of any configured session pivoting.
 
 ## tmux
 ```
