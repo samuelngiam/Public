@@ -87,17 +87,11 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - `/usr/share/windows-resources/binaries/`
 
 # 1 Information Gathering and Enumeration
-- [curl](#curl)
 - [FTP](#FTP)
+- [HTTP](#HTTP)
 - [Port Scanning](#Port-Scanning)
 - [SMB/Samba](#SMBSamba)
 - [Wordlists](#Wordlists)
-
-## curl
-```
-curl http://<ip>:<port>
-```
-- Useful for analyzing a Web page in a shell-only environment.
 
 ## FTP
 ```
@@ -111,6 +105,16 @@ set PASS_FILE <wordlist>
 set VERBOSE false
 ```
 - Can set `USERNAME` or `PASSWORD` if either is known.
+
+## HTTP
+```
+curl http://<ip>:<port>
+curl http://<ip>/robots.txt
+```
+```
+curl http://<ip>/<directory>/
+```
+- Check if directory listing (Apache) is enabled i.e. `Index of`.
 
 ## Port Scanning
 ```
