@@ -86,7 +86,6 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - `/usr/share/windows-resources/`
 - `/usr/share/windows-resources/binaries/`
 
-
 # 1 Info Gathering and Enumeration
 - [Port Scanning](#Port-Scanning)
 
