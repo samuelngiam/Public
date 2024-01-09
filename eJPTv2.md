@@ -156,14 +156,12 @@ use auxiliary/scanner/mysql/mysql_version
 ```
 ```
 use auxiliary/scanner/mysql/mysql_login
-set USERNAME root
 ```
-- Focus on `root` account.
+- Prioritize `root` account.
 
 ```
 use auxiliary/admin/mysql/mysql_enum
 ```
-- Needs credentials.
 - Includes account enumeration - hashes, privileges.
   - https://crackstation.net/
   - Hashcat:
@@ -174,7 +172,7 @@ use auxiliary/admin/mysql/mysql_enum
 ```
 use auxiliary/admin/mysql/mysql_sql
 ```
-- Likely need `root` account for this.
+- Non-`root` account may not work i.e. access denied.
 - Other SQL: `set SQL show databases;`
 
 ```
@@ -241,6 +239,7 @@ set ShowFiles true
 ```
 use auxiliary/scanner/smb/smb_login
 ```
+- Prioritize `administrator` account.
 
 ```
 nmap -Pn -sV -p445 --script=smb-os-discovery <ip>
