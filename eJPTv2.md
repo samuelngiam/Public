@@ -186,9 +186,24 @@ set PASSWORD <password>
 
 ```
 use auxiliary/scanner/mysql/mysql_file_enum
-use auxiliary/scanner/mysql/mysql_hashdump
-use auxiliary/scanner/mysql/mysql_writable_dirs
+set FILE_LIST <wordlist>
+set PASSWORD <password>
 ```
+- Enumerate files and directories using the MySQL load_file feature.
+- `USERNAME` default as `root`.
+
+```
+use auxiliary/scanner/mysql/mysql_hashdump
+set USERNAME <username>
+set PASSWORD <password>
+```
+
+```
+use auxiliary/scanner/mysql/mysql_writable_dirs
+set DIR_LIST /usr/share/metasploit-framework/data/wordlists/directory.txt
+set PASSWORD <password>
+```
+- `USERNAME` default as `root`.
 
 ```
 mysql -h <ip> -u root -p
@@ -277,6 +292,7 @@ nmblookup -A <ip>
 /usr/share/metasploit-framework/data/wordlists/http_default_users.txt
 /usr/share/metasploit-framework/data/wordlists/http_default_pass.txt
 /usr/share/metasploit-framework/data/wordlists/namelist.txt
+/usr/share/metasploit-framework/data/wordlists/directory.txt
 ```
 ```
 /usr/share/metasploit-framework/data/wmap/
