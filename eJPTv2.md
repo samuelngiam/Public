@@ -89,6 +89,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 # 1 Information Gathering and Enumeration
 - [FTP](#FTP)
 - [HTTP](#HTTP)
+- [MySQL](#MySQL)
 - [Port Scanning](#Port-Scanning)
 - [SMB/Samba](#SMBSamba)
 - [Wordlists](#Wordlists)
@@ -141,6 +142,8 @@ curl http://<ip>/robots.txt
 curl http://<ip>/<directory>/
 ```
 - Check if directory listing (Apache) is enabled i.e. `Index of /<directory>`.
+
+## MySQL
 
 ## Port Scanning
 ```
