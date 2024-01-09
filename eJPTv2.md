@@ -111,6 +111,8 @@ db_import results
 db_nmap -Pn -sV <ip>
 ```
 ```
+search type:auxiliary portscan
+
 use auxiliary/scanner/portscan/tcp
 ```
 
