@@ -92,6 +92,8 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - [MySQL](#MySQL)
 - [Port Scanning](#Port-Scanning)
 - [SMB/Samba](#SMBSamba)
+- [SMTP](#SMTP)
+- [SSH](#SSH)
 - [Wordlists](#Wordlists)
 
 ## FTP
@@ -279,23 +281,49 @@ rpcclient -U "" -N <ip>
 nmblookup -A <ip>
 ```
 
+## SMTP
+
+## SSH
+```
+use auxiliary/scanner/ssh/ssh_version
+```
+```
+use auxiliary/scanner/ssh/ssh_login
+set USER_FILE <wordlist>
+set PASS_FILE <wordlist>
+```
+- Opens a reverse command shell (non-meterpreter) with credentials found.
+
+```
+use auxiliary/scanner/ssh/ssh_enumusers
+set USER_FILE <wordlist>
+```
+
 ## Wordlists
 ```
 /usr/share/wordlists/
+
+gunzip /usr/share/wordlists/rockyou.txt.gz
+/usr/share/wordlists/rockyou.txt
 ```
 ```
 /usr/share/metasploit-framework/data/wordlists/
+
 /usr/share/metasploit-framework/data/wordlists/common_users.txt
 /usr/share/metasploit-framework/data/wordlists/unix_users.txt
-/usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
 /usr/share/metasploit-framework/data/wordlists/http_default_users.txt
+
+/usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
 /usr/share/metasploit-framework/data/wordlists/http_default_pass.txt
+
 /usr/share/metasploit-framework/data/wordlists/namelist.txt
 /usr/share/metasploit-framework/data/wordlists/directory.txt
 ```
 ```
 /usr/share/metasploit-framework/data/wmap/
+
 /usr/share/metasploit-framework/data/wmap/wmap_dirs.txt
+
 /usr/share/metasploit-framework/data/wmap/wmap_files.txt
 ```
 
