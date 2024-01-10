@@ -151,6 +151,7 @@ use auxiliary/scanner/http/apache_userdir_enum
 use auxiliary/scanner/http/http_put
 ```
 - Change `PATH` to directory being tested.
+- Change `FILEDATA` and `FILENAME` accordingly if uploading a payload.
 
 ```
 curl http://<ip>:<port>
