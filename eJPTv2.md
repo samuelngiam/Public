@@ -138,6 +138,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - [SMB/Samba](#SMBSamba)
 - [SMTP](#SMTP)
 - [SSH](#SSH)
+- [WinRM](#WinRM)
 - [Wordlists](#Wordlists)
 
 ```
@@ -378,6 +379,24 @@ use auxiliary/scanner/ssh/ssh_login
 ```
 use auxiliary/scanner/ssh/ssh_enumusers
 ```
+
+## WinRM
+```
+nmap -Pn -sV -p5985,5986 <ip>
+nmap -Pn -sV -p- <ip>
+```
+- Default nmap scan (top 1000 ports) will not check WinRM ports.
+- nmap may not identify WinRM service properly too.
+
+```
+use auxiliary/scanner/winrm/winrm_auth_methods
+use auxiliary/scanner/winrm/winrm_login
+```
+```
+use auxiliary/scanner/winrm/winrm_cmd
+set CMD <command>
+```
+- Needs credentials
 
 ## Wordlists
 ```
