@@ -463,7 +463,7 @@ gcc -pthread 40839.c -o dirty -lcrypt
 
 ## MSF Payloads
 - 64-bit (`x64`) payload cannot run on 32-bit architecture.
-- Staged payload (sent in 2 parts), non-staged payload (exploit and payload sent separately).
+- Staged payload (sent in 2 parts), non-staged/line payload (exploit and shellcode sent separately).
   - `windows/x64/meterpreter/reverse_tcp` is staged.
   - `windows/x64/meterpreter_reverse_tcp` is non-staged.
 
