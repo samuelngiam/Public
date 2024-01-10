@@ -396,7 +396,7 @@ use auxiliary/scanner/winrm/winrm_login
 use auxiliary/scanner/winrm/winrm_cmd
 set CMD <command>
 ```
-- Needs credentials
+- Needs credentials.
 
 ## Wordlists
 ```
@@ -429,6 +429,7 @@ set CMD <command>
 - SMB/Samba
   - [EternalBlue](#EternalBlue)
   - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
+- [WinRM](#WinRM)
 - Others
   - [XODA 0.4.5](#XODA-045)
   - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
@@ -486,6 +487,13 @@ use exploit/windows/smb/ms17_010_eternalblue
 ```
 use exploit/linux/samba/is_known_pipename
 ```
+
+## WinRM
+```
+use exploit/windows/winrm/winrm_script_exec
+set FORCE_VBS true
+```
+- Needs credentials.
 
 ## Others
 ### XODA 0.4.5
