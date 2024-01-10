@@ -148,6 +148,11 @@ use auxiliary/scanner/http/apache_userdir_enum
 - Apache only.
 
 ```
+use auxiliary/scanner/http/http_put
+```
+- Change `PATH` to directory being tested.
+
+```
 curl http://<ip>:<port>
 curl http://<ip>/robots.txt
 ```
