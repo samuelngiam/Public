@@ -91,6 +91,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 # 1 Information Gathering and Enumeration
 - [FTP](#FTP)
 - [HTTP](#HTTP)
+  - [WMAP](#WMAP)
 - [metasploit-autopwn](#metasploit-autopwn)
 - [MySQL](#MySQL)
 - [Nessus](#Nessus)
@@ -125,6 +126,7 @@ use auxiliary/scanner/http/http_version
 
 ```
 use auxiliary/scanner/http/http_header
+use auxiliary/scanner/http/options
 use auxiliary/scanner/http/robots_txt
 use auxiliary/scanner/http/dir_scanner
 ```
@@ -153,6 +155,29 @@ curl http://<ip>/robots.txt
 curl http://<ip>/<directory>/
 ```
 - Check if directory listing (Apache) is enabled i.e. `Index of /<directory>`.
+
+### WMAP
+```
+load wmap
+wmap_sites -h
+wmap_sites -a <ip>
+wmap_sites -l
+wmap_targets -h
+wmap_targets -t http://<ip>
+wmap_targets -l
+```
+- Web app vulnerability scanner.
+- Uses built-in MSF modules.
+- Available as MSF plugin (`wmap.rb`).
+
+```
+wmap_run -h
+wmap_run -t
+wmap_run -e
+
+wmap_vulns -h
+wmap_vulns -l
+```
 
 ## metasploit-autopwn
 ```
