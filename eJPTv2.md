@@ -373,7 +373,7 @@ use auxiliary/scanner/ssh/ssh_enumusers
 - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [Linux Compilation](#Linux-Compilation)
 - [MSFVenom](#MSFVenom)
-- [Payloads](#Payloads)
+- [MSF Payloads](#MSF-Payloads)
 - [XODA 0.4.5](#XODA-045)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
@@ -465,7 +465,7 @@ gcc -pthread 40839.c -o dirty -lcrypt
 ## MSFVenom
 - https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
-## Payloads
+## MSF Payloads
 ```
 windows/meterpreter/reverse_tcp
 windows/meterpreter/bind_tcp
