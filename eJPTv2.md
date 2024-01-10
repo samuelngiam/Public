@@ -367,13 +367,12 @@ use auxiliary/scanner/ssh/ssh_enumusers
 - HTTP
   - [BadBlue httpd 2.7](#BadBlue-httpd-27)
   - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
-
 - [ARP Poisoning](#ARP-Poisoning)
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
 - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [Linux Compilation](#Linux-Compilation)
-- [MSFVenom](#MSFVenom)
 - [MSF Payloads](#MSF-Payloads)
+  - [msfvenom](#msfvenom)
 - [XODA 0.4.5](#XODA-045)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
@@ -462,9 +461,6 @@ searchsploit -m 40839
 gcc -pthread 40839.c -o dirty -lcrypt
 ```
 
-## MSFVenom
-- https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
-
 ## MSF Payloads
 ```
 windows/meterpreter/reverse_tcp
@@ -473,6 +469,8 @@ windows/x64/meterpreter/reverse_tcp
 
 linux/x86/meterpreter/reverse_tcp
 ```
+### msfvenom
+- https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
 ## ProFTPD 1.3.3c
 ```
