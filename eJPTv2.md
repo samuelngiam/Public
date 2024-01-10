@@ -471,6 +471,12 @@ linux/x86/meterpreter/reverse_tcp
 ```
 ### msfvenom
 - https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
+- Staged payload (sent in 2 parts), non-staged payload (exploit and payload sent separately).
+
+```
+msfvenom
+```
+
 
 ## ProFTPD 1.3.3c
 ```
