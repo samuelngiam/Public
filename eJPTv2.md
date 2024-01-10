@@ -122,7 +122,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - `/usr/share/windows-resources/`
 - `/usr/share/windows-resources/binaries/`
 
-# 1 Information Gathering and Enumeration
+# Information Gathering and Enumeration
 - [FTP](#FTP)
 - [HTTP](#HTTP)
   - [WMAP](#WMAP)
@@ -391,7 +391,7 @@ use auxiliary/scanner/ssh/ssh_enumusers
 /usr/share/metasploit-framework/data/wmap/wmap_files.txt
 ```
 
-# 2 Exploitation
+# Exploitation
 - FTP
   - [ProFTPD 1.3.3c](#ProFTPD-133c) 
   - [vsftpd 2.3.4](#vsftpd-234)
@@ -605,7 +605,7 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 ```
 - Use 32-bit if unsure of target architecture.
 
-# 3 Post-Exploitation
+# Post-Exploitation
 - [Cleanup Resource Scripts](#Cleanup-Resource-Scripts)
 - [Clear Linux History](#Clear-Linux-History)
 - [Clear Windows Event Logs](#Clear-Windows-Event-Logs)
