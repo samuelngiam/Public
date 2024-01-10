@@ -319,6 +319,10 @@ use auxiliary/scanner/discovery/udp_sweep
 ## SMB/Samba
 ```
 use auxiliary/scanner/smb/smb_version
+```
+- If SMBv1, check for EternalBlue.
+
+```
 use auxiliary/scanner/smb/smb_enumusers
 ```
 ```
