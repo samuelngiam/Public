@@ -64,7 +64,9 @@ hosts
 services
 creds
 analyze
+
 vulns
+vulns -p <port>
 ```
 ```
 connect <ip> <port>
@@ -91,6 +93,7 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 - [HTTP](#HTTP)
 - [metasploit-autopwn](#metasploit-autopwn)
 - [MySQL](#MySQL)
+- [Nessus](#Nessus)
 - [Port Scanning](#Port-Scanning)
 - [SMB/Samba](#SMBSamba)
 - [SMTP](#SMTP)
@@ -209,6 +212,12 @@ mysql -h <ip> -u root -p
 MySQL [(none)]>
 MySQL [(none)]> show databases;
 ```
+
+## Nessus
+```
+db_import <filename>
+```
+- Export scan results to .nessus (XML) file.
 
 ## Port Scanning
 ```
