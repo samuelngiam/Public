@@ -457,6 +457,7 @@ python 39161.py <ip> <port>
 use auxiliary/scanner/smb/smb_ms17_010
 use exploit/windows/smb/ms17_010_eternalblue
 ```
+- SMBv1 only.
 
 ### Samba smbd 3.X - 4.X
 ```
