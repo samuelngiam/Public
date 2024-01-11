@@ -465,8 +465,8 @@ set SHELL cmd
 ```
 sessions -l
 ```
-- Because shell is `shell java/linux`, cannot upgrade to meterpreter normally.
-- Cannot specify a meterpreter payload with the module too.
+- Because shell is `shell java/linux`, cannot upgrade to meterpreter.
+- Cannot specify a meterpreter payload via the module too.
 - Generate payload with msfvenom instead.
 
 ```
