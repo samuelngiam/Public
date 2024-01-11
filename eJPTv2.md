@@ -731,6 +731,9 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 - Use 32-bit if unsure of target architecture.
 
 # Post-Exploitation
+- Privilege Escalation
+- Maintaining Persistent Access
+- Clearing Tracks
 - [Cleanup Resource Scripts](#Cleanup-Resource-Scripts)
 - [Clear Linux History](#Clear-Linux-History)
 - [Clear Windows Event Logs](#Clear-Windows-Event-Logs)
