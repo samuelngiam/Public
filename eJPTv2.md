@@ -468,7 +468,7 @@ set CMD <command>
 ```
 check
 ```
-- For MSF modules that don't have an auxiliary scanner to confirm vulnerability (like EternalBlue), try `check` if available.
+- For MSF modules that don't have an auxiliary scanner to confirm vulnerability (like EternalBlue), try `check`.
 
 ## FTP
 ### ProFTPD 1.3.3c
