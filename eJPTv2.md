@@ -133,11 +133,11 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
   - [WMAP](#WMAP)
 - [metasploit-autopwn](#metasploit-autopwn)
 - [MySQL](#MySQL)
-- [Nessus](#Nessus)
 - [Port Scanning](#Port-Scanning)
 - [SMB/Samba](#SMBSamba)
 - [SMTP](#SMTP)
 - [SSH](#SSH)
+- [Vulnerability Scanning](#Vulnerability-Scanning)
 - [WinRM](#WinRM)
 - [Wordlists](#Wordlists)
 
@@ -284,12 +284,6 @@ MySQL [(none)]>
 MySQL [(none)]> show databases;
 ```
 
-## Nessus
-```
-db_import <filename>
-```
-- Export scan results to .nessus (XML) file.
-
 ## Port Scanning
 ```
 nmap -Pn -sV <ip>
@@ -378,6 +372,16 @@ use auxiliary/scanner/ssh/ssh_login
 
 ```
 use auxiliary/scanner/ssh/ssh_enumusers
+```
+
+## Vulnerability Scanning
+```
+db_import <filename>
+```
+- Export scan results to .nessus (XML) file.
+
+```
+nmap -Pn -sV --script=vuln <ip>
 ```
 
 ## WinRM
