@@ -465,6 +465,11 @@ set CMD <command>
 - [Linux Compilation](#Linux-Compilation)
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
+```
+check
+```
+- For MSF modules that don't have an auxiliary scanner to confirm vulnerability (like EternalBlue), try `check` if available.
+
 ## FTP
 ### ProFTPD 1.3.3c
 [<< Index](#Index)
