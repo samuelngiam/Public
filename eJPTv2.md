@@ -79,6 +79,8 @@ meterpreter > help
 meterpreter > exit
 meterpreter > background (or Ctrl + Z)
 ```
+- `help` will show different commands for Windows and Linux.
+
 ```
 meterpreter > search -d /usr/bin -f *<keyword>*
 meterpreter > search -f *.<extension>
@@ -290,16 +292,13 @@ use auxiliary/admin/mysql/mysql_sql
 ```
 use auxiliary/scanner/mysql/mysql_schemadump
 ```
-
 ```
 use auxiliary/scanner/mysql/mysql_file_enum
 set FILE_LIST <wordlist>
 ```
-
 ```
 use auxiliary/scanner/mysql/mysql_hashdump
 ```
-
 ```
 use auxiliary/scanner/mysql/mysql_writable_dirs
 set DIR_LIST <wordlist>
@@ -781,9 +780,12 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 
 ## Local Enumeration
 ### Windows
+[<< Index](#Index)
+
+
 
 ### Linux
-
+[<< Index](#Index)
 
 
 
