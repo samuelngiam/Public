@@ -220,6 +220,7 @@ use auxiliary/scanner/http/http_put
 ```
 curl http://<ip>:<port>
 curl http://<ip>/robots.txt
+curl http://<ip>/phpinfo.php
 ```
 ```
 curl http://<ip>/<directory>/
@@ -466,6 +467,7 @@ set CMD <command>
   - [Apache Tomcat 8.5.19](#Apache-Tomcat-8519)
   - [BadBlue httpd 2.7](#BadBlue-httpd-27)
   - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
+  - [Xdebug <= v2.5.5](#Xdebug <= v2.5.5)
   - [XODA 0.4.5](#XODA-045)
 - SMB/Samba
   - [EternalBlue](#EternalBlue)
@@ -544,6 +546,8 @@ nc -nvlp <port>
 
 python 39161.py <ip> <port>
 ```
+
+### Xdebug <= v2.5.5
 
 ### XODA 0.4.5
 [<< Index](#Index)
