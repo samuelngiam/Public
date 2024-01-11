@@ -471,9 +471,6 @@ sessions -l
 - Cannot specify a meterpreter payload via the module too.
 - Generate payload with msfvenom instead.
 
-```
-```
-
 ### BadBlue httpd 2.7
 ```
 use exploit/windows/http/badblue_passthru
