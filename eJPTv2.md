@@ -7,18 +7,21 @@
   - Review old notes
   - Take Exam
 
-[General](#General) | 
-[Information Gathering and Enumeration](#Information-Gathering-and-Enumeration) | 
-[Exploitation](#Exploitation) | 
-[Post-Exploitation](#Post-Exploitation) |
+# Index
+- [General](#General)
+- [Information Gathering and Enumeration](#Information-Gathering-and-Enumeration)
+- [Exploitation](#Exploitation)
+- [Post-Exploitation](#Post-Exploitation)
 
 # General
+[<< Index](#Index)
 - [Metasploit](#Metasploit)
 - [Resource Scripts](#Resource-Scripts)
 - [tmux](#tmux)
 - [windows-resources](#windows-resources)
 
 ## Metasploit
+[<< Index](#Index)
 ```
 sudo apt update
 sudo apt install metasploit-framework
