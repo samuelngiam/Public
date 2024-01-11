@@ -846,13 +846,14 @@ cat schtasks.txt
 ```
 meterpreter > show_mount
 
+use post/windows/manage/migrate
 use post/windows/gather/win_privs
+use post/windows/gather/checkvm
 use post/windows/gather/enum_logged_on_users
 use post/windows/gather/enum_applications
 use post/windows/gather/enum_patches
 use post/windows/gather/enum_shares
-use post/windows/gather/enum_computers
-use post/windows/gather/checkvm
+use post/windows/gather/enum_av_excluded
 
 cat /root/.msf4/loot/<filename>.txt
 ```
@@ -882,6 +883,9 @@ cat jaws-enum.txt
 ```
 meterpreter > getsystem
 ```
+- https://docs.rapid7.com/metasploit/meterpreter-getsystem/
+
+
 
 
 
