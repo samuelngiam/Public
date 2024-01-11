@@ -14,7 +14,6 @@
 - [Post-Exploitation](#Post-Exploitation)
 
 # General
-[<< Index](#Index)
 - [Metasploit](#Metasploit)
 - [Resource Scripts](#Resource-Scripts)
 - [tmux](#tmux)
