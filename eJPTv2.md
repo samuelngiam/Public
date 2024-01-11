@@ -548,6 +548,12 @@ use exploit/linux/samba/is_known_pipename
 ## SMTP
 ### Haraka <2.8.9
 [<< Index](#Index)
+- References
+  - https://arben.sh/ctf7e4/ctf7e4-Machines-HARP/
+
+```
+To review thoroughly...
+```
 
 ## SSH
 ### libssh v0.6.0-0.8.0
