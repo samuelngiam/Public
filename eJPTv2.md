@@ -588,7 +588,7 @@ exploit
 ```
 - Payload is non-staged.
 - `<port1>` hosts the payload, `<port2>` is the reverse handler.
-- `email_to` should be a "valid" email address?
+- `email_to` must be valid i.e. `xxx@attackdefense.test`.
 
 ## SSH
 ### libssh v0.6.0-0.8.0
