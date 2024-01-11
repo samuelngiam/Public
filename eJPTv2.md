@@ -918,7 +918,7 @@ meterpreter > getsystem
 - Need to have a 64-bit meterpreter session (session_1).
 - Change `LPORT` to avoid conflict with existing session(s).
 - Set `target` to `1` (Windows x64)
-- In session_2, `getsystem` works because UAC flag is no longer set.
+- In session_2, `getsystem` works.
 
 
 
