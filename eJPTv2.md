@@ -761,6 +761,7 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 - Privilege Escalation
   - [SUDO Privileges](#SUDO-Privileges)
   - [SUID Binaries](#SUID-Binaries)
+  - [UAC Bypass](#UAC-Bypass)
 - Maintaining Persistent Access
   - Windows
     - [RDP](#RDP)
@@ -885,7 +886,8 @@ meterpreter > getsystem
 ```
 - https://docs.rapid7.com/metasploit/meterpreter-getsystem/
 
-
+### UAC Bypass
+[<< Index](#Index)
 
 
 
