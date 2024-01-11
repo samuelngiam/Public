@@ -15,6 +15,7 @@
 
 # General
 - [Metasploit](#Metasploit)
+  - [Meterpreter](#Meterpreter)
 - [Resource Scripts](#Resource-Scripts)
 - [tmux](#tmux)
 - [windows-resources](#windows-resources)
@@ -53,18 +54,6 @@ sessions -i <session_id>
 sessions -k <session_id>
 ```
 ```
-meterpreter > background (or Ctrl + Z)
-```
-```
-meterpreter > ps
-meterpreter > ps -S <process>
-meterpreter > pgrep <process>
-meterpreter > migrate <pid>
-meterpreter > migrate -N explorer.exe
-meterpreter > migrate -N lsass.exe
-meterpreter > getpid
-```
-```
 Hold Ctrl + M + L to clear screen
 ```
 ```
@@ -78,6 +67,21 @@ vulns -p <port>
 ```
 ```
 connect <ip> <port>
+```
+
+### Meterpreter
+[<< Index](#Index)
+```
+meterpreter > background (or Ctrl + Z)
+```
+```
+meterpreter > ps
+meterpreter > ps -S <process>
+meterpreter > pgrep <process>
+meterpreter > migrate <pid>
+meterpreter > migrate -N explorer.exe
+meterpreter > migrate -N lsass.exe
+meterpreter > getpid
 ```
 
 ## Resource Scripts
