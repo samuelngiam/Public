@@ -72,6 +72,7 @@ connect <ip> <port>
 ### Meterpreter
 [<< Index](#Index)
 ```
+meterpreter > help
 meterpreter > background (or Ctrl + Z)
 ```
 ```
@@ -735,6 +736,7 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 - Use 32-bit if unsure of target architecture.
 
 # Post-Exploitation
+[<< Index](#Index)
 - Privilege Escalation
 - Maintaining Persistent Access
 - Clearing Tracks
