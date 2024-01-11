@@ -756,24 +756,27 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 
 # Post-Exploitation
 [<< Index](#Index)
+- Local Enumeration
+  - Windows
+  - Linux
 - Privilege Escalation
+  - [SUDO Privileges](#SUDO-Privileges)
+  - [SUID Binaries](#SUID-Binaries)
 - Maintaining Persistent Access
+  - Windows
+    - [RDP](#RDP)
+    - [Services](#Services)
+  - Linux
+    - [Cron Jobs](#Cron-Jobs)
+    - [SSH Keys](#SSH-Keys)
 - Clearing Tracks
-- [Cleanup Resource Scripts](#Cleanup-Resource-Scripts)
-- [Clear Linux History](#Clear-Linux-History)
-- [Clear Windows Event Logs](#Clear-Windows-Event-Logs)
+  - [Resource Scripts](#Resource-Scripts)
+  - [Linux History](#Linux-History)
+  - [Windows Event Logs](#Windows-Event-Logs)
 - [Keylogging](#Keylogging)
-- [Linux Local Enumeration](#Linux-Local-Enumeration)
-- [Linux Persistence Via Cron Jobs](#Linux-Persistence-Via-Cron-Jobs)
-- [Linux Persistence Via SSH Keys](#Linux-Persistence-Via-SSH-Keys)
 - [Pivoting](#Pivoting)
-- [SUDO Privileges](#SUDO-Privileges)
-- [SUID Binaries](#SUID-Binaries)
 - [Transfer Files](#Transfer-Files)
 - [Upgrade Shells](#Upgrade-Shells)
-- [Windows Local Enumeration](#Windows-Local-Enumeration)
-- [Windows Persistence Via RDP](#Windows-Persistence-Via-RDP)
-- [Windows Persistence Via Services](#Windows-Persistence-Via-Services)
 - [Working Directories](#Working-Directories)
 
 ## Cleanup Resource Scripts
