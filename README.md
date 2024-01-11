@@ -1,6 +1,5 @@
 # Notes
 For certifications, courses and more.
 
-1. eJPT
+1. eJPTv2
 2. PJPT
-3. CCD
