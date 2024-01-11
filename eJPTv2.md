@@ -455,7 +455,7 @@ set CMD <command>
   - [EternalBlue](#EternalBlue)
   - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
 - [SMTP](#SMTP)
-  - [Haraka <2.8.9](#Haraka--289)
+  - [Haraka <2.8.9](#Haraka-289)
 - [SSH](#SSH)
 - [WinRM](#WinRM)
 - Others
