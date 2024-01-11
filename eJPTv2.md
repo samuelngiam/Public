@@ -456,7 +456,8 @@ set CMD <command>
   - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
 - SMTP
   - [Haraka <2.8.9](#Haraka-289)
-- [SSH](#SSH)
+- SSH
+  - [libssh v0.6.0-0.8.0](#libssh-v060-080)
 - [WinRM](#WinRM)
 - Others
   - [XODA 0.4.5](#XODA-045)
@@ -549,7 +550,7 @@ use exploit/linux/samba/is_known_pipename
 [<< Index](#Index)
 
 ## SSH
-### libssh V0.6.0-0.8.0
+### libssh v0.6.0-0.8.0
 [<< Index](#Index)
 ```
 use auxiliary/scanner/ssh/libssh_auth_bypass
