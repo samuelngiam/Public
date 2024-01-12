@@ -1,11 +1,4 @@
 # eJPTv2 Cheatsheet
-- To Do
-  - Finish 3.3
-  - Finish 3.4
-  - Rewatch 3.1
-  - Rewatch 1.1, 1.2, 1.3, 1.4
-  - Review old notes
-  - Take Exam
 
 # Index
 General
@@ -30,9 +23,62 @@ Information Gathering and Enumeration
 - [Wordlists](#Wordlists)
 
 Exploitation
+- FTP
+  - [ProFTPD 1.3.3c](#ProFTPD-133c) 
+  - [vsftpd 2.3.4](#vsftpd-234)
+- HTTP
+  - [Apache Tomcat 8.5.19](#Apache-Tomcat-8519)
+  - [BadBlue httpd 2.7](#BadBlue-httpd-27)
+  - [ProcessMaker](#ProcessMaker)
+  - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
+  - [Xdebug <= v2.5.5](#Xdebug--v255)
+  - [XODA 0.4.5](#XODA-045)
+- SMB/Samba
+  - [EternalBlue](#EternalBlue)
+  - [psexec](#psexec)
+  - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
+- SMTP
+  - [Haraka <2.8.9](#Haraka-289)
+- SSH
+  - [libssh v0.6.0-0.8.0](#libssh-v060-080)
+- [WinRM](#WinRM)
+- Others
+  - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
+- [ARP Poisoning](#ARP-Poisoning)
+- [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
+- [Bind and Reverse Shells](#Bind-and-Reverse-Shells)
+- [Empire](#Empire)
+- [MSF Payloads and Listeners](#MSF-Payloads-and-Listeners)
+  - [msfvenom](#msfvenom)
+- [Linux Compilation](#Linux-Compilation)
+- [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
 Post-Exploitation
-
+- Local Enumeration
+  - [Windows](#Windows)
+  - [Linux](#Linux)
+- Privilege Escalation
+  - [PrivescCheck](#PrivescCheck)
+  - [SUDO Privileges](#SUDO-Privileges)
+  - [SUID Binaries](#SUID-Binaries)
+  - [Token Impersonation](#Token-Impersonation)
+  - [UAC Bypass](#UAC-Bypass)
+- Maintaining Persistent Access
+  - Windows
+    - [RDP](#RDP)
+    - [Services](#Services)
+  - Linux
+    - [Cron Jobs](#Cron-Jobs)
+    - [SSH Keys](#SSH-Keys)
+- Clearing Tracks
+  - [Linux History](#Linux-History)
+  - [Resource Scripts](#Resource-Scripts)
+  - [Windows Event Logs](#Windows-Event-Logs)
+- [Keylogging](#Keylogging)
+- [Pivoting](#Pivoting)
+- [Transfer Files](#Transfer-Files)
+- [Upgrade Shells](#Upgrade-Shells)
+- [Working Directories](#Working-Directories)
 
 # General
 [<< Index](#Index)
@@ -463,35 +509,6 @@ set CMD <command>
 
 # Exploitation
 [<< Index](#Index)
-- FTP
-  - [ProFTPD 1.3.3c](#ProFTPD-133c) 
-  - [vsftpd 2.3.4](#vsftpd-234)
-- HTTP
-  - [Apache Tomcat 8.5.19](#Apache-Tomcat-8519)
-  - [BadBlue httpd 2.7](#BadBlue-httpd-27)
-  - [ProcessMaker](#ProcessMaker)
-  - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
-  - [Xdebug <= v2.5.5](#Xdebug--v255)
-  - [XODA 0.4.5](#XODA-045)
-- SMB/Samba
-  - [EternalBlue](#EternalBlue)
-  - [psexec](#psexec)
-  - [Samba smbd 3.X - 4.X](#Samba-smbd-3X---4X)
-- SMTP
-  - [Haraka <2.8.9](#Haraka-289)
-- SSH
-  - [libssh v0.6.0-0.8.0](#libssh-v060-080)
-- [WinRM](#WinRM)
-- Others
-  - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
-- [ARP Poisoning](#ARP-Poisoning)
-- [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
-- [Bind and Reverse Shells](#Bind-and-Reverse-Shells)
-- [Empire](#Empire)
-- [MSF Payloads and Listeners](#MSF-Payloads-and-Listeners)
-  - [msfvenom](#msfvenom)
-- [Linux Compilation](#Linux-Compilation)
-- [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
 ```
 check
@@ -854,31 +871,6 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
 
 # Post-Exploitation
 [<< Index](#Index)
-- Local Enumeration
-  - [Windows](#Windows)
-  - [Linux](#Linux)
-- Privilege Escalation
-  - [PrivescCheck](#PrivescCheck)
-  - [SUDO Privileges](#SUDO-Privileges)
-  - [SUID Binaries](#SUID-Binaries)
-  - [Token Impersonation](#Token-Impersonation)
-  - [UAC Bypass](#UAC-Bypass)
-- Maintaining Persistent Access
-  - Windows
-    - [RDP](#RDP)
-    - [Services](#Services)
-  - Linux
-    - [Cron Jobs](#Cron-Jobs)
-    - [SSH Keys](#SSH-Keys)
-- Clearing Tracks
-  - [Linux History](#Linux-History)
-  - [Resource Scripts](#Resource-Scripts)
-  - [Windows Event Logs](#Windows-Event-Logs)
-- [Keylogging](#Keylogging)
-- [Pivoting](#Pivoting)
-- [Transfer Files](#Transfer-Files)
-- [Upgrade Shells](#Upgrade-Shells)
-- [Working Directories](#Working-Directories)
 
 ## Local Enumeration
 ### Windows
