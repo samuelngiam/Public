@@ -128,6 +128,9 @@ Hold Ctrl + M + L to clear screen
 ```
 hosts
 services
+services -p <port>
+services -S <string>
+services <ip>
 creds
 analyze
 
