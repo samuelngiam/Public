@@ -1118,7 +1118,8 @@ meterpreter > impersonate_token <token>
 ```
 migrate -N explorer.exe
 ```
-- Current process is still associated with low privileges; `hashdump` will not work.
+- Current process is still associated with low privileges; `hashdump` etc will not work.
+  -  This is despite `getuid` changing to `"ATTACKDEFENSE\Administrator"`.
 
 ### UAC Bypass
 [<< Index](#Index)
