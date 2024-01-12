@@ -465,6 +465,7 @@ set CMD <command>
 - HTTP
   - [Apache Tomcat 8.5.19](#Apache-Tomcat-8519)
   - [BadBlue httpd 2.7](#BadBlue-httpd-27)
+  - [ProcessMaker](#ProcessMaker)
   - [Rejetto HttpFileServer 2.3](#Rejetto-HttpFileServer-23)
   - [Xdebug <= v2.5.5](#Xdebug--v255)
   - [XODA 0.4.5](#XODA-045)
@@ -527,6 +528,14 @@ sessions -l
 ```
 use exploit/windows/http/badblue_passthru
 ```
+
+### ProcessMaker
+[<< Index](#Index)
+```
+use exploit/multi/http/processmaker_plugin_upload
+use exploit/multi/http/processmaker_exec
+```
+- Both modules require credentials - default credentials are `admin / admin`.
 
 ### Rejetto HttpFileServer 2.3
 [<< Index](#Index)
