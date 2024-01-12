@@ -1,9 +1,9 @@
-# eJPTv2 Cheatsheet
+# eJPTv2
 
 # Index
 General
 - [Metasploit](#Metasploit)
-  - [Meterpreter](#Meterpreter)
+- [Meterpreter](#Meterpreter)
 - [Resource Scripts](#Resource-Scripts)
 - [tmux](#tmux)
 - [windows-resources](#windows-resources)
@@ -85,7 +85,7 @@ Post-Exploitation
 - [Working Directories](#Working-Directories)
 
 # General
-[<< Index](#Index)
+
 ## Metasploit
 [<< Index](#Index)
 ```
@@ -138,7 +138,7 @@ vulns -p <port>
 connect <ip> <port>
 ```
 
-### Meterpreter
+## Meterpreter
 [<< Index](#Index)
 ```
 meterpreter > help
@@ -864,8 +864,7 @@ gcc -pthread 40839.c -o dirty -lcrypt
 [<< Index](#Index)
 ```
 sudo apt-get install mingw-w64 gcc
-```
-```
+
 searchsploit -m 9303
 
 i686-w64-mingw32-gcc 9303.c -o exploit
