@@ -8,18 +8,34 @@
   - Take Exam
 
 # Index
-- [General](#General)
-- [Information Gathering and Enumeration](#Information-Gathering-and-Enumeration)
-- [Exploitation](#Exploitation)
-- [Post-Exploitation](#Post-Exploitation)
-
-# General
+General
 - [Metasploit](#Metasploit)
   - [Meterpreter](#Meterpreter)
 - [Resource Scripts](#Resource-Scripts)
 - [tmux](#tmux)
 - [windows-resources](#windows-resources)
 
+Information Gathering and Enumeration
+- [FTP](#FTP)
+- [HTTP](#HTTP)
+  - [WMAP](#WMAP)
+- [metasploit-autopwn](#metasploit-autopwn)
+- [MySQL](#MySQL)
+- [Port Scanning](#Port-Scanning)
+- [SMB/Samba](#SMBSamba)
+- [SMTP](#SMTP)
+- [SSH](#SSH)
+- [Vulnerability Scanning](#Vulnerability-Scanning)
+- [WinRM](#WinRM)
+- [Wordlists](#Wordlists)
+
+Exploitation
+
+Post-Exploitation
+
+
+# General
+[<< Index](#Index)
 ## Metasploit
 [<< Index](#Index)
 ```
@@ -152,18 +168,6 @@ Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 
 # Information Gathering and Enumeration
 [<< Index](#Index)
-- [FTP](#FTP)
-- [HTTP](#HTTP)
-  - [WMAP](#WMAP)
-- [metasploit-autopwn](#metasploit-autopwn)
-- [MySQL](#MySQL)
-- [Port Scanning](#Port-Scanning)
-- [SMB/Samba](#SMBSamba)
-- [SMTP](#SMTP)
-- [SSH](#SSH)
-- [Vulnerability Scanning](#Vulnerability-Scanning)
-- [WinRM](#WinRM)
-- [Wordlists](#Wordlists)
 
 ```
 set USER_FILE <wordlist>
