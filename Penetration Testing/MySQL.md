@@ -29,6 +29,7 @@ hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt <ip> mysql
 # Brute-forcing can result in IP getting blocked.
 ```
 
+## mysql
 ```
 mysql -u root -p -h <ip>
 
