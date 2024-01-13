@@ -1,5 +1,6 @@
 # MySQL
 
+## Post-Exploitation
 ```
 cat ~/.mysql_history
 ```
