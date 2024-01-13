@@ -42,13 +42,7 @@ select * from <table>;
 ```
 
 ```
-hashcat -m300 -a0 hashes.txt /usr/share/wordlists/rockyou.txt
-
-# -m300 for MySQL4.1/MySQL5.
-```
-
-```
 cat ~/.mysql_history
-```
 
-## Others
+# History file may contain credentials.
+```
