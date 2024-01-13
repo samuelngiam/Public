@@ -28,6 +28,20 @@ hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt <ip> mysql
 ```
 - Brute-forcing MySQL will likely result in your IP being blocked - avoid brute-forcing!
 
+### mysql
+```
+mysql -u root -p -h <ip>
+```
+- Press enter for password if `NULL`.
+
+```
+MySQL [(none)]> show databases;
+MySQL [(none)]> use <database>;
+MySQL [(none)]> select * from <table>;
+MySQL [(none)]> 
+```
+- If MySQL is supporting a Web app, hashed credentials for that app can be retrieved.
+
 ## Exploitation
 
 ## Post-Exploitation
