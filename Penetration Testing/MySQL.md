@@ -24,9 +24,9 @@ hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt <ip> mysql
 - `hydra` does not appear to find `NULL` passwords.
 
 ```
-ERROR] Host 'ip-10-10-21-2.ap-southeast-1.compute.internal' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts'
+[ERROR] Host '<hostname>' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts'
 ```
-- Brute-forcing MySQL can result in IP being blocked.
+- Brute-forcing MySQL will likely result in your IP being blocked - avoid brute-forcing!
 
 ## Exploitation
 
