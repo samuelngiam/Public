@@ -1,4 +1,5 @@
 # MySQL
+- MySQL is an open-source relational database management system (RDBMS).
 
 - Basic nmap scan.
 ```
