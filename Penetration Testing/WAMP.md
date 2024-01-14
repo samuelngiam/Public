@@ -1,3 +1,3 @@
 # WAMP
 
-- See also [MySQL](../MySQL.md)
+- See also [MySQL](./MySQL.md).
