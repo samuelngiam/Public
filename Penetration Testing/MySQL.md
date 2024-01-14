@@ -53,12 +53,6 @@ show tables;
 select * from <table>;
 ```
 
-- Check Web app database for hashed user credentials e.g. WordPress.
-```
-use wordpress;
-select * from wp_users;
-```
-
 - Check users' mysql history file for credentials and other information.
 ```
 cat ~/.mysql_history
