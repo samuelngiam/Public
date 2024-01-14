@@ -5,7 +5,6 @@ General
 - [Metasploit](#Metasploit)
 - [Meterpreter](#Meterpreter)
 - [Resource Scripts](#Resource-Scripts)
-- [tmux](#tmux)
 - [windows-resources](#windows-resources)
 
 Information Gathering and Enumeration
@@ -199,19 +198,6 @@ msf6 > set LPORT <port>
 msf6 > exploit
 ^C
 msf6 > makerc handler.rc
-```
-
-## tmux
-[<< Index](#Index)
-```
-tmux
-tmux ls
-tmux attach -t <session_id>
-```
-```
-Ctrl + B, D — Detach from the current session.
-Ctrl + B, C — Create a new window.
-Ctrl + B, 0 (1,2...) — Move to a specific window by number.
 ```
 
 ## windows-resources
