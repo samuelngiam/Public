@@ -32,3 +32,14 @@ http://<ip>:8585/phpmyadmin
 
 Your configuration file contains settings (root with no password) that correspond to the default MySQL privileged account. Your MySQL server is running with this default, is open to intrusion, and you really should fix this security hole by setting a password for user 'root'.
 ```
+
+- Change WordPress admin password from phpMyAdmin.
+```
+Click on wordpress.
+Click on wp-users.
+Edit admin user.
+Set user_pass to MD5 (function) and password123 (Value).
+
+Go back to http://<ip>:8585/ and click on wordpress under Your Projects.
+Log in with the new password.
+```
