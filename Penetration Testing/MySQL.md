@@ -19,7 +19,7 @@ use auxiliary/scanner/mysql/mysql_version
 ```
 
 - Brute-force MySQL login.
-  - Focus on root as other accounts may not have sufficient privileges for our intent.
+  - Focus on root.
   - root password can be NULL.
   - hydra does not attempt NULL password?
 ```
