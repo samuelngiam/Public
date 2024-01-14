@@ -1,11 +1,9 @@
 # tmux
-
 ```
 tmux
 tmux ls
 tmux attach -t <session_id>
 ```
-
 ```
 Ctrl + B, D — Detach from the current session.
 Ctrl + B, C — Create a new window.
