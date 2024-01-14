@@ -1,6 +1,4 @@
 # MySQL
-- MySQL is an open-source relational database management system (RDBMS).
-
 - Basic nmap scan.
 ```
 nmap -Pn -sV -sC -p3306 <ip>
