@@ -53,5 +53,13 @@ Edit admin user.
 Set user_pass to MD5 (function) and password123 (Value).
 
 Go back to http://<ip>:8585/ and click on wordpress under Your Projects.
+Alternatively, http://<ip>:8585/wordpress/wp-admin
 Log in with the new password.
+```
+
+- Change WordPress admin password with mysql
+```
+mysql -u root -p -h <ip>
+use wordpress;
+UPDATE wp_users SET user_pass = MD5('password123') WHERE user_login = 'admin';
 ```
