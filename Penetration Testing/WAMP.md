@@ -1,6 +1,18 @@
 # WAMP
 
-- See also [MySQL](./MySQL.md).
+- Check Web app database for hashed user credentials e.g. WordPress.
+```
+show databases;
+use wordpress;
+select * from wp_users;
+
+1 | admin      | $P$BXzMzwqxm65vuHegt/rsJN2VbXPtT.1 | admin         | admin@example.com
+```
+
+- Crack hashed credentials.
+```
+hashcat -m400 -a0 hashes.txt /usr/share/wordlists/rockyou.txt
+```
 
 - Modify phpmyadmin.conf to allow remote access.
 ```
