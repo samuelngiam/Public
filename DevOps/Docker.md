@@ -21,18 +21,24 @@ sudo docker version
 ```
 https://hub.docker.com/
 
-sudo docker run docker/whalesay cowsay Hello-World!
+docker run docker/whalesay cowsay Hello-World!
 ```
 
-- `sudo docker run`
+- `docker run <image>`
 
-- `sudo docker ps`, `sudo docker ps -a`
+- `docker ps`, `docker ps -a`
 
-- `sudo docker stop <container_name>/<container_id>`
+- `docker start <container>`, `docker stop <container>`
 
-- `sudo docker rm <container_name>/<container_id>`
+- `docker rm <container>`
 
-- `sudo docker images`
+- `docker images`
 
-- `sudo docker rmi <repository_name>/<image_id>`
+- `docker rmi <image>`
   - Must delete all dependent containers first.
+
+- `docker pull <image>`
+
+- `docker run <image> <command>` e.g. `docker run ubuntu sleep 100`
+
+- 
