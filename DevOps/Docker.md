@@ -46,3 +46,5 @@ docker run docker/whalesay cowsay Hello-World!
 - `docker exec <image> command`
 
 - `docker run -d <image>`, `docker attach <image>`
+
+- `docker run -it ubuntu bash`
