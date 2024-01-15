@@ -24,6 +24,8 @@ https://hub.docker.com/
 docker run docker/whalesay cowsay Hello-World!
 ```
 
+- Note: `docker` commands mostly require privileges to run.
+
 - `docker run <image>`
 
 - `docker ps`, `docker ps -a`
