@@ -41,4 +41,6 @@ docker run docker/whalesay cowsay Hello-World!
 
 - `docker run <image> <command>` e.g. `docker run ubuntu sleep 100`
 
-- 
+- `docker exec <image> command`
+
+- `docker run -d <image>`, `docker attach <image>`
