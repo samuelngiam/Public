@@ -28,7 +28,7 @@ docker run docker/whalesay cowsay Hello-World!
 
 - `docker ps`, `docker ps -a`
 
-- `docker start <container>`, `docker stop <container>`
+- `docker stop <container>`, `docker start <container>`
 
 - `docker rm <container>`
 
