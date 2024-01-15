@@ -24,4 +24,15 @@ https://hub.docker.com/
 sudo docker run docker/whalesay cowsay Hello-World!
 ```
 
-- docker run
+- `sudo docker run`
+
+- `sudo docker ps`, `sudo docker ps -a`
+
+- `sudo docker stop <container_name>/<container_id>`
+
+- `sudo docker rm <container_name>/<container_id>`
+
+- `sudo docker images`
+
+- `sudo docker rmi <repository_name>/<image_id>`
+  - Must delete all dependent containers first.
