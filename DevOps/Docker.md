@@ -16,3 +16,12 @@ sudo sh get-docker.sh
 
 sudo docker version
 ```
+
+- Test Docker after installation
+```
+https://hub.docker.com/
+
+sudo docker run docker/whalesay cowsay Hello-World!
+```
+
+- docker run
