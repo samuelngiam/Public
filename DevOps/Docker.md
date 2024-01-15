@@ -26,25 +26,28 @@ docker run docker/whalesay cowsay Hello-World!
 
 - Note: `docker` commands mostly require privileges to run.
 
-- `docker run <image>`
+```
+docker run <image>
+docker run <image> <command> e.g. docker run ubuntu sleep 100
+docker exec <image> command
+docker run -d <image>
+docker attach <image>
+docker run -it ubuntu bash
+```
 
-- `docker ps`, `docker ps -a`
+```
+docker ps
+docker ps -a
+```
 
-- `docker stop <container>`, `docker start <container>`
+```
+docker stop <container>
+docker start <container>
+docker rm <container>
+```
 
-- `docker rm <container>`
-
-- `docker images`
-
-- `docker rmi <image>`
-  - Must delete all dependent containers first.
-
-- `docker pull <image>`
-
-- `docker run <image> <command>` e.g. `docker run ubuntu sleep 100`
-
-- `docker exec <image> command`
-
-- `docker run -d <image>`, `docker attach <image>`
-
-- `docker run -it ubuntu bash`
+```
+docker pull <image>
+docker images
+docker rmi <image> ==> must delete all dependent containers first.
+```
