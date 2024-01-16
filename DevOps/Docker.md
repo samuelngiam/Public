@@ -33,30 +33,30 @@
 - Basic Docker commands.
   - Note: `docker` commands mostly require privileges to run.
 
-```
-docker run <image>
-docker run <image> <command> e.g. docker run ubuntu sleep 100
-docker run -d <image>
-docker attach <container>
-docker run -it ubuntu bash
-docker exec <container> command
-```
+  ```
+  docker run <image>
+  docker run <image> <command> e.g. docker run ubuntu sleep 100
+  docker run -d <image>
+  docker attach <container>
+  docker run -it ubuntu bash
+  docker exec <container> command
+  ```
 
-```
-docker ps
-docker ps -a
-```
-
-```
-docker stop <container>
-docker start <container>
-docker rm <container>
-```
-
-```
-docker pull <image>
-docker images
-docker rmi <image> ==> must delete all dependent containers first.
-```
+  ```
+  docker ps
+  docker ps -a
+  ```
+  
+  ```
+  docker stop <container>
+  docker start <container>
+  docker rm <container>
+  ```
+  
+  ```
+  docker pull <image>
+  docker images
+  docker rmi <image> ==> must delete all dependent containers first.
+  ```
 
 - Non-official images must be prefixed by the "account" i.e. `docker/whalesay` vs `ubuntu`.
