@@ -30,7 +30,7 @@ docker run docker/whalesay cowsay Hello-World!
 docker run <image>
 docker run <image> <command> e.g. docker run ubuntu sleep 100
 docker run -d <image>
-docker attach <image>
+docker attach <container>
 docker run -it ubuntu bash
 docker exec <container> command
 ```
