@@ -1,7 +1,7 @@
 # Docker
 - Install Docker Engine.
   - https://docs.docker.com/engine/install/ubuntu/
-  - Make sure OS requirements are met.
+  - Check OS.
     ```
     cat /etc/*release*
     ```
