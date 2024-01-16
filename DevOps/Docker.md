@@ -41,10 +41,11 @@
   docker run -d <image>
   docker attach <container>
 
-  docker run -it ubuntu bash
+  docker run -it ubuntu bash ==> "i" for interactive, "t" for terminal
     
   docker run <image>:<tag> i.e. docker run redis:4.0
   Default tag is "latest" i.e. docker run redis ==> docker run redis:latest
+  https://hub.docker.com/_/redis/tags
   ```
 
   ```
@@ -61,7 +62,7 @@
   ```
   docker pull <image>
   docker images
-  docker rmi <image> ==> must delete all dependent containers first.
+  docker rmi <image> ==> delete all dependent containers first.
   ```
 
 - Non-official images must be prefixed by the "account" i.e. `docker/whalesay` vs `ubuntu`.
