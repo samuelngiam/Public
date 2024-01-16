@@ -58,7 +58,15 @@
   docker ps
   docker ps -a
   ```
+
+  ```
+  docker inspect <container>
+  ```
   
+  ```
+  docker logs <container> ==> stuff written to STDOUT
+  ```
+
   ```
   docker stop <container>
   docker start <container>
