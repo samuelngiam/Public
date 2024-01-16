@@ -64,7 +64,7 @@ docker ps -a
 ```
 
 ```
-docker inspect <container>
+docker inspect <container> ==> IP address can be found here
 ```
   
 ```
