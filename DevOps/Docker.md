@@ -65,4 +65,8 @@
   docker rmi <image> ==> delete all dependent containers first.
   ```
 
+  ```
+  docker run -p <host_port>:<container_port> <image>
+  ```
+
 - Non-official images must be prefixed by the "account" i.e. `docker/whalesay` vs `ubuntu`.
