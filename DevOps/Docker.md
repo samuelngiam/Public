@@ -51,3 +51,5 @@ docker pull <image>
 docker images
 docker rmi <image> ==> must delete all dependent containers first.
 ```
+
+- Non-official images must be prefixed by the "account" i.e. `docker/whalesay` vs `ubuntu`.
