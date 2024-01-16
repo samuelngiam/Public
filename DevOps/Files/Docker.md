@@ -36,6 +36,7 @@ docker run docker/whalesay cowsay Hello-World!
 ```
 docker run <image>
 docker run --name <container_name> <image>
+docker run -u <username> <image>
 
 docker run <image> <command> e.g. docker run ubuntu sleep 100
 docker exec <container> command
