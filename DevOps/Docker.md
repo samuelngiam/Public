@@ -60,3 +60,10 @@
   ```
 
 - Non-official images must be prefixed by the "account" i.e. `docker/whalesay` vs `ubuntu`.
+
+- Docker tags
+  ```
+  docker run <image>:<tag> i.e. docker run redis:4.0
+  
+  Default tag is "latest" i.e. docker run redis ==> docker run redis:latest
+  ```
