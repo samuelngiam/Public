@@ -23,14 +23,15 @@
     sudo docker version
     ```
 
-- Test Docker after installation.
-```
-https://hub.docker.com/
+  - Test Docker after installation.
+    ```
+    https://hub.docker.com/
 
-docker run docker/whalesay cowsay Hello-World!
-```
+    docker run docker/whalesay cowsay Hello-World!
+    ```
 
-- Note: `docker` commands mostly require privileges to run.
+- Basic Docker commands.
+  - Note: `docker` commands mostly require privileges to run.
 
 ```
 docker run <image>
