@@ -1,5 +1,5 @@
 # Docker
-- Install Docker Engine
+- Install Docker Engine.
   - https://docs.docker.com/engine/install/ubuntu/
   - Make sure OS requirements are met.
     ```
@@ -23,7 +23,7 @@
     sudo docker version
     ```
 
-- Test Docker after installation
+- Test Docker after installation.
 ```
 https://hub.docker.com/
 
