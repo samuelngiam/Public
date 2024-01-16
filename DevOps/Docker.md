@@ -37,12 +37,18 @@
   docker run <image>
   docker run <image> <command> e.g. docker run ubuntu sleep 100
   docker exec <container> command
+  ```
 
+  ```
   docker run -d <image>
   docker attach <container>
+  ```
 
+  ```
   docker run -it ubuntu bash ==> "i" for interactive, "t" for terminal
-    
+  ```
+
+  ```
   docker run <image>:<tag> i.e. docker run redis:4.0
   Default tag is "latest" i.e. docker run redis ==> docker run redis:latest
   https://hub.docker.com/_/redis/tags
@@ -67,6 +73,10 @@
 
   ```
   docker run -p <host_port>:<container_port> <image>
+  ```
+
+  ```
+  docker run -v <host_directory>:<container_directory> <image>
   ```
 
 - Non-official images must be prefixed by the "account" i.e. `docker/whalesay` vs `ubuntu`.
