@@ -52,9 +52,9 @@ docker run -it ubuntu bash ==> "i" for interactive, "t" for terminal
 ```
 
 ```
-docker run <image>:<tag> i.e. docker run redis:4.0
+docker run <image>:<tag> e.g. docker run redis:4.0
 
-Default tag is "latest" i.e. docker run redis ==> docker run redis:latest
+Default tag is "latest" e.g. docker run redis ==> docker run redis:latest
 
 https://hub.docker.com/_/redis/tags
 ```
@@ -93,7 +93,7 @@ docker run -p <host_port>:<container_port> <image>
 docker run -v <host_directory>:<container_directory> <image>
 ```
 
-- Non-official images must be prefixed by the "account" i.e. `docker/whalesay` vs `ubuntu`.
+- Non-official images must be prefixed by the "account" e.g. `docker/whalesay` vs `ubuntu`.
 
 ## Docker Image
 - Dockerfile consists of instructions and arguments.
@@ -116,7 +116,8 @@ ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 
 - Build Image
 ```
-docker build Dockerfile -t <image>
+docker build Dockerfile -t <account_name>/<application_name> ==> default tag is "latest".
 
-docker push <tag>
+docker login
+docker push <account_name>/<application_name>
 ```
