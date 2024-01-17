@@ -103,14 +103,12 @@ FROM Ubuntu
 ==> Dockerfiles must always start with a "FROM".
 
 RUN apt-get update
-RUN apt-get install -y python
-
+RUN apt-get install -y python python-pip
 RUN pip install flask
-RUN pip install flask-mysql
 
-COPY . /opt/source-code
+COPY app.py /opt/app.py
 
-ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
 ==> Command to execute when image is run as a container.
 ```
 
