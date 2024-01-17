@@ -119,6 +119,8 @@ docker build . -t <name>:<tag>
 ==> <name> can be <account_name>/<application_name>.
 ==> <tag> is optional, default is "latest".
 
+docker history <name>:<tag>
+
 docker login
 docker push <name>:<tag>
 ```
