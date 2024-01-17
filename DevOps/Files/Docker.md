@@ -124,3 +124,9 @@ docker history <name>:<tag>
 docker login
 docker push <name>:<tag>
 ```
+
+- Environment variables
+```
+docker run -e xx=yy <image>
+docker inspect <container> ==> Environment variables can be found here
+```
