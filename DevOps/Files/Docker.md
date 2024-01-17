@@ -94,3 +94,26 @@ docker run -v <host_directory>:<container_directory> <image>
 ```
 
 - Non-official images must be prefixed by the "account" i.e. `docker/whalesay` vs `ubuntu`.
+
+## Docker Image
+- Dockerfile consists of instructions and arguments.
+```
+FROM Ubuntu ==> base OS or another image
+
+RUN apt-get update
+RUN apt-get install python
+
+RUN pip install flask
+RUN pip install flask-mysql
+
+COPY . /opt/source-code
+
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+```
+
+- Build Image
+```
+docker build Dockerfile -t <image>
+
+docker push <tag>
+```
