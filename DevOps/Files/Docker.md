@@ -103,7 +103,7 @@ FROM Ubuntu
 ==> Dockerfiles must always start with a "FROM".
 
 RUN apt-get update
-RUN apt-get install python
+RUN apt-get install -y python
 
 RUN pip install flask
 RUN pip install flask-mysql
