@@ -114,7 +114,9 @@ ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
 
 - Build Image
 ```
-docker build Dockerfile -t <account_name>/<application_name> ==> default tag is "latest".
+docker build . -t <account_name>/<application_name>
+==> "." is the directory where Dockerfile resides.
+==> default tag is "latest".
 
 docker login
 docker push <account_name>/<application_name>
