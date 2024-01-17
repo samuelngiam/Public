@@ -65,7 +65,7 @@ docker ps -a
 ```
 
 ```
-docker inspect <container> ==> IP address can be found here
+docker inspect <container>/<image> ==> IP address can be found here
 ```
   
 ```
