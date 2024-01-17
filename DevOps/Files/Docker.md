@@ -98,7 +98,9 @@ docker run -v <host_directory>:<container_directory> <image>
 ## Docker Image
 - Dockerfile consists of instructions and arguments.
 ```
-FROM Ubuntu ==> base OS or another image
+FROM Ubuntu
+==> Base OS or another image;
+==> Dockerfiles must always start with a "FROM".
 
 RUN apt-get update
 RUN apt-get install python
@@ -109,6 +111,7 @@ RUN pip install flask-mysql
 COPY . /opt/source-code
 
 ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+==> Command to execute when image is run as a container.
 ```
 
 - Build Image
