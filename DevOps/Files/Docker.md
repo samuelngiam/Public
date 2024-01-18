@@ -49,6 +49,7 @@
   ```
   ```
   [Sample Dockerfile]
+  
   FROM ubuntu
   ==> Base OS or another image
   ==> Dockerfiles must always start with a "FROM"
