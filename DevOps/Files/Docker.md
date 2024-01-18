@@ -2,9 +2,8 @@
 ## Useful Links
 - https://docs.docker.com/engine/install/ubuntu/
 - https://hub.docker.com/
-- https://docs.docker.com/trusted-content/official-images/
 
-## Docker Commands
+## Basic Docker
 - Use `sudo`.
 - `<image>` can be `<account_name>/<application_name>:<tag>`.
 - `<tag>` is optional, default is `latest`.
@@ -91,3 +90,6 @@
   ENTRYPOINT ["sleep"]
   CMD ["5"]
   ```
+
+## Docker Compose
+- Compose is a tool for defining and running multi-container Docker applications.
