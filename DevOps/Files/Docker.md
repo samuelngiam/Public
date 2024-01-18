@@ -12,7 +12,7 @@
 - `<container>` can be `<container_name>` or `<container_id>`.
 
   ```
-  sudo docker version
+  docker version
   
   docker run docker/whalesay cowsay Hello-World!
   
