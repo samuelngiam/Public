@@ -50,7 +50,7 @@
   python3 psexec.py administrator@<ip> ipconfig
   ```
 
-- EternalBlue
+- Exploit EternalBlue.
   ```
   use auxiliary/scanner/smb/smb_ms17_010
   
