@@ -30,6 +30,7 @@
   
   docker ps
   docker ps -a
+  docker ps -a -q ==> only list <container_id>
   
   docker inspect <container>/<image> ==> IP address and environment variables can be found here
   
@@ -38,6 +39,7 @@
   docker stop <container>
   docker start <container>
   docker rm <container>
+  docker rm $(docker ps -a -q)
   
   docker pull <image>
   docker images
@@ -48,7 +50,7 @@
   ```
   ```
   [Sample Dockerfile]
-  FROM Ubuntu
+  FROM ubuntu
   ==> Base OS or another image
   ==> Dockerfiles must always start with a "FROM"
   
@@ -72,4 +74,20 @@
   docker push <image>
   
   docker run -e <env_var>=<value> <image>
+  ```
+  ```
+  docker run ubuntu
+  ==> CMD ["bash"]
+
+  docker run ubuntu sleep 5
+  
+  FROM ubuntu
+  CMD sleep 5 or CMD ["sleep", "5"]
+
+  FROM ubuntu
+  ENTRYPOINT ["sleep"]
+
+  FROM ubuntu
+  ENTRYPOINT ["sleep"]
+  CMD ["5"]
   ```
