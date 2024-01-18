@@ -2,12 +2,13 @@
 ## Useful Links
 - https://docs.docker.com/engine/install/ubuntu/
 - https://hub.docker.com/
+- https://docs.docker.com/trusted-content/official-images/
 
 ## Docker Commands
 - Use `sudo`.
 - `<image>` can be `<account_name>/<application_name>:<tag>`.
 - `<tag>` is optional, default is `latest`.
-- Non-official images must be prefixed by the account e.g. `docker/whalesay` vs `ubuntu`.
+- Non Docker official images must be prefixed by the account e.g. `docker/whalesay` vs `ubuntu`.
 - `<container>` can be `<container_name>` or `<container_id>`.
 
   ```
