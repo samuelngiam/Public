@@ -48,8 +48,8 @@ docker run -v <host_directory>:<container_directory> <image>
 ```
 [Sample Dockerfile]
 FROM Ubuntu
-==> Base OS or another image;
-==> Dockerfiles must always start with a "FROM".
+==> Base OS or another image
+==> Dockerfiles must always start with a "FROM"
 
 RUN apt-get update
 RUN apt-get install -y python python-pip
@@ -58,12 +58,12 @@ RUN pip install flask
 COPY app.py /opt/app.py
 
 ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
-==> Command to execute when image is run as a container.
+==> Command to execute when image is run as a container
 ```
 ```
 docker build . -t <account_name>/<application_name>:<tag>
-==> "." is the directory where Dockerfile resides.
-==> <tag> is optional, default is "latest".
+==> "." is the directory where Dockerfile resides
+==> <tag> is optional, default is "latest"
 
 docker history <image>
 
