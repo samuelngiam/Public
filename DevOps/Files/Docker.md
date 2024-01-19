@@ -29,11 +29,11 @@
   
   docker ps
   docker ps -a
-  docker ps -a -q ==> only list <container_id>
+  docker ps -a -q ==> only show <container_id> column
   
   docker inspect <container>/<image> ==> IP address and environment variables can be found here
   
-  docker logs <container> ==> stuff written to STDOUT
+  docker logs <container> ==> ?
   
   docker stop <container>
   docker start <container>
