@@ -137,32 +137,33 @@ docker run -d --name=worker --link db:db --link redis:redis worker
 [docker-compose.yml]
 
 version: 2
-redis:
-  image: redis
-  networks:
-    - back-end
-db:
-  image: postgres:9.4
-  networks:
-    - back-end
-vote:
-  image: voting-app
-  ports:
-    - 5000:80
-  networks:
-    - front-end
-    - back-end
-result:
-  image: result-app
-  ports:
-    - 5001:80
-  networks:
-    - front-end
-    - back-end
-worker:
-  image: worker
-  networks:
-    - back-end
+services:
+    redis:
+      image: redis
+      networks:
+        - back-end
+    db:
+      image: postgres:9.4
+      networks:
+        - back-end
+    vote:
+      image: voting-app
+      ports:
+        - 5000:80
+      networks:
+        - front-end
+        - back-end
+    result:
+      image: result-app
+      ports:
+        - 5001:80
+      networks:
+        - front-end
+        - back-end
+    worker:
+      image: worker
+      networks:
+        - back-end
 
 networks:
   front-end:
