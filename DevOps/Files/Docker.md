@@ -30,6 +30,7 @@ docker rm $(docker ps -a -q)
 docker pull <image>
 docker images
 docker rmi <image> ==> delete all dependent containers first
+docker rmi $(docker images -q)
 ```
 
 ```
@@ -94,19 +95,27 @@ docker push <image>
 
 ```
 docker run ubuntu
-==> CMD ["bash"]
 
 docker run ubuntu sleep 5
 
 FROM ubuntu
 CMD sleep 5 or CMD ["sleep", "5"]
 
+docker run ubuntu-sleeper sleep 10
+
 FROM ubuntu
 ENTRYPOINT ["sleep"]
+
+docker run ubuntu-sleeper
 
 FROM ubuntu
 ENTRYPOINT ["sleep"]
 CMD ["5"]
+
+docker run ubuntu-sleeper
+docker run ubuntu-sleeper 10
+
+docker run --entrypoint echo ubuntu-sleeper 20
 ```
 
 ## Docker Compose
