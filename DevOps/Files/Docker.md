@@ -61,6 +61,7 @@ docker logs <container> ==> ?
 
 ```
 [Sample Dockerfile]
+
 git clone https://github.com/docker/getting-started-app.git
 
 cd ~/getting-started-app
