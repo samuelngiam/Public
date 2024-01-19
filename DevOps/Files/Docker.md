@@ -61,19 +61,23 @@ docker logs <container> ==> ?
 
 ```
 [Sample Dockerfile]
+git clone https://github.com/docker/getting-started-app.git
 
-FROM ubuntu
-==> Base OS or another image
-==> Dockerfiles must always start with a "FROM"
+cd ~/getting-started-app
+touch Dockerfile
 
-RUN apt-get update
-RUN apt-get install -y python python-pip
-RUN pip install flask
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
 
-COPY app.py /opt/app.py
+docker build -t getting-started .
 
-ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
-==> Command to execute when image is run as a container
+docker run -dp 127.0.0.1:3000:3000 getting-started
+
+http://localhost:3000
 ```
 
 ```
