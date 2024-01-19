@@ -170,5 +170,5 @@ networks:
   front-end:
   back-end:
 
-docker compose up
+docker-compose up
 ```
