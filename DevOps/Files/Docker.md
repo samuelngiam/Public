@@ -6,8 +6,8 @@
 ## Basic Docker
 - Use `sudo`.
 - `<image>` can be `<account_name>/<application_name>:<tag>`.
-- `<tag>` is optional, default is `latest`.
-- Non Docker official images must be prefixed by the account e.g. `docker/whalesay` vs `ubuntu`.
+  - `<tag>` is optional, default is `latest`.
+  - Non Docker official images must be prefixed by the account e.g. `docker/whalesay` vs `ubuntu`.
 - `<container>` can be `<container_name>` or `<container_id>`.
 
   ```
