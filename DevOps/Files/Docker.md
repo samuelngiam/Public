@@ -101,12 +101,15 @@ docker run ubuntu sleep 5
 FROM ubuntu
 CMD sleep 5 or CMD ["sleep", "5"]
 
+docker run ubuntu-sleeper
 docker run ubuntu-sleeper sleep 10
 
 FROM ubuntu
 ENTRYPOINT ["sleep"]
 
-docker run ubuntu-sleeper
+docker run ubuntu-sleeper 5
+docker run ubuntu-sleeper 10
+docker run ubuntu-sleeper ==> Crash!
 
 FROM ubuntu
 ENTRYPOINT ["sleep"]
