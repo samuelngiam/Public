@@ -138,7 +138,7 @@ docker run -d --name=worker --link db:db --link redis:redis worker
 
 ```
 [docker-compose.yml]
-==> Avoid using tabs
+==> Avoid using tabs?
 
 version: 2
 services:
