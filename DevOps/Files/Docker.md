@@ -2,6 +2,8 @@
 ## Useful Links
 - https://docs.docker.com/engine/install/ubuntu/
 - https://hub.docker.com/
+- https://docs.docker.com/compose/
+- https://docs.docker.com/engine/reference/commandline/compose/
 - https://github.com/dockersamples/example-voting-app
 
 ## Basic Docker
@@ -136,6 +138,7 @@ docker run -d --name=worker --link db:db --link redis:redis worker
 
 ```
 [docker-compose.yml]
+==> Avoid using tabs
 
 version: 2
 services:
