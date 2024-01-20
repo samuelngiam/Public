@@ -1,11 +1,4 @@
 # Docker
-## Useful Links
-- https://docs.docker.com/engine/install/ubuntu/
-- https://hub.docker.com/
-- https://docs.docker.com/compose/
-- https://docs.docker.com/engine/reference/commandline/compose/
-- https://github.com/dockersamples/example-voting-app
-
 ## Basic Docker
 - Use `sudo`.
 - `<image>` can be `<account_name>/<application_name>:<tag>`.
@@ -16,6 +9,12 @@
 ```
 docker version
 docker run docker/whalesay cowsay Hello-World!
+```
+
+```
+docker -H=<remote_docker_engine>:2375 run <image>
+docker run --cpus=.5 <image>
+docker run --memory=100m <image>
 ```
 
 ```
@@ -175,3 +174,13 @@ networks:
 
 docker-compose up
 ```
+
+## Useful Links
+- https://docs.docker.com/engine/install/ubuntu/
+- https://hub.docker.com/
+- https://docs.docker.com/compose/
+- https://docs.docker.com/engine/reference/commandline/compose/
+- https://github.com/dockersamples/example-voting-app
+- https://docs.docker.com/engine/
+- https://docs.docker.com/engine/api/
+- https://docs.docker.com/config/containers/runmetrics/#control-groups
