@@ -1,15 +1,13 @@
 # HTTP
 
 ## WebDAV
-- Microsoft IIS
-  - Hosts Web pages developed in ASP.NET and PHP.
-  - Supported executable file extensions: .asp, .aspx, .config, .php.
-
 - WebDAV typically runs on Apache on MS IIS.
   - Manage files on remote Web server.
   - Requires credentials.
 
 - "DAVTest tests WebDAV-enabled servers by uploading test executable files, and then (optionally) uploading files which allow for command execution or other actions directly on the target. It is meant for penetration testers to quickly and easily determine if enabled DAV services are exploitable."
+
+- "cadaver is a command-line WebDAV client, with support for file upload, download..."
 
 ```
 nmap -Pn -sV -p80 --script=http-webdav-scan,http-enum <ip>
