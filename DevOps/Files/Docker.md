@@ -16,6 +16,18 @@ docker version
 docker run docker/whalesay cowsay Hello-World!
 ```
 
+- Default networks
+  - `bridge`, `none`, `host`.
+```
+docker run ubuntu
+docker run ubuntu --network=none
+docker run ubuntu --network=host
+
+docker network create --driver bridge --subnet <subnet> <network_name>
+
+docker inspect <container>
+```
+
 ## Unsorted
 
 ```
