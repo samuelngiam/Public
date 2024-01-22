@@ -6,8 +6,13 @@
   - Non Docker official images are prefixed by `<account_name>` e.g. `docker/whalesay`.
 - `<container>`: `<container_name>` or `<container_id>`.
 
+- Check Docker version.
 ```
 docker version
+```
+
+- Test Docker after installation.
+```
 docker run docker/whalesay cowsay Hello-World!
 ```
 
