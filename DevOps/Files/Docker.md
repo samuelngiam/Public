@@ -1,6 +1,5 @@
 # Docker
 
-## Basic Docker
 - Use `sudo`.
 - `<image>` can be `<account_name>/<application_name>:<tag>`.
   - `<tag>` is optional, default is `latest`.
@@ -125,10 +124,7 @@ docker run ubuntu-sleeper 10
 docker run --entrypoint echo ubuntu-sleeper 20
 ```
 
-## Docker Compose
-- Compose is a tool for defining and running multi-container Docker applications.
-- Note: Linking is a legacy feature.
-
+- Docker Compose is a tool for defining and running multi-container Docker applications.
 ```
 docker run -d --name=redis redis
 docker run -d --name=db postgres:9.4
@@ -177,7 +173,6 @@ networks:
 docker-compose up
 ```
 
-## Docker Storage
 ```
 /var/lib/docker
 /var/lib/docker/volumes/
