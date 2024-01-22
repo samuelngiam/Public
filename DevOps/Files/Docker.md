@@ -55,6 +55,7 @@ docker exec <container> <command>
 
 docker run -it ubuntu bash ==> "i" for interactive, "t" for terminal
 docker run -e <env_var>=<value> <image>
+==> Example: docker run -d -e MYSQL_ROOT_PASSWORD=db_pass123 --name mysql-db mysql
 ```
 
 ```
