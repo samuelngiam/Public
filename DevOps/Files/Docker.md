@@ -176,12 +176,17 @@ networks:
 docker-compose up
 ```
 
+## Docker Storage
+```
+/var/lib/docker
+/var/lib/docker/volumes/
+
+docker run -v mysql:/var/lib/mysql mysql ==> volume mounting
+docker run -v /data/mysql:/var/lib/mysql mysql ==> bind mounting
+docker run --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
+```
+
 ## Useful Links
 - https://docs.docker.com/engine/install/ubuntu/
 - https://hub.docker.com/
-- https://docs.docker.com/compose/
-- https://docs.docker.com/engine/reference/commandline/compose/
 - https://github.com/dockersamples/example-voting-app
-- https://docs.docker.com/engine/
-- https://docs.docker.com/engine/api/
-- https://docs.docker.com/config/containers/runmetrics/#control-groups
