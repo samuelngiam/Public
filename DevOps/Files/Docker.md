@@ -1,10 +1,10 @@
 # Docker
 
 - All commands require `sudo`.
-- `<image>`: `<account_name>/<application_name>:<tag>`.
+- `<image>` ==> `<account_name>/<application_name>:<tag>`.
   - `<tag>` optional, default `latest`.
   - Non Docker official images are prefixed by `<account_name>` e.g. `docker/whalesay`.
-- `<container>`: `<container_name>` or `<container_id>`.
+- `<container>` ==> `<container_name>` or `<container_id>`.
 
 - Check Docker version.
 ```
