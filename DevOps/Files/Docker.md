@@ -1,4 +1,5 @@
 # Docker
+
 ## Basic Docker
 - Use `sudo`.
 - `<image>` can be `<account_name>/<application_name>:<tag>`.
@@ -20,7 +21,7 @@ docker run --memory=100m <image>
 ```
 docker ps
 docker ps -a
-docker ps -a -q ==> only show <container_id> column
+docker ps -a -q ==> only show <container_id>
 
 docker stop <container>
 docker start <container>
