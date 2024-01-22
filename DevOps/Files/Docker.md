@@ -1,10 +1,10 @@
 # Docker
 
-- Use `sudo`.
-- `<image>` can be `<account_name>/<application_name>:<tag>`.
-  - `<tag>` is optional, default is `latest`.
-  - Non Docker official images must be prefixed by the account e.g. `docker/whalesay` vs `ubuntu`.
-- `<container>` can be `<container_name>` or `<container_id>`.
+- All commands require `sudo`.
+- `<image>`: `<account_name>/<application_name>:<tag>`.
+  - `<tag>` optional, default `latest`.
+  - Non Docker official images prefixed by account e.g. `docker/whalesay`.
+- `<container>`: `<container_name>`/`<container_id>`.
 
 ```
 docker version
