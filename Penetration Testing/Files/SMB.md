@@ -31,3 +31,16 @@ msf > set SMBPass <password>
 ```
 
 ## EternalBlue
+```
+--script=smb-vuln-ms17-010
+
+gitclone autoblue 
+
+pip install -r requirements
+
+cd shellcode
+chmod +x shell_prep.sh
+./shell_prep.sh
+
+eternalblue
+```
