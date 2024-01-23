@@ -58,19 +58,24 @@ docker rm <container>
 docker rm $(docker ps -a -q)
 ```
 
+- Image management.
+```
+docker pull <image>
+
+docker images
+
+docker rmi <image> ==> delete all dependent containers first
+docker rmi $(docker images -q)
+
+docker image prune -a
+```
+
 ## Unsorted
 
 ```
 docker -H=<remote_docker_engine>:2375 run <image>
 docker run --cpus=.5 <image>
 docker run --memory=100m <image>
-```
-
-```
-docker pull <image>
-docker images
-docker rmi <image> ==> delete all dependent containers first
-docker rmi $(docker images -q)
 ```
 
 ```
