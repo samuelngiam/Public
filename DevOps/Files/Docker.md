@@ -38,7 +38,7 @@ Google's registry ==> gcr.io ==> https://cloud.google.com/artifact-registry/
 docker login <private_registry>
 docker run <private_registry>/<image>
 
-docker run -d -p 5000:5000 --name registry registry
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
 docker image tag <image> localhost:5000/<image> ==> assuming registry is local
 docker push localhost:5000/<image>
 docker pull localhost:5000/<image>
