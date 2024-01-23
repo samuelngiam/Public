@@ -28,17 +28,23 @@ docker network ls
 docker network inspect <network_name>
 
 docker inspect <container>
-
 ```
 
-## Unsorted
-
+- Docker Registry.
 ```
-docker -H=<remote_docker_engine>:2375 run <image>
-docker run --cpus=.5 <image>
-docker run --memory=100m <image>
+nginx ==> nginx/nginx ==> docker.io/nginx/nginx
+Google's registry ==> gcr.io ==> https://cloud.google.com/artifact-registry/
+
+docker login <private_registry>
+docker run <private_registry>/<image>
+
+docker run -d -p 5000:5000 --name registry registry
+docker image tag <image> localhost:5000/<image> ==> assuming registry is local
+docker push localhost:5000/<image>
+docker pull localhost:5000/<image>
 ```
 
+- View and manage containers.
 ```
 docker ps
 docker ps -a
@@ -48,6 +54,14 @@ docker stop <container>
 docker start <container>
 docker rm <container>
 docker rm $(docker ps -a -q)
+```
+
+## Unsorted
+
+```
+docker -H=<remote_docker_engine>:2375 run <image>
+docker run --cpus=.5 <image>
+docker run --memory=100m <image>
 ```
 
 ```
