@@ -125,9 +125,6 @@ http://localhost:3000
 docker build . -t <user or account>/<image or repository>:<tag>
 
 docker history <image>
-
-docker login
-docker push <image>
 ```
 
 ```
