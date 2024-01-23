@@ -42,6 +42,8 @@ docker run -d -p 5000:5000 --restart=always --name registry registry:2
 docker image tag <image> localhost:5000/<image> ==> assuming registry is local
 docker push localhost:5000/<image>
 docker pull localhost:5000/<image>
+
+curl -X GET localhost:5000/v2/_catalog
 ```
 
 - View and manage containers.
