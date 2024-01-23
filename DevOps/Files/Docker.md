@@ -1,9 +1,9 @@
 # Docker
 
 - All commands require `sudo`.
-- `<image>` ==> `<account_name>/<application_name>:<tag>`.
+- `<image>` ==> `<user or account>/<image or repository>:<tag>`.
   - `<tag>` optional, default `latest`.
-  - Non Docker official images are prefixed by `<account_name>` e.g. `docker/whalesay`.
+  - Non Docker official images are prefixed by `<user or account>` e.g. `docker/whalesay`.
 - `<container>` ==> `<container_name>` or `<container_id>`.
 
 - Check Docker version.
@@ -108,9 +108,7 @@ http://localhost:3000
 ```
 
 ```
-docker build . -t <account_name>/<application_name>:<tag>
-==> "." is the directory where Dockerfile resides
-==> <tag> is optional, default is "latest"
+docker build . -t <user or account>/<image or repository>:<tag>
 
 docker history <image>
 
