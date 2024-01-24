@@ -31,7 +31,7 @@ msf > set SMBPass <password>
 ```
 
 ## EternalBlue
-- Practice with [Blue](https://tryhackme.com/room/blue)
+- Practice with [Blue](https://tryhackme.com/room/blue).
 
 ```
 nmap -Pn -sV -p445 --script=smb-vuln-ms17-010 <ip>
