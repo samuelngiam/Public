@@ -1,6 +1,6 @@
 # Docker
 
-- All commands require `sudo`.
+- Use `sudo`.
 - `<image>` ==> `<user or account>/<image or repository>:<tag>`.
   - `<tag>` optional, default `latest`.
   - Non Docker official images are prefixed by `<user or account>` e.g. `docker/whalesay`.
@@ -18,7 +18,7 @@ docker run docker/whalesay cowsay Hello-World!
 
 - Network-related commands.
 ```
-docker run ubuntu ==> --network=bridge
+docker run ubuntu --network=bridge (default)
 docker run ubuntu --network=none
 docker run ubuntu --network=host
 
