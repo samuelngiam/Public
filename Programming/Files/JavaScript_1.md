@@ -1,8 +1,7 @@
 # JavaScript Essentials 1
 
+- 1.3.1.11 The "Hello, World!" Program - Tasks
 ```
-[1.3.1.11 The "Hello, World!" Program - Tasks]
-
 console.log("Samuel Ngiam");
 
 console.log("1991");
