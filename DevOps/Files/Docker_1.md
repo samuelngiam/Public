@@ -1,5 +1,7 @@
 # KodeKloud - Docker Training Course for the Absolute Beginner
 
+## Introduction
+
 - https://docs.docker.com/engine/install/ubuntu/
 - https://hub.docker.com/
 
@@ -18,3 +20,5 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 ```
+
+## Docker Commands
