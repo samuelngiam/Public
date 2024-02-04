@@ -22,3 +22,25 @@ sudo rm -rf /var/lib/containerd
 ```
 
 ## Docker Commands
+
+```
+docker run nginx
+
+docker ps
+docker ps -a
+
+docker stop silly_sammet
+docker rm silly_sammet
+
+docker images
+docker rmi nginx
+docker pull ubuntu
+
+docker run ubuntu
+docker run ubuntu sleep 5
+docker exec distracted_mcclintock cat /etc/hosts
+
+docker run kodekloud/simple-webapp
+docker run -d kodekloud/simple-webapp
+docker run attach a043d
+```
