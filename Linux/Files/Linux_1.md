@@ -3,20 +3,16 @@
 ## Essential Commands
 
 ```
-ssh <username>@<ip>
-```
-
-```
-<cmd> --help
+ls --help
 Up-Arrow, Down-Arrow, Pg-Up, Pg-Down, q
 
-man <cmd>
+man journalctl
 man man
 
-apropos <keywords>
+apropos director
 sudo mandb
 
-apropos -s 1,8 <keywords>
+apropos -s 1,8 director
 ```
 
 ```
