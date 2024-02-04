@@ -1,3 +1,3 @@
 # Programming
 
-- [JavaScript](./Files/JavaScript.md)
+- [JavaScript Essentials 1](./Files/JavaScript_1.md)
