@@ -1,4 +1,4 @@
-# KodeKloud - Docker Training Course for the Absolute Beginner
+# Docker Training Course for the Absolute Beginner
 
 ## Introduction
 
