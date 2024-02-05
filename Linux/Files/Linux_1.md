@@ -15,8 +15,8 @@ sudo mandb
 apropos -s 1,8 director
 ```
 
+- Lab
 ```
-[Lab]
 ssh -V
 
 apropos -s 1,8 hostname
