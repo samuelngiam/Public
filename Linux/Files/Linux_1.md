@@ -45,3 +45,21 @@ apropos ssh
 apropos -s 5 nfs mount
 echo nfsmount.conf > /home/bob/nfs
 ```
+
+```
+ls
+ls -a
+ls -l /var/log
+ls -a -l
+ls -al
+ls -alh
+
+/home/aaron/Documents/Invoice.pdf
+/home/aaron/Documents
+
+pwd
+cd /var/log
+
+cd /home/aaron
+cd ..
+```
