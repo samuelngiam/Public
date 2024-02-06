@@ -62,4 +62,34 @@ cd /var/log
 
 cd /home/aaron
 cd ..
+
+cd /home/aaron
+Documents/Invoice.pdf
+Invoice.pdf
+../Invoice.pdf
+../../Invoice.pdf
+
+cd /
+cd -
+cd
+cd ~ 
+
+touch Receipt.pdf
+touch /home/jane/Receipt.pdf
+touch ../jane/Receipt.pdf
+
+mkdir Receipts
+cp Receipt.pdf Receipts
+cp Receipt.pdf Receipts/
+cp Receipt.pdf Receipts/ReceiptCopy.pdf
+cp -r Receipts/ BackupOfReceipts/
+cp -r Receipts/ BackupOfReceipts/ (destination directory exists)
+
+mv Receipt.pdf Receipts/
+mv Receipt.pdf OldReceipt.pdf
+mv Receipts/ OldReceipts/
+
+rm Invoice.pdf
+rm -r Invoices/
+
 ```
